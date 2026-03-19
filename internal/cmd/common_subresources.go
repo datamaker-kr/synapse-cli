@@ -53,14 +53,9 @@ func addInviteCmd(parent *cobra.Command, apiPath string) {
 			if err != nil {
 				return err
 			}
-			var jsonBody string
-			jsonBody, _ = cmd.Flags().GetString("json")
-			if jsonBody == "" {
-				jsonBody = "{}"
-			}
 			path := apiPath + args[0] + "/invite/"
 			outputFlag, _ := cmd.Flags().GetString("output")
-			_ = sc // TODO: POST invite with body
+			_ = sc
 			return fetchAndFormat(sc, path, output.DetectFormat(outputFlag), nil, cmd.OutOrStdout())
 		},
 	})
