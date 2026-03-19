@@ -332,9 +332,13 @@ func streamAllPages(sc *client.SynapseClient, basePath, format string, w io.Writ
 			return err
 		}
 
-		body, err := io.ReadAll(resp.Body)
+		body, readErr := io.ReadAll(resp.Body)
 		resp.Body.Close()
 		cancel()
+
+		if readErr != nil {
+			return fmt.Errorf("read response: %w", readErr)
+		}
 
 		if resp.StatusCode >= 400 {
 			return fmt.Errorf("HTTP %d: %s", resp.StatusCode, string(body))
