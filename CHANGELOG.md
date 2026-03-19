@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.1] - 2026-03-19
+
 ### Added
 
 - Cobra + Viper 기반 CLI 프레임워크 초기 구성
@@ -34,3 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - v2 API 표준 에러 처리 (`error.code/message/details`, `meta.request_id`)
 - OS 네이티브 config 디렉토리 지원 (`os.UserConfigDir()`)
 - 코드 포매터 설정 (`goimports` + `gofumpt`)
+
+### Fixed
+
+- login 시 API 에러 응답 nil pointer dereference 수정
+- login 응답 코드 2xx 전체를 성공으로 처리 (201 포함)
