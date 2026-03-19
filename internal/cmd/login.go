@@ -63,7 +63,10 @@ func newLoginCmd() *cobra.Command {
 
 			if resp.StatusCode != http.StatusOK {
 				apiErr := client.ParseAPIError(resp)
-				return fmt.Errorf("login failed: %s", apiErr.Error())
+				if apiErr != nil {
+					return fmt.Errorf("login failed: %s", apiErr.FormatHuman())
+				}
+				return fmt.Errorf("login failed: HTTP %d", resp.StatusCode)
 			}
 
 			var result struct {

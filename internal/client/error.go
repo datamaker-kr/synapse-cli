@@ -35,6 +35,9 @@ type Meta struct {
 }
 
 func (e *APIError) Error() string {
+	if e == nil {
+		return "unknown error"
+	}
 	if e.ErrorBody.Message != "" {
 		return e.ErrorBody.Message
 	}
@@ -44,6 +47,9 @@ func (e *APIError) Error() string {
 // ParseAPIError parses an HTTP response into an APIError.
 // Returns nil if the response is not an error (2xx).
 func ParseAPIError(resp *http.Response) *APIError {
+	if resp == nil {
+		return &APIError{StatusCode: 0, ErrorBody: ErrorBody{Message: "no response"}}
+	}
 	if resp.StatusCode >= 200 && resp.StatusCode < 300 {
 		return nil
 	}
