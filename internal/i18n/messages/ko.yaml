@@ -1,0 +1,89 @@
+ServerNotConfigured:
+  other: "서버가 설정되지 않았습니다.\n  synapse config add-context <name> --server <url>"
+
+ServerURLNotSet:
+  other: "서버 URL이 설정되지 않았습니다.\n  synapse config set-server <url>"
+
+AuthRequired:
+  other: "로그인이 필요합니다.\n  synapse login"
+
+WorkspaceNotSelected:
+  other: "워크스페이스가 선택되지 않았습니다.\n  synapse tenant list\n  synapse tenant select <code>"
+
+LoginSuccess:
+  other: "로그인 성공! (context: {{.Context}})"
+
+LoginFailed:
+  other: "로그인 실패: {{.Error}}"
+
+LogoutSuccess:
+  other: "\"{{.Context}}\" 컨텍스트에서 로그아웃되었습니다"
+
+WorkspaceSet:
+  other: "워크스페이스가 \"{{.Code}}\"(으)로 설정되었습니다 (context: {{.Context}})"
+
+WorkspaceNotFound:
+  other: "워크스페이스 \"{{.Code}}\"을(를) 찾을 수 없습니다"
+
+ContextAdded:
+  other: "컨텍스트 \"{{.Name}}\" 추가됨 (server: {{.Server}})"
+
+ContextSwitched:
+  other: "컨텍스트 \"{{.Name}}\"(으)로 전환됨"
+
+ContextDeleted:
+  other: "컨텍스트 \"{{.Name}}\" 삭제됨"
+
+HealthCheckOK:
+  other: "상태:  정상 ({{.Elapsed}})"
+
+HealthCheckFailed:
+  other: "경고: 서버에 연결할 수 없습니다: {{.URL}} (context: {{.Context}})"
+
+ServerCheckingConnectivity:
+  other: "서버 연결 확인 중: {{.URL}}"
+
+ServerOK:
+  other: "서버 연결 확인: {{.URL}}"
+
+ServerCannotConnect:
+  other: "경고: 서버에 연결할 수 없습니다: {{.URL}}"
+
+ServerUseForce:
+  other: "--force 플래그로 강제 저장할 수 있습니다."
+
+DryRunPrefix:
+  other: "[DRY RUN]"
+
+TokenCreatedNote:
+  other: "참고: 토큰 값은 이번에만 표시됩니다. 안전하게 보관하세요."
+
+TokenSavedToContext:
+  other: "토큰이 컨텍스트 \"{{.Context}}\"에 저장됨"
+
+TokenDeleted:
+  other: "토큰 {{.ID}} 삭제됨"
+
+ConfirmDeletion:
+  other: "{{.Resource}} {{.ID}} 삭제를 확인하려면 --force를 사용하세요"
+
+LanguageSet:
+  other: "언어가 \"{{.Lang}}\"(으)로 설정되었습니다"
+
+SelectWorkspace:
+  other: "워크스페이스를 선택하세요:"
+
+Workspaces:
+  other: "소속 워크스페이스:"
+
+AccessTokenSet:
+  other: "액세스 토큰이 컨텍스트 \"{{.Context}}\"에 설정됨"
+
+ServerSet:
+  other: "서버가 {{.URL}}(으)로 설정됨"
+
+NoContextConfigured:
+  other: "설정된 컨텍스트가 없습니다"
+
+NoContextsFound:
+  other: "설정된 컨텍스트가 없습니다. 실행: synapse config add-context <name> --server <url>"

@@ -1,0 +1,52 @@
+# Binaries
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test
+*.test
+*.out
+coverage.out
+coverage.html
+
+# Build & Release
+dist/
+
+# Dependency directories
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Claude Code
+.claude/settings.local.json
+
+# Debug
+__debug_bin*
+*.prof
+*.cpu
+*.mem
+
+# Specs (design documents, not shipped)
+specs/
+
+# Go workspace (if not using go.work)
+# go.work
+# go.work.sum

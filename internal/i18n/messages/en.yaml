@@ -1,0 +1,89 @@
+ServerNotConfigured:
+  other: "Server is not configured.\n  synapse config add-context <name> --server <url>"
+
+ServerURLNotSet:
+  other: "Server URL is not set.\n  synapse config set-server <url>"
+
+AuthRequired:
+  other: "Authentication required.\n  synapse login"
+
+WorkspaceNotSelected:
+  other: "Workspace not selected.\n  synapse tenant list\n  synapse tenant select <code>"
+
+LoginSuccess:
+  other: "Login successful! (context: {{.Context}})"
+
+LoginFailed:
+  other: "Login failed: {{.Error}}"
+
+LogoutSuccess:
+  other: "Logged out from context \"{{.Context}}\""
+
+WorkspaceSet:
+  other: "Workspace set to \"{{.Code}}\" (context: {{.Context}})"
+
+WorkspaceNotFound:
+  other: "Workspace \"{{.Code}}\" not found"
+
+ContextAdded:
+  other: "Context \"{{.Name}}\" added (server: {{.Server}})"
+
+ContextSwitched:
+  other: "Switched to context \"{{.Name}}\""
+
+ContextDeleted:
+  other: "Context \"{{.Name}}\" deleted"
+
+HealthCheckOK:
+  other: "Status:  OK ({{.Elapsed}})"
+
+HealthCheckFailed:
+  other: "Warning: Cannot connect to server: {{.URL}} (context: {{.Context}})"
+
+ServerCheckingConnectivity:
+  other: "Checking server connectivity: {{.URL}}"
+
+ServerOK:
+  other: "Server OK: {{.URL}}"
+
+ServerCannotConnect:
+  other: "Warning: Cannot connect to server: {{.URL}}"
+
+ServerUseForce:
+  other: "Use --force to save anyway."
+
+DryRunPrefix:
+  other: "[DRY RUN]"
+
+TokenCreatedNote:
+  other: "Note: Token value is only shown once. Save it securely."
+
+TokenSavedToContext:
+  other: "Token saved to context \"{{.Context}}\""
+
+TokenDeleted:
+  other: "Token {{.ID}} deleted"
+
+ConfirmDeletion:
+  other: "Use --force to confirm deletion of {{.Resource}} {{.ID}}"
+
+LanguageSet:
+  other: "Language set to \"{{.Lang}}\""
+
+SelectWorkspace:
+  other: "Select a workspace:"
+
+Workspaces:
+  other: "Workspaces:"
+
+AccessTokenSet:
+  other: "Access token set for context \"{{.Context}}\""
+
+ServerSet:
+  other: "Server set to {{.URL}}"
+
+NoContextConfigured:
+  other: "No context configured"
+
+NoContextsFound:
+  other: "No contexts configured. Run: synapse config add-context <name> --server <url>"
