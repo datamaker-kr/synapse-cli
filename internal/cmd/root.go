@@ -53,6 +53,7 @@ func newRootCmd() *cobra.Command {
 	root.AddCommand(newTokenCmd())
 	root.AddCommand(newHealthCmd())
 	root.AddCommand(newAPICmd())
+	root.AddCommand(newMcpCmd())
 
 	// v2 API resource commands (17 resources)
 	registerResourceCommands(root)
