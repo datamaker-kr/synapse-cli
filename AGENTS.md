@@ -249,6 +249,11 @@ contexts:
 
 이전 설계 blueprint: `specs/architecture-for-initiate-synapse-cli/references/`
 
+## MCP 연동
+
+`synapse mcp` 서브커맨드로 MCP 서버를 실행할 수 있다.
+자세한 내용은 [docs/mcp.md](./docs/mcp.md) 참조.
+
 ## Do NOT
 
 - `internal/client/generated/` 코드를 수동 수정하지 말 것 (`make generate`로 재생성)

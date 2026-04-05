@@ -3,12 +3,12 @@
       ████
        ██░░ ████████████████
        ░░░░ ██▓▓▓▓▓▓▓▓▓▓▓▓██
-            ██▓▓          ▓▓██   ███████╗██╗   ██╗███╗   ██╗ █████╗ ██████╗ ███████╗███████╗
-            ██▓▓          ▓▓██   ██╔════╝╚██╗ ██╔╝████╗  ██║██╔══██╗██╔══██╗██╔════╝██╔════╝
-            ██▓▓          ▓▓██   ███████╗ ╚████╔╝ ██╔██╗ ██║███████║██████╔╝███████╗█████╗
-            ██▓▓          ▓▓██   ╚════██║  ╚██╔╝  ██║╚██╗██║██╔══██║██╔═══╝ ╚════██║██╔══╝
-            ██▓▓▓▓▓▓▓▓▓▓▓▓██     ███████║   ██║   ██║ ╚████║██║  ██║██║     ███████║███████╗
-            ████████████████░░   ╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝     ╚══════╝╚══════╝
+            ██▓▓        ▓▓██    ███████╗██╗   ██╗███╗   ██╗ █████╗ ██████╗ ███████╗███████╗
+            ██▓▓        ▓▓██    ██╔════╝╚██╗ ██╔╝████╗  ██║██╔══██╗██╔══██╗██╔════╝██╔════╝
+            ██▓▓        ▓▓██    ███████╗ ╚████╔╝ ██╔██╗ ██║███████║██████╔╝███████╗█████╗
+            ██▓▓        ▓▓██    ╚════██║  ╚██╔╝  ██║╚██╗██║██╔══██║██╔═══╝ ╚════██║██╔══╝
+            ██▓▓▓▓▓▓▓▓▓▓▓▓██    ███████║   ██║   ██║ ╚████║██║  ██║██║     ███████║███████╗
+            ████████████████░░  ╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝     ╚══════╝╚══════╝
                             ██
                            ████                                                   CLI
                             ██
@@ -60,44 +60,90 @@ synapse experiment list --output json
 
 ### Core
 
-| Command | Description |
-|---------|-------------|
-| `synapse login` | 이메일/비밀번호로 로그인 |
-| `synapse logout` | 로컬 자격증명 삭제 |
-| `synapse health` | 서버 헬스 체크 |
+| Command                       | Description                  |
+| ----------------------------- | ---------------------------- |
+| `synapse login`               | 이메일/비밀번호로 로그인     |
+| `synapse logout`              | 로컬 자격증명 삭제           |
+| `synapse health`              | 서버 헬스 체크               |
 | `synapse api <METHOD> <PATH>` | 임의 API 호출 (escape hatch) |
 
 ### Workspace & Auth
 
-| Command | Description |
-|---------|-------------|
-| `synapse tenant list` | 소속 워크스페이스 목록 |
-| `synapse tenant select <code>` | 워크스페이스 전환 |
-| `synapse token create` | 액세스 토큰 생성 |
-| `synapse config add-context <name>` | 환경 프로파일 추가 |
-| `synapse config use-context <name>` | 환경 전환 |
-| `synapse config view` | 현재 설정 확인 |
+| Command                             | Description            |
+| ----------------------------------- | ---------------------- |
+| `synapse tenant list`               | 소속 워크스페이스 목록 |
+| `synapse tenant select <code>`      | 워크스페이스 전환      |
+| `synapse token create`              | 액세스 토큰 생성       |
+| `synapse config add-context <name>` | 환경 프로파일 추가     |
+| `synapse config use-context <name>` | 환경 전환              |
+| `synapse config view`               | 현재 설정 확인         |
 
 ### Resources (v2 API)
 
-| Command | Operations |
-|---------|-----------|
-| `synapse project` | list, create, get, update, delete + permissions/roles/invite/tags |
-| `synapse task` | list, create, get, update, delete |
-| `synapse assignment` | list, get |
-| `synapse review` | list, get |
-| `synapse data-collection` | list, create, get, update, delete + groups/invite |
-| `synapse data-file` | list, get |
-| `synapse data-unit` | list, create, get, update, delete |
-| `synapse experiment` | list, create, get, update, delete + invite |
-| `synapse gt-dataset` | list, create, get, update, delete + versions |
-| `synapse gt` | list, get |
-| `synapse model` | list, get |
-| `synapse job` | list, get + log |
-| `synapse plugin` | list, get + release |
-| `synapse group` | list, create, get, update, delete |
-| `synapse workshop` | list, get |
-| `synapse member` | list, get |
+| Command                   | Operations                                                        |
+| ------------------------- | ----------------------------------------------------------------- |
+| `synapse project`         | list, create, get, update, delete + permissions/roles/invite/tags |
+| `synapse task`            | list, create, get, update, delete                                 |
+| `synapse assignment`      | list, get                                                         |
+| `synapse review`          | list, get                                                         |
+| `synapse data-collection` | list, create, get, update, delete + groups/invite                 |
+| `synapse data-file`       | list, get                                                         |
+| `synapse data-unit`       | list, create, get, update, delete                                 |
+| `synapse experiment`      | list, create, get, update, delete + invite                        |
+| `synapse gt-dataset`      | list, create, get, update, delete + versions                      |
+| `synapse gt`              | list, get                                                         |
+| `synapse model`           | list, get                                                         |
+| `synapse job`             | list, get + log                                                   |
+| `synapse plugin`          | list, get + release                                               |
+| `synapse group`           | list, create, get, update, delete                                 |
+| `synapse workshop`        | list, get                                                         |
+| `synapse member`          | list, get                                                         |
+
+## AI 연동 (MCP)
+
+`synapse mcp` 서브커맨드로 [MCP](https://modelcontextprotocol.io/) 서버를 실행하여, AI 어시스턴트에서 자연어로 Synapse를 조작할 수 있다.
+
+### 지원 클라이언트
+
+| 클라이언트 | 설정 파일 |
+|-----------|----------|
+| **Claude Code** | 프로젝트 루트 `.mcp.json` (자동 인식) |
+| **Claude Desktop** | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| **ChatGPT Desktop** | `~/.openai/mcp.json` |
+| **Cursor** | Cursor Settings → MCP |
+| **Windsurf** | `~/.codeium/windsurf/mcp_config.json` |
+
+### 빠른 설정 (Claude Code)
+
+프로젝트에 이미 `.mcp.json`이 포함되어 있어 별도 설정 없이 바로 사용 가능하다:
+
+```json
+{
+  "mcpServers": {
+    "synapse": {
+      "command": "synapse",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
+### 사용 예시
+
+```
+"현재 실행 중인 실험이 있어?"
+"프로젝트 목록 보여줘"
+"experiment exp-123의 잡 로그 확인해줘"
+"새 프로젝트 만들어줘 — 이름은 image-classification"
+```
+
+### 제공 Tool (21개)
+
+- **읽기 13개**: experiment, job, project, task, assignment, data-collection, data-unit, data-file의 list/get
+- **쓰기 4개**: project/experiment create (dry-run 기본) / delete (force 필수)
+- **설정 4개**: config 조회/전환, login 안내 (보안 guardrail)
+
+> 상세 설정 가이드: [docs/mcp.md](./docs/mcp.md)
 
 ## Authentication
 
@@ -125,11 +171,11 @@ export SYNAPSE_ACCESS_TOKEN=syn_aBcDeFgHiJkLmNoPqRsT...
 
 설정 파일 위치: OS 네이티브 config 디렉토리
 
-| OS | 경로 |
-|----|------|
-| Linux | `~/.config/synapse/config.yaml` |
-| macOS | `~/Library/Application Support/synapse/config.yaml` |
-| Windows | `%APPDATA%\synapse\config.yaml` |
+| OS      | 경로                                                |
+| ------- | --------------------------------------------------- |
+| Linux   | `~/.config/synapse/config.yaml`                     |
+| macOS   | `~/Library/Application Support/synapse/config.yaml` |
+| Windows | `%APPDATA%\synapse\config.yaml`                     |
 
 ```yaml
 current_context: production
@@ -155,16 +201,16 @@ contexts:
 
 ### 환경 변수
 
-| Variable | Description |
-|----------|-------------|
-| `SYNAPSE_CONTEXT` | 활성 context 이름 |
-| `SYNAPSE_SERVER` | 서버 URL |
-| `SYNAPSE_TOKEN` | DRF Token |
-| `SYNAPSE_ACCESS_TOKEN` | Tenant Access Token |
-| `SYNAPSE_TENANT` | 워크스페이스 코드 |
-| `SYNAPSE_LANG` | 언어 (en/ko) |
-| `SYNAPSE_CONFIG_DIR` | Config 디렉토리 오버라이드 |
-| `SYNAPSE_NO_LOGO` | 로고 숨기기 |
+| Variable               | Description                |
+| ---------------------- | -------------------------- |
+| `SYNAPSE_CONTEXT`      | 활성 context 이름          |
+| `SYNAPSE_SERVER`       | 서버 URL                   |
+| `SYNAPSE_TOKEN`        | DRF Token                  |
+| `SYNAPSE_ACCESS_TOKEN` | Tenant Access Token        |
+| `SYNAPSE_TENANT`       | 워크스페이스 코드          |
+| `SYNAPSE_LANG`         | 언어 (en/ko)               |
+| `SYNAPSE_CONFIG_DIR`   | Config 디렉토리 오버라이드 |
+| `SYNAPSE_NO_LOGO`      | 로고 숨기기                |
 
 ## Output Formats
 

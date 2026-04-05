@@ -82,7 +82,7 @@ func getValidationLevel(cmd *cobra.Command) ValidationLevel {
 	path := commandPath(cmd)
 
 	switch {
-	case matchPath(path, "config", "version", "completion"):
+	case matchPath(path, "config", "version", "completion", "mcp"):
 		return ValidationNone
 	case matchPath(path, "health", "login"):
 		return ValidationServer

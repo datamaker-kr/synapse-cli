@@ -5,7 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.1.0] - 2026-04-05
+
+### Added
+
+- MCP(Model Context Protocol) stdio 서버 내장 (`synapse mcp` 서브커맨드)
+  - 공식 Go SDK (`github.com/modelcontextprotocol/go-sdk`) 기반
+  - 21개 MCP tool 제공 (읽기 13, 쓰기 4, config/auth 4)
+  - Claude Code, Claude Desktop, ChatGPT Desktop, Cursor, Windsurf 등 MCP 클라이언트 연동 지원
+- MCP 읽기 전용 tool: experiment list/get, job list/log, project list/get, task list, assignment list, data-collection list/get, data-unit list/get, data-file list
+- MCP 쓰기 tool: project/experiment create (dry-run 기본 활성화), project/experiment delete (force 필수)
+- MCP config/auth tool: config current-context/list-contexts/use-context, login guardrail (보안상 credential 입력 차단, 방법 안내만 반환)
+- MCP resource: `synapse://skills/synapse-cli` — Claude용 Synapse 플랫폼 사용 가이드 (go:embed 내장)
+- `.mcp.json` Claude Code 연동 설정 파일
+- `docs/` 디렉토리 CLI 문서화 (12개 파일): getting-started, architecture, commands/*, configuration, authentication, output-formats, development, mcp 연동 가이드
+- `skills/synapse-cli.md` Claude용 skill 파일
+
+### Changed
+
+- `CLAUDE.md`에 MCP 연동 안내 섹션 추가
+- `README.md`에 AI 연동 (MCP) 섹션 추가 — 지원 클라이언트 목록, 빠른 설정, 사용 예시
 
 ## [0.0.1] - 2026-03-19
 
