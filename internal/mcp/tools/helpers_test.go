@@ -116,8 +116,8 @@ func TestFetchAllPages(t *testing.T) {
 	assert.Len(t, items, 2)
 
 	var item1, item2 map[string]string
-	json.Unmarshal(items[0], &item1)
-	json.Unmarshal(items[1], &item2)
+	require.NoError(t, json.Unmarshal(items[0], &item1))
+	require.NoError(t, json.Unmarshal(items[1], &item2))
 	assert.Equal(t, "1", item1["id"])
 	assert.Equal(t, "2", item2["id"])
 }
