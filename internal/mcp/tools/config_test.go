@@ -3,8 +3,9 @@ package tools
 import (
 	"testing"
 
-	"github.com/datamaker-kr/synapse-cli/internal/config"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
+
+	"github.com/datamaker-kr/synapse-cli/internal/config"
 )
 
 func TestRegisterConfig_AllToolsRegistered(t *testing.T) {
