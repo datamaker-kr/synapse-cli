@@ -22,10 +22,45 @@ Synapse Backend v2 API를 위한 CLI 클라이언트. Go로 작성되며, Cobra 
 
 Synapse는 데이터 중심 ML 워크플로우 관리 플랫폼이다. `synapse-cli`는 Synapse Backend의 v2 API(21개 리소스 그룹)를 터미널에서 사용할 수 있게 해주는 도구로, 인증, 워크스페이스 관리, 프로젝트/데이터/모델 관리, 임의 API 호출 등의 기능을 제공한다.
 
+## Prerequisites
+
+### Go 설치
+
+Go 1.25 이상이 필요하다. [공식 다운로드 페이지](https://go.dev/dl/)에서 설치할 수 있다.
+
+```bash
+# macOS (Homebrew)
+brew install go
+
+# Linux (공식 바이너리)
+wget https://go.dev/dl/go1.25.0.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.25.0.linux-amd64.tar.gz
+
+# Windows — https://go.dev/dl/ 에서 .msi 설치
+```
+
+### GOPATH 설정
+
+셸 프로필(`~/.zshrc`, `~/.bashrc` 등)에 다음을 추가한다:
+
+```bash
+export GOPATH="$HOME/go"
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
+```
+
+적용 후 확인:
+
+```bash
+source ~/.zshrc  # 또는 ~/.bashrc
+go version       # go version go1.25.0 ...
+```
+
+> `go install`로 설치한 바이너리는 `$GOPATH/bin`에 위치하므로, PATH에 포함되어야 `synapse` 명령어를 바로 사용할 수 있다.
+
 ## Installation
 
 ```bash
-# Go install
+# Go install (권장)
 go install github.com/datamaker-kr/synapse-cli/cmd/synapse@latest
 
 # 또는 릴리즈 바이너리 다운로드 (Linux, macOS, Windows)
