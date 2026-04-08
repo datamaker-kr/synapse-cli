@@ -126,6 +126,114 @@ func (e AssignmentV2ListStatusReview) Valid() bool {
 	}
 }
 
+// Defines values for DataCollectionFileSpecificationV2FileType.
+const (
+	DataCollectionFileSpecificationV2FileTypeAudio DataCollectionFileSpecificationV2FileType = "audio"
+	DataCollectionFileSpecificationV2FileTypeData  DataCollectionFileSpecificationV2FileType = "data"
+	DataCollectionFileSpecificationV2FileTypeImage DataCollectionFileSpecificationV2FileType = "image"
+	DataCollectionFileSpecificationV2FileTypePcd   DataCollectionFileSpecificationV2FileType = "pcd"
+	DataCollectionFileSpecificationV2FileTypeText  DataCollectionFileSpecificationV2FileType = "text"
+	DataCollectionFileSpecificationV2FileTypeVideo DataCollectionFileSpecificationV2FileType = "video"
+)
+
+// Valid indicates whether the value is a known member of the DataCollectionFileSpecificationV2FileType enum.
+func (e DataCollectionFileSpecificationV2FileType) Valid() bool {
+	switch e {
+	case DataCollectionFileSpecificationV2FileTypeAudio:
+		return true
+	case DataCollectionFileSpecificationV2FileTypeData:
+		return true
+	case DataCollectionFileSpecificationV2FileTypeImage:
+		return true
+	case DataCollectionFileSpecificationV2FileTypePcd:
+		return true
+	case DataCollectionFileSpecificationV2FileTypeText:
+		return true
+	case DataCollectionFileSpecificationV2FileTypeVideo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DataCollectionFileSpecificationV2FunctionType.
+const (
+	DataCollectionFileSpecificationV2FunctionTypeEmpty DataCollectionFileSpecificationV2FunctionType = ""
+	DataCollectionFileSpecificationV2FunctionTypeMain  DataCollectionFileSpecificationV2FunctionType = "main"
+	DataCollectionFileSpecificationV2FunctionTypeMeta  DataCollectionFileSpecificationV2FunctionType = "meta"
+	DataCollectionFileSpecificationV2FunctionTypeSub   DataCollectionFileSpecificationV2FunctionType = "sub"
+)
+
+// Valid indicates whether the value is a known member of the DataCollectionFileSpecificationV2FunctionType enum.
+func (e DataCollectionFileSpecificationV2FunctionType) Valid() bool {
+	switch e {
+	case DataCollectionFileSpecificationV2FunctionTypeEmpty:
+		return true
+	case DataCollectionFileSpecificationV2FunctionTypeMain:
+		return true
+	case DataCollectionFileSpecificationV2FunctionTypeMeta:
+		return true
+	case DataCollectionFileSpecificationV2FunctionTypeSub:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DataCollectionFileSpecificationV2RequestFileType.
+const (
+	DataCollectionFileSpecificationV2RequestFileTypeAudio DataCollectionFileSpecificationV2RequestFileType = "audio"
+	DataCollectionFileSpecificationV2RequestFileTypeData  DataCollectionFileSpecificationV2RequestFileType = "data"
+	DataCollectionFileSpecificationV2RequestFileTypeImage DataCollectionFileSpecificationV2RequestFileType = "image"
+	DataCollectionFileSpecificationV2RequestFileTypePcd   DataCollectionFileSpecificationV2RequestFileType = "pcd"
+	DataCollectionFileSpecificationV2RequestFileTypeText  DataCollectionFileSpecificationV2RequestFileType = "text"
+	DataCollectionFileSpecificationV2RequestFileTypeVideo DataCollectionFileSpecificationV2RequestFileType = "video"
+)
+
+// Valid indicates whether the value is a known member of the DataCollectionFileSpecificationV2RequestFileType enum.
+func (e DataCollectionFileSpecificationV2RequestFileType) Valid() bool {
+	switch e {
+	case DataCollectionFileSpecificationV2RequestFileTypeAudio:
+		return true
+	case DataCollectionFileSpecificationV2RequestFileTypeData:
+		return true
+	case DataCollectionFileSpecificationV2RequestFileTypeImage:
+		return true
+	case DataCollectionFileSpecificationV2RequestFileTypePcd:
+		return true
+	case DataCollectionFileSpecificationV2RequestFileTypeText:
+		return true
+	case DataCollectionFileSpecificationV2RequestFileTypeVideo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DataCollectionFileSpecificationV2RequestFunctionType.
+const (
+	DataCollectionFileSpecificationV2RequestFunctionTypeEmpty DataCollectionFileSpecificationV2RequestFunctionType = ""
+	DataCollectionFileSpecificationV2RequestFunctionTypeMain  DataCollectionFileSpecificationV2RequestFunctionType = "main"
+	DataCollectionFileSpecificationV2RequestFunctionTypeMeta  DataCollectionFileSpecificationV2RequestFunctionType = "meta"
+	DataCollectionFileSpecificationV2RequestFunctionTypeSub   DataCollectionFileSpecificationV2RequestFunctionType = "sub"
+)
+
+// Valid indicates whether the value is a known member of the DataCollectionFileSpecificationV2RequestFunctionType enum.
+func (e DataCollectionFileSpecificationV2RequestFunctionType) Valid() bool {
+	switch e {
+	case DataCollectionFileSpecificationV2RequestFunctionTypeEmpty:
+		return true
+	case DataCollectionFileSpecificationV2RequestFunctionTypeMain:
+		return true
+	case DataCollectionFileSpecificationV2RequestFunctionTypeMeta:
+		return true
+	case DataCollectionFileSpecificationV2RequestFunctionTypeSub:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for DataCollectionV2CreateRequestAccessLevel.
 const (
 	DataCollectionV2CreateRequestAccessLevelPartiallyPublic DataCollectionV2CreateRequestAccessLevel = "partially_public"
@@ -306,6 +414,75 @@ func (e DataCollectionV2ListCategory) Valid() bool {
 	case DataCollectionV2ListCategoryText:
 		return true
 	case DataCollectionV2ListCategoryVideo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DataCollectionV2UpdateRequestAccessLevel.
+const (
+	DataCollectionV2UpdateRequestAccessLevelPartiallyPublic DataCollectionV2UpdateRequestAccessLevel = "partially_public"
+	DataCollectionV2UpdateRequestAccessLevelPrivate         DataCollectionV2UpdateRequestAccessLevel = "private"
+	DataCollectionV2UpdateRequestAccessLevelPublic          DataCollectionV2UpdateRequestAccessLevel = "public"
+)
+
+// Valid indicates whether the value is a known member of the DataCollectionV2UpdateRequestAccessLevel enum.
+func (e DataCollectionV2UpdateRequestAccessLevel) Valid() bool {
+	switch e {
+	case DataCollectionV2UpdateRequestAccessLevelPartiallyPublic:
+		return true
+	case DataCollectionV2UpdateRequestAccessLevelPrivate:
+		return true
+	case DataCollectionV2UpdateRequestAccessLevelPublic:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DataCollectionV2UpdateRequestCategory.
+const (
+	DataCollectionV2UpdateRequestCategoryAudio DataCollectionV2UpdateRequestCategory = "audio"
+	DataCollectionV2UpdateRequestCategoryData  DataCollectionV2UpdateRequestCategory = "data"
+	DataCollectionV2UpdateRequestCategoryImage DataCollectionV2UpdateRequestCategory = "image"
+	DataCollectionV2UpdateRequestCategoryPcd   DataCollectionV2UpdateRequestCategory = "pcd"
+	DataCollectionV2UpdateRequestCategoryText  DataCollectionV2UpdateRequestCategory = "text"
+	DataCollectionV2UpdateRequestCategoryVideo DataCollectionV2UpdateRequestCategory = "video"
+)
+
+// Valid indicates whether the value is a known member of the DataCollectionV2UpdateRequestCategory enum.
+func (e DataCollectionV2UpdateRequestCategory) Valid() bool {
+	switch e {
+	case DataCollectionV2UpdateRequestCategoryAudio:
+		return true
+	case DataCollectionV2UpdateRequestCategoryData:
+		return true
+	case DataCollectionV2UpdateRequestCategoryImage:
+		return true
+	case DataCollectionV2UpdateRequestCategoryPcd:
+		return true
+	case DataCollectionV2UpdateRequestCategoryText:
+		return true
+	case DataCollectionV2UpdateRequestCategoryVideo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DataCollectionV2UpdateRequestCaution.
+const (
+	DataCollectionV2UpdateRequestCautionEmpty            DataCollectionV2UpdateRequestCaution = ""
+	DataCollectionV2UpdateRequestCautionSensitiveContent DataCollectionV2UpdateRequestCaution = "sensitive_content"
+)
+
+// Valid indicates whether the value is a known member of the DataCollectionV2UpdateRequestCaution enum.
+func (e DataCollectionV2UpdateRequestCaution) Valid() bool {
+	switch e {
+	case DataCollectionV2UpdateRequestCautionEmpty:
+		return true
+	case DataCollectionV2UpdateRequestCautionSensitiveContent:
 		return true
 	default:
 		return false
@@ -657,69 +834,69 @@ func (e MemberV2ListRole) Valid() bool {
 	}
 }
 
-// Defines values for PatchedDataCollectionV2CreateRequestAccessLevel.
+// Defines values for PatchedDataCollectionV2UpdateRequestAccessLevel.
 const (
-	PatchedDataCollectionV2CreateRequestAccessLevelPartiallyPublic PatchedDataCollectionV2CreateRequestAccessLevel = "partially_public"
-	PatchedDataCollectionV2CreateRequestAccessLevelPrivate         PatchedDataCollectionV2CreateRequestAccessLevel = "private"
-	PatchedDataCollectionV2CreateRequestAccessLevelPublic          PatchedDataCollectionV2CreateRequestAccessLevel = "public"
+	PatchedDataCollectionV2UpdateRequestAccessLevelPartiallyPublic PatchedDataCollectionV2UpdateRequestAccessLevel = "partially_public"
+	PatchedDataCollectionV2UpdateRequestAccessLevelPrivate         PatchedDataCollectionV2UpdateRequestAccessLevel = "private"
+	PatchedDataCollectionV2UpdateRequestAccessLevelPublic          PatchedDataCollectionV2UpdateRequestAccessLevel = "public"
 )
 
-// Valid indicates whether the value is a known member of the PatchedDataCollectionV2CreateRequestAccessLevel enum.
-func (e PatchedDataCollectionV2CreateRequestAccessLevel) Valid() bool {
+// Valid indicates whether the value is a known member of the PatchedDataCollectionV2UpdateRequestAccessLevel enum.
+func (e PatchedDataCollectionV2UpdateRequestAccessLevel) Valid() bool {
 	switch e {
-	case PatchedDataCollectionV2CreateRequestAccessLevelPartiallyPublic:
+	case PatchedDataCollectionV2UpdateRequestAccessLevelPartiallyPublic:
 		return true
-	case PatchedDataCollectionV2CreateRequestAccessLevelPrivate:
+	case PatchedDataCollectionV2UpdateRequestAccessLevelPrivate:
 		return true
-	case PatchedDataCollectionV2CreateRequestAccessLevelPublic:
+	case PatchedDataCollectionV2UpdateRequestAccessLevelPublic:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for PatchedDataCollectionV2CreateRequestCategory.
+// Defines values for PatchedDataCollectionV2UpdateRequestCategory.
 const (
-	PatchedDataCollectionV2CreateRequestCategoryAudio PatchedDataCollectionV2CreateRequestCategory = "audio"
-	PatchedDataCollectionV2CreateRequestCategoryData  PatchedDataCollectionV2CreateRequestCategory = "data"
-	PatchedDataCollectionV2CreateRequestCategoryImage PatchedDataCollectionV2CreateRequestCategory = "image"
-	PatchedDataCollectionV2CreateRequestCategoryPcd   PatchedDataCollectionV2CreateRequestCategory = "pcd"
-	PatchedDataCollectionV2CreateRequestCategoryText  PatchedDataCollectionV2CreateRequestCategory = "text"
-	PatchedDataCollectionV2CreateRequestCategoryVideo PatchedDataCollectionV2CreateRequestCategory = "video"
+	PatchedDataCollectionV2UpdateRequestCategoryAudio PatchedDataCollectionV2UpdateRequestCategory = "audio"
+	PatchedDataCollectionV2UpdateRequestCategoryData  PatchedDataCollectionV2UpdateRequestCategory = "data"
+	PatchedDataCollectionV2UpdateRequestCategoryImage PatchedDataCollectionV2UpdateRequestCategory = "image"
+	PatchedDataCollectionV2UpdateRequestCategoryPcd   PatchedDataCollectionV2UpdateRequestCategory = "pcd"
+	PatchedDataCollectionV2UpdateRequestCategoryText  PatchedDataCollectionV2UpdateRequestCategory = "text"
+	PatchedDataCollectionV2UpdateRequestCategoryVideo PatchedDataCollectionV2UpdateRequestCategory = "video"
 )
 
-// Valid indicates whether the value is a known member of the PatchedDataCollectionV2CreateRequestCategory enum.
-func (e PatchedDataCollectionV2CreateRequestCategory) Valid() bool {
+// Valid indicates whether the value is a known member of the PatchedDataCollectionV2UpdateRequestCategory enum.
+func (e PatchedDataCollectionV2UpdateRequestCategory) Valid() bool {
 	switch e {
-	case PatchedDataCollectionV2CreateRequestCategoryAudio:
+	case PatchedDataCollectionV2UpdateRequestCategoryAudio:
 		return true
-	case PatchedDataCollectionV2CreateRequestCategoryData:
+	case PatchedDataCollectionV2UpdateRequestCategoryData:
 		return true
-	case PatchedDataCollectionV2CreateRequestCategoryImage:
+	case PatchedDataCollectionV2UpdateRequestCategoryImage:
 		return true
-	case PatchedDataCollectionV2CreateRequestCategoryPcd:
+	case PatchedDataCollectionV2UpdateRequestCategoryPcd:
 		return true
-	case PatchedDataCollectionV2CreateRequestCategoryText:
+	case PatchedDataCollectionV2UpdateRequestCategoryText:
 		return true
-	case PatchedDataCollectionV2CreateRequestCategoryVideo:
+	case PatchedDataCollectionV2UpdateRequestCategoryVideo:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for PatchedDataCollectionV2CreateRequestCaution.
+// Defines values for PatchedDataCollectionV2UpdateRequestCaution.
 const (
-	PatchedDataCollectionV2CreateRequestCautionEmpty            PatchedDataCollectionV2CreateRequestCaution = ""
-	PatchedDataCollectionV2CreateRequestCautionSensitiveContent PatchedDataCollectionV2CreateRequestCaution = "sensitive_content"
+	PatchedDataCollectionV2UpdateRequestCautionEmpty            PatchedDataCollectionV2UpdateRequestCaution = ""
+	PatchedDataCollectionV2UpdateRequestCautionSensitiveContent PatchedDataCollectionV2UpdateRequestCaution = "sensitive_content"
 )
 
-// Valid indicates whether the value is a known member of the PatchedDataCollectionV2CreateRequestCaution enum.
-func (e PatchedDataCollectionV2CreateRequestCaution) Valid() bool {
+// Valid indicates whether the value is a known member of the PatchedDataCollectionV2UpdateRequestCaution enum.
+func (e PatchedDataCollectionV2UpdateRequestCaution) Valid() bool {
 	switch e {
-	case PatchedDataCollectionV2CreateRequestCautionEmpty:
+	case PatchedDataCollectionV2UpdateRequestCautionEmpty:
 		return true
-	case PatchedDataCollectionV2CreateRequestCautionSensitiveContent:
+	case PatchedDataCollectionV2UpdateRequestCautionSensitiveContent:
 		return true
 	default:
 		return false
@@ -1019,13 +1196,13 @@ func (e ProjectV2DetailCategory) Valid() bool {
 
 // Defines values for ProjectV2DetailCaution.
 const (
-	ProjectV2DetailCautionSensitiveContent ProjectV2DetailCaution = "sensitive_content"
+	SensitiveContent ProjectV2DetailCaution = "sensitive_content"
 )
 
 // Valid indicates whether the value is a known member of the ProjectV2DetailCaution enum.
 func (e ProjectV2DetailCaution) Valid() bool {
 	switch e {
-	case ProjectV2DetailCautionSensitiveContent:
+	case SensitiveContent:
 		return true
 	default:
 		return false
@@ -1238,16 +1415,16 @@ func (e WorkshopV2DetailStatus) Valid() bool {
 
 // Defines values for WorkshopV2DetailVisibility.
 const (
-	WorkshopV2DetailVisibilityPrivate WorkshopV2DetailVisibility = "private"
-	WorkshopV2DetailVisibilityPublic  WorkshopV2DetailVisibility = "public"
+	Private WorkshopV2DetailVisibility = "private"
+	Public  WorkshopV2DetailVisibility = "public"
 )
 
 // Valid indicates whether the value is a known member of the WorkshopV2DetailVisibility enum.
 func (e WorkshopV2DetailVisibility) Valid() bool {
 	switch e {
-	case WorkshopV2DetailVisibilityPrivate:
+	case Private:
 		return true
-	case WorkshopV2DetailVisibilityPublic:
+	case Public:
 		return true
 	default:
 		return false
@@ -1353,30 +1530,6 @@ func (e DataCollectionListParamsCategory) Valid() bool {
 	case DataCollectionListParamsCategoryText:
 		return true
 	case DataCollectionListParamsCategoryVideo:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for DataFileListParamsProcessingStatus.
-const (
-	Completed  DataFileListParamsProcessingStatus = "completed"
-	Failed     DataFileListParamsProcessingStatus = "failed"
-	Pending    DataFileListParamsProcessingStatus = "pending"
-	Processing DataFileListParamsProcessingStatus = "processing"
-)
-
-// Valid indicates whether the value is a known member of the DataFileListParamsProcessingStatus enum.
-func (e DataFileListParamsProcessingStatus) Valid() bool {
-	switch e {
-	case Completed:
-		return true
-	case Failed:
-		return true
-	case Pending:
-		return true
-	case Processing:
 		return true
 	default:
 		return false
@@ -1526,31 +1679,31 @@ func (e PluginListParamsCategory) Valid() bool {
 
 // Defines values for ProjectListParamsCategory.
 const (
-	ProjectListParamsCategoryAudio      ProjectListParamsCategory = "audio"
-	ProjectListParamsCategoryImage      ProjectListParamsCategory = "image"
-	ProjectListParamsCategoryPcd        ProjectListParamsCategory = "pcd"
-	ProjectListParamsCategoryPrompt     ProjectListParamsCategory = "prompt"
-	ProjectListParamsCategoryText       ProjectListParamsCategory = "text"
-	ProjectListParamsCategoryTimeSeries ProjectListParamsCategory = "time_series"
-	ProjectListParamsCategoryVideo      ProjectListParamsCategory = "video"
+	Audio      ProjectListParamsCategory = "audio"
+	Image      ProjectListParamsCategory = "image"
+	Pcd        ProjectListParamsCategory = "pcd"
+	Prompt     ProjectListParamsCategory = "prompt"
+	Text       ProjectListParamsCategory = "text"
+	TimeSeries ProjectListParamsCategory = "time_series"
+	Video      ProjectListParamsCategory = "video"
 )
 
 // Valid indicates whether the value is a known member of the ProjectListParamsCategory enum.
 func (e ProjectListParamsCategory) Valid() bool {
 	switch e {
-	case ProjectListParamsCategoryAudio:
+	case Audio:
 		return true
-	case ProjectListParamsCategoryImage:
+	case Image:
 		return true
-	case ProjectListParamsCategoryPcd:
+	case Pcd:
 		return true
-	case ProjectListParamsCategoryPrompt:
+	case Prompt:
 		return true
-	case ProjectListParamsCategoryText:
+	case Text:
 		return true
-	case ProjectListParamsCategoryTimeSeries:
+	case TimeSeries:
 		return true
-	case ProjectListParamsCategoryVideo:
+	case Video:
 		return true
 	default:
 		return false
@@ -1672,34 +1825,34 @@ type AssignmentV2Detail struct {
 	IsDiscarded *bool       `json:"is_discarded,omitempty"`
 	ReviewerId  *int        `json:"reviewer_id,omitempty"`
 
-	// StatusLabel * `stand_by` - 대기
-	// * `in_progress` - 진행중
-	// * `completed` - 완료
-	// * `skipped` - 보류
+	// StatusLabel * `stand_by` - Stand By
+	// * `in_progress` - In Progress
+	// * `completed` - Completed
+	// * `skipped` - Skipped
 	StatusLabel *AssignmentV2DetailStatusLabel `json:"status_label,omitempty"`
 
-	// StatusReview * `stand_by` - 대기
-	// * `in_progress` - 진행중
-	// * `rejected` - 반려
-	// * `completed` - 완료
-	// * `skipped` - 보류
+	// StatusReview * `stand_by` - Stand By
+	// * `in_progress` - In Progress
+	// * `rejected` - Rejected
+	// * `completed` - Completed
+	// * `skipped` - Skipped
 	StatusReview *AssignmentV2DetailStatusReview `json:"status_review,omitempty"`
 	Tags         *[]int                          `json:"tags,omitempty"`
 	TaskId       *int                            `json:"task_id,omitempty"`
 	UserId       *int                            `json:"user_id,omitempty"`
 }
 
-// AssignmentV2DetailStatusLabel * `stand_by` - 대기
-// * `in_progress` - 진행중
-// * `completed` - 완료
-// * `skipped` - 보류
+// AssignmentV2DetailStatusLabel * `stand_by` - Stand By
+// * `in_progress` - In Progress
+// * `completed` - Completed
+// * `skipped` - Skipped
 type AssignmentV2DetailStatusLabel string
 
-// AssignmentV2DetailStatusReview * `stand_by` - 대기
-// * `in_progress` - 진행중
-// * `rejected` - 반려
-// * `completed` - 완료
-// * `skipped` - 보류
+// AssignmentV2DetailStatusReview * `stand_by` - Stand By
+// * `in_progress` - In Progress
+// * `rejected` - Rejected
+// * `completed` - Completed
+// * `skipped` - Skipped
 type AssignmentV2DetailStatusReview string
 
 // AssignmentV2List 목록용 — context window 최적화를 위한 최소 필드.
@@ -1709,133 +1862,211 @@ type AssignmentV2List struct {
 	IsConfirmed *bool      `json:"is_confirmed,omitempty"`
 	IsDiscarded *bool      `json:"is_discarded,omitempty"`
 
-	// StatusLabel * `stand_by` - 대기
-	// * `in_progress` - 진행중
-	// * `completed` - 완료
-	// * `skipped` - 보류
+	// StatusLabel * `stand_by` - Stand By
+	// * `in_progress` - In Progress
+	// * `completed` - Completed
+	// * `skipped` - Skipped
 	StatusLabel *AssignmentV2ListStatusLabel `json:"status_label,omitempty"`
 
-	// StatusReview * `stand_by` - 대기
-	// * `in_progress` - 진행중
-	// * `rejected` - 반려
-	// * `completed` - 완료
-	// * `skipped` - 보류
+	// StatusReview * `stand_by` - Stand By
+	// * `in_progress` - In Progress
+	// * `rejected` - Rejected
+	// * `completed` - Completed
+	// * `skipped` - Skipped
 	StatusReview *AssignmentV2ListStatusReview `json:"status_review,omitempty"`
 	TaskId       *int                          `json:"task_id,omitempty"`
 	UserId       *int                          `json:"user_id,omitempty"`
 }
 
-// AssignmentV2ListStatusLabel * `stand_by` - 대기
-// * `in_progress` - 진행중
-// * `completed` - 완료
-// * `skipped` - 보류
+// AssignmentV2ListStatusLabel * `stand_by` - Stand By
+// * `in_progress` - In Progress
+// * `completed` - Completed
+// * `skipped` - Skipped
 type AssignmentV2ListStatusLabel string
 
-// AssignmentV2ListStatusReview * `stand_by` - 대기
-// * `in_progress` - 진행중
-// * `rejected` - 반려
-// * `completed` - 완료
-// * `skipped` - 보류
+// AssignmentV2ListStatusReview * `stand_by` - Stand By
+// * `in_progress` - In Progress
+// * `rejected` - Rejected
+// * `completed` - Completed
+// * `skipped` - Skipped
 type AssignmentV2ListStatusReview string
+
+// DataCollectionFileSpecificationV2 파일 스펙 — 읽기/쓰기 겸용.
+type DataCollectionFileSpecificationV2 struct {
+	Configuration interface{} `json:"configuration,omitempty"`
+	Description   *string     `json:"description,omitempty"`
+
+	// FileType * `audio` - Audio
+	// * `data` - Data
+	// * `image` - Image
+	// * `pcd` - PCD
+	// * `text` - Text
+	// * `video` - Video
+	FileType        DataCollectionFileSpecificationV2FileType `json:"file_type"`
+	FileTypeDisplay *string                                   `json:"file_type_display,omitempty"`
+
+	// FunctionType * `main` - Main File
+	// * `sub` - Sub File
+	// * `meta` - Meta File
+	FunctionType *DataCollectionFileSpecificationV2FunctionType `json:"function_type,omitempty"`
+	Id           *int                                           `json:"id,omitempty"`
+	Index        *int                                           `json:"index,omitempty"`
+	IsPrimary    *bool                                          `json:"is_primary,omitempty"`
+	IsRequired   *bool                                          `json:"is_required,omitempty"`
+	IsSequential *bool                                          `json:"is_sequential,omitempty"`
+	Name         string                                         `json:"name"`
+}
+
+// DataCollectionFileSpecificationV2FileType * `audio` - Audio
+// * `data` - Data
+// * `image` - Image
+// * `pcd` - PCD
+// * `text` - Text
+// * `video` - Video
+type DataCollectionFileSpecificationV2FileType string
+
+// DataCollectionFileSpecificationV2FunctionType * `main` - Main File
+// * `sub` - Sub File
+// * `meta` - Meta File
+type DataCollectionFileSpecificationV2FunctionType string
+
+// DataCollectionFileSpecificationV2Request 파일 스펙 — 읽기/쓰기 겸용.
+type DataCollectionFileSpecificationV2Request struct {
+	Configuration interface{} `json:"configuration,omitempty"`
+	Description   *string     `json:"description,omitempty"`
+
+	// FileType * `audio` - Audio
+	// * `data` - Data
+	// * `image` - Image
+	// * `pcd` - PCD
+	// * `text` - Text
+	// * `video` - Video
+	FileType DataCollectionFileSpecificationV2RequestFileType `json:"file_type"`
+
+	// FunctionType * `main` - Main File
+	// * `sub` - Sub File
+	// * `meta` - Meta File
+	FunctionType *DataCollectionFileSpecificationV2RequestFunctionType `json:"function_type,omitempty"`
+	Index        *int                                                  `json:"index,omitempty"`
+	IsPrimary    *bool                                                 `json:"is_primary,omitempty"`
+	IsRequired   *bool                                                 `json:"is_required,omitempty"`
+	IsSequential *bool                                                 `json:"is_sequential,omitempty"`
+	Name         string                                                `json:"name"`
+}
+
+// DataCollectionFileSpecificationV2RequestFileType * `audio` - Audio
+// * `data` - Data
+// * `image` - Image
+// * `pcd` - PCD
+// * `text` - Text
+// * `video` - Video
+type DataCollectionFileSpecificationV2RequestFileType string
+
+// DataCollectionFileSpecificationV2RequestFunctionType * `main` - Main File
+// * `sub` - Sub File
+// * `meta` - Meta File
+type DataCollectionFileSpecificationV2RequestFunctionType string
 
 // DataCollectionV2CreateRequest 생성용 — 단일 요청 완결.
 //
 // v1에서 Phase 1/2/3 다단계로 수행하던 데이터 컬렉션 생성을
-// 단일 POST로 처리.
+// 단일 POST로 처리. file_specifications 동시 생성 지원.
 type DataCollectionV2CreateRequest struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
 	AccessLevel *DataCollectionV2CreateRequestAccessLevel `json:"access_level,omitempty"`
 
-	// Category * `image` - 이미지
-	// * `video` - 비디오
-	// * `audio` - 오디오
-	// * `text` - 텍스트
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
 	// * `pcd` - PCD
-	// * `data` - 데이터
+	// * `data` - Data
 	Category DataCollectionV2CreateRequestCategory `json:"category"`
 
-	// Caution * `sensitive_content` - 민감한 콘텐츠
-	Caution     *DataCollectionV2CreateRequestCaution `json:"caution,omitempty"`
-	Description *string                               `json:"description,omitempty"`
-	Meta        interface{}                           `json:"meta,omitempty"`
-	Name        string                                `json:"name"`
+	// Caution * `sensitive_content` - Sensitive Content
+	Caution            *DataCollectionV2CreateRequestCaution       `json:"caution,omitempty"`
+	Description        *string                                     `json:"description,omitempty"`
+	FileSpecifications *[]DataCollectionFileSpecificationV2Request `json:"file_specifications,omitempty"`
+	Meta               interface{}                                 `json:"meta,omitempty"`
+	Name               string                                      `json:"name"`
 }
 
-// DataCollectionV2CreateRequestAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
+// DataCollectionV2CreateRequestAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
 type DataCollectionV2CreateRequestAccessLevel string
 
-// DataCollectionV2CreateRequestCategory * `image` - 이미지
-// * `video` - 비디오
-// * `audio` - 오디오
-// * `text` - 텍스트
+// DataCollectionV2CreateRequestCategory * `image` - Image
+// * `video` - Video
+// * `audio` - Audio
+// * `text` - Text
 // * `pcd` - PCD
-// * `data` - 데이터
+// * `data` - Data
 type DataCollectionV2CreateRequestCategory string
 
-// DataCollectionV2CreateRequestCaution * `sensitive_content` - 민감한 콘텐츠
+// DataCollectionV2CreateRequestCaution * `sensitive_content` - Sensitive Content
 type DataCollectionV2CreateRequestCaution string
 
-// DataCollectionV2Detail 상세용 — 전체 필드.
+// DataCollectionV2Detail 상세용 — 전체 필드 + file_specifications.
 type DataCollectionV2Detail struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
 	AccessLevel *DataCollectionV2DetailAccessLevel `json:"access_level,omitempty"`
 
-	// Category * `image` - 이미지
-	// * `video` - 비디오
-	// * `audio` - 오디오
-	// * `text` - 텍스트
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
 	// * `pcd` - PCD
-	// * `data` - 데이터
+	// * `data` - Data
 	Category        *DataCollectionV2DetailCategory `json:"category,omitempty"`
 	CategoryDisplay *string                         `json:"category_display,omitempty"`
 
-	// Caution * `sensitive_content` - 민감한 콘텐츠
-	Caution       *DataCollectionV2DetailCaution `json:"caution,omitempty"`
-	CountProjects *int                           `json:"count_projects,omitempty"`
-	Created       *time.Time                     `json:"created,omitempty"`
-	Description   *string                        `json:"description,omitempty"`
-	Id            *int                           `json:"id,omitempty"`
-	IsArchived    *bool                          `json:"is_archived,omitempty"`
-	Meta          interface{}                    `json:"meta,omitempty"`
-	Name          *string                        `json:"name,omitempty"`
-	TenantId      *int                           `json:"tenant_id,omitempty"`
+	// Caution * `sensitive_content` - Sensitive Content
+	Caution            *DataCollectionV2DetailCaution       `json:"caution,omitempty"`
+	CountProjects      *int                                 `json:"count_projects,omitempty"`
+	Created            *time.Time                           `json:"created,omitempty"`
+	Description        *string                              `json:"description,omitempty"`
+	FileSpecifications *[]DataCollectionFileSpecificationV2 `json:"file_specifications,omitempty"`
+	Id                 *int                                 `json:"id,omitempty"`
+	IsArchived         *bool                                `json:"is_archived,omitempty"`
+	Meta               interface{}                          `json:"meta,omitempty"`
+	Name               *string                              `json:"name,omitempty"`
+	TenantId           *int                                 `json:"tenant_id,omitempty"`
 }
 
-// DataCollectionV2DetailAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
+// DataCollectionV2DetailAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
 type DataCollectionV2DetailAccessLevel string
 
-// DataCollectionV2DetailCategory * `image` - 이미지
-// * `video` - 비디오
-// * `audio` - 오디오
-// * `text` - 텍스트
+// DataCollectionV2DetailCategory * `image` - Image
+// * `video` - Video
+// * `audio` - Audio
+// * `text` - Text
 // * `pcd` - PCD
-// * `data` - 데이터
+// * `data` - Data
 type DataCollectionV2DetailCategory string
 
-// DataCollectionV2DetailCaution * `sensitive_content` - 민감한 콘텐츠
+// DataCollectionV2DetailCaution * `sensitive_content` - Sensitive Content
 type DataCollectionV2DetailCaution string
 
 // DataCollectionV2List 목록용 — context window 최적화를 위한 최소 필드.
 type DataCollectionV2List struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
 	AccessLevel *DataCollectionV2ListAccessLevel `json:"access_level,omitempty"`
 
-	// Category * `image` - 이미지
-	// * `video` - 비디오
-	// * `audio` - 오디오
-	// * `text` - 텍스트
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
 	// * `pcd` - PCD
-	// * `data` - 데이터
+	// * `data` - Data
 	Category        *DataCollectionV2ListCategory `json:"category,omitempty"`
 	CategoryDisplay *string                       `json:"category_display,omitempty"`
 	CountProjects   *int                          `json:"count_projects,omitempty"`
@@ -1845,18 +2076,60 @@ type DataCollectionV2List struct {
 	Name            *string                       `json:"name,omitempty"`
 }
 
-// DataCollectionV2ListAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
+// DataCollectionV2ListAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
 type DataCollectionV2ListAccessLevel string
 
-// DataCollectionV2ListCategory * `image` - 이미지
-// * `video` - 비디오
-// * `audio` - 오디오
-// * `text` - 텍스트
+// DataCollectionV2ListCategory * `image` - Image
+// * `video` - Video
+// * `audio` - Audio
+// * `text` - Text
 // * `pcd` - PCD
-// * `data` - 데이터
+// * `data` - Data
 type DataCollectionV2ListCategory string
+
+// DataCollectionV2UpdateRequest 수정용 — file_specifications 업데이트 지원.
+//
+// v1의 DataCollectionUpdateSerializer 패턴을 v2로 이식.
+// file_specifications 제공 시 get_or_create + 삭제 로직 적용.
+type DataCollectionV2UpdateRequest struct {
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
+	AccessLevel *DataCollectionV2UpdateRequestAccessLevel `json:"access_level,omitempty"`
+
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
+	// * `pcd` - PCD
+	// * `data` - Data
+	Category DataCollectionV2UpdateRequestCategory `json:"category"`
+
+	// Caution * `sensitive_content` - Sensitive Content
+	Caution            *DataCollectionV2UpdateRequestCaution       `json:"caution,omitempty"`
+	Description        *string                                     `json:"description,omitempty"`
+	FileSpecifications *[]DataCollectionFileSpecificationV2Request `json:"file_specifications,omitempty"`
+	Meta               interface{}                                 `json:"meta,omitempty"`
+	Name               string                                      `json:"name"`
+}
+
+// DataCollectionV2UpdateRequestAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
+type DataCollectionV2UpdateRequestAccessLevel string
+
+// DataCollectionV2UpdateRequestCategory * `image` - Image
+// * `video` - Video
+// * `audio` - Audio
+// * `text` - Text
+// * `pcd` - PCD
+// * `data` - Data
+type DataCollectionV2UpdateRequestCategory string
+
+// DataCollectionV2UpdateRequestCaution * `sensitive_content` - Sensitive Content
+type DataCollectionV2UpdateRequestCaution string
 
 // DataFileV2Detail 상세용.
 type DataFileV2Detail struct {
@@ -1866,18 +2139,18 @@ type DataFileV2Detail struct {
 	Id       *int        `json:"id,omitempty"`
 	Meta     interface{} `json:"meta,omitempty"`
 
-	// ProcessingStatus * `pending` - 대기중
+	// ProcessingStatus * `pending` - Stand By
 	// * `processing` - 처리중
-	// * `completed` - 완료
-	// * `failed` - 실패
+	// * `completed` - Completed
+	// * `failed` - Failure
 	ProcessingStatus *DataFileV2DetailProcessingStatus `json:"processing_status,omitempty"`
 	StorageId        *int                              `json:"storage_id,omitempty"`
 }
 
-// DataFileV2DetailProcessingStatus * `pending` - 대기중
+// DataFileV2DetailProcessingStatus * `pending` - Stand By
 // * `processing` - 처리중
-// * `completed` - 완료
-// * `failed` - 실패
+// * `completed` - Completed
+// * `failed` - Failure
 type DataFileV2DetailProcessingStatus string
 
 // DataFileV2List 목록용.
@@ -1887,17 +2160,17 @@ type DataFileV2List struct {
 	FileSize *int       `json:"file_size,omitempty"`
 	Id       *int       `json:"id,omitempty"`
 
-	// ProcessingStatus * `pending` - 대기중
+	// ProcessingStatus * `pending` - Stand By
 	// * `processing` - 처리중
-	// * `completed` - 완료
-	// * `failed` - 실패
+	// * `completed` - Completed
+	// * `failed` - Failure
 	ProcessingStatus *DataFileV2ListProcessingStatus `json:"processing_status,omitempty"`
 }
 
-// DataFileV2ListProcessingStatus * `pending` - 대기중
+// DataFileV2ListProcessingStatus * `pending` - Stand By
 // * `processing` - 처리중
-// * `completed` - 완료
-// * `failed` - 실패
+// * `completed` - Completed
+// * `failed` - Failure
 type DataFileV2ListProcessingStatus string
 
 // DataGroupV2CreateRequest 생성용.
@@ -1951,25 +2224,25 @@ type DataUnitV2List struct {
 
 // ExperimentV2CreateRequest 생성/수정용.
 type ExperimentV2CreateRequest struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
 	AccessLevel *ExperimentV2CreateRequestAccessLevel `json:"access_level,omitempty"`
 	Description *string                               `json:"description,omitempty"`
 	Name        string                                `json:"name"`
 	Task        int                                   `json:"task"`
 }
 
-// ExperimentV2CreateRequestAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
+// ExperimentV2CreateRequestAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
 type ExperimentV2CreateRequestAccessLevel string
 
 // ExperimentV2Detail 상세용 — 전체 필드.
 type ExperimentV2Detail struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
 	AccessLevel *ExperimentV2DetailAccessLevel `json:"access_level,omitempty"`
 	Created     *time.Time                     `json:"created,omitempty"`
 	Description *string                        `json:"description,omitempty"`
@@ -1980,16 +2253,16 @@ type ExperimentV2Detail struct {
 	TenantId    *int                           `json:"tenant_id,omitempty"`
 }
 
-// ExperimentV2DetailAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
+// ExperimentV2DetailAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
 type ExperimentV2DetailAccessLevel string
 
 // ExperimentV2List 목록용 — context window 최적화를 위한 최소 필드.
 type ExperimentV2List struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
 	AccessLevel *ExperimentV2ListAccessLevel `json:"access_level,omitempty"`
 	Created     *time.Time                   `json:"created,omitempty"`
 	Id          *int                         `json:"id,omitempty"`
@@ -1997,9 +2270,9 @@ type ExperimentV2List struct {
 	Name        *string                      `json:"name,omitempty"`
 }
 
-// ExperimentV2ListAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
+// ExperimentV2ListAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
 type ExperimentV2ListAccessLevel string
 
 // GroundTruthDatasetV2CreateRequest 생성/수정용.
@@ -2049,9 +2322,9 @@ type GroundTruthDatasetVersionV2List struct {
 
 // GroundTruthV2Detail 상세용 — 전체 필드.
 type GroundTruthV2Detail struct {
-	// Category * `train` - 학습
-	// * `validation` - 검증
-	// * `test` - 테스트
+	// Category * `train` - Train
+	// * `validation` - Validation
+	// * `test` - Test
 	Category             *GroundTruthV2DetailCategory `json:"category,omitempty"`
 	Classes              *[]string                    `json:"classes,omitempty"`
 	Data                 interface{}                  `json:"data,omitempty"`
@@ -2061,25 +2334,25 @@ type GroundTruthV2Detail struct {
 	ProjectId            *int                         `json:"project_id,omitempty"`
 }
 
-// GroundTruthV2DetailCategory * `train` - 학습
-// * `validation` - 검증
-// * `test` - 테스트
+// GroundTruthV2DetailCategory * `train` - Train
+// * `validation` - Validation
+// * `test` - Test
 type GroundTruthV2DetailCategory string
 
 // GroundTruthV2List 목록용 — context window 최적화를 위한 최소 필드.
 type GroundTruthV2List struct {
-	// Category * `train` - 학습
-	// * `validation` - 검증
-	// * `test` - 테스트
+	// Category * `train` - Train
+	// * `validation` - Validation
+	// * `test` - Test
 	Category             *GroundTruthV2ListCategory `json:"category,omitempty"`
 	DataUnitId           *int                       `json:"data_unit_id,omitempty"`
 	GroundTruthDatasetId *int                       `json:"ground_truth_dataset_id,omitempty"`
 	Id                   *int                       `json:"id,omitempty"`
 }
 
-// GroundTruthV2ListCategory * `train` - 학습
-// * `validation` - 검증
-// * `test` - 테스트
+// GroundTruthV2ListCategory * `train` - Train
+// * `validation` - Validation
+// * `test` - Test
 type GroundTruthV2ListCategory string
 
 // GroupRole Target model 에 대한 GroupRole Model Serializer.
@@ -2202,19 +2475,19 @@ type JobV2Detail struct {
 	ProgressRecord  interface{}         `json:"progress_record,omitempty"`
 	Result          interface{}         `json:"result,omitempty"`
 
-	// Status * `PENDING` - 대기
-	// * `RUNNING` - 진행중
-	// * `STOPPED` - 중지
-	// * `SUCCEEDED` - 성공
-	// * `FAILED` - 실패
+	// Status * `PENDING` - Stand By
+	// * `RUNNING` - In Progress
+	// * `STOPPED` - Stopped
+	// * `SUCCEEDED` - Sucess
+	// * `FAILED` - Failure
 	Status *JobV2DetailStatus `json:"status,omitempty"`
 }
 
-// JobV2DetailStatus * `PENDING` - 대기
-// * `RUNNING` - 진행중
-// * `STOPPED` - 중지
-// * `SUCCEEDED` - 성공
-// * `FAILED` - 실패
+// JobV2DetailStatus * `PENDING` - Stand By
+// * `RUNNING` - In Progress
+// * `STOPPED` - Stopped
+// * `SUCCEEDED` - Sucess
+// * `FAILED` - Failure
 type JobV2DetailStatus string
 
 // JobV2List 목록용 — CLI 폴링 최적화를 위한 최소 필드.
@@ -2225,19 +2498,19 @@ type JobV2List struct {
 	Id        *openapi_types.UUID `json:"id,omitempty"`
 	IsActive  *bool               `json:"is_active,omitempty"`
 
-	// Status * `PENDING` - 대기
-	// * `RUNNING` - 진행중
-	// * `STOPPED` - 중지
-	// * `SUCCEEDED` - 성공
-	// * `FAILED` - 실패
+	// Status * `PENDING` - Stand By
+	// * `RUNNING` - In Progress
+	// * `STOPPED` - Stopped
+	// * `SUCCEEDED` - Sucess
+	// * `FAILED` - Failure
 	Status *JobV2ListStatus `json:"status,omitempty"`
 }
 
-// JobV2ListStatus * `PENDING` - 대기
-// * `RUNNING` - 진행중
-// * `STOPPED` - 중지
-// * `SUCCEEDED` - 성공
-// * `FAILED` - 실패
+// JobV2ListStatus * `PENDING` - Stand By
+// * `RUNNING` - In Progress
+// * `STOPPED` - Stopped
+// * `SUCCEEDED` - Sucess
+// * `FAILED` - Failure
 type JobV2ListStatus string
 
 // MemberRole Target model 에 대한 MemberRole Model Serializer.
@@ -2262,55 +2535,55 @@ type MemberRoleRequest struct {
 //
 // “tenant“\ 는 요청 컨텍스트에서 자동 주입되므로 직접 입력하지 않는다.
 type MemberV2CreateRequest struct {
-	// Role * `owner` - 소유자
-	// * `admin` - 관리자
-	// * `member` - 멤버
-	// * `guest` - 게스트
+	// Role * `owner` - Owner
+	// * `admin` - Manager
+	// * `member` - Membership
+	// * `guest` - Test
 	Role MemberV2CreateRequestRole `json:"role"`
 	User int                       `json:"user"`
 }
 
-// MemberV2CreateRequestRole * `owner` - 소유자
-// * `admin` - 관리자
-// * `member` - 멤버
-// * `guest` - 게스트
+// MemberV2CreateRequestRole * `owner` - Owner
+// * `admin` - Manager
+// * `member` - Membership
+// * `guest` - Test
 type MemberV2CreateRequestRole string
 
 // MemberV2Detail 상세용.
 type MemberV2Detail struct {
 	Id *int `json:"id,omitempty"`
 
-	// Role * `owner` - 소유자
-	// * `admin` - 관리자
-	// * `member` - 멤버
-	// * `guest` - 게스트
+	// Role * `owner` - Owner
+	// * `admin` - Manager
+	// * `member` - Membership
+	// * `guest` - Test
 	Role     *MemberV2DetailRole `json:"role,omitempty"`
 	TenantId *int                `json:"tenant_id,omitempty"`
 	UserId   *int                `json:"user_id,omitempty"`
 }
 
-// MemberV2DetailRole * `owner` - 소유자
-// * `admin` - 관리자
-// * `member` - 멤버
-// * `guest` - 게스트
+// MemberV2DetailRole * `owner` - Owner
+// * `admin` - Manager
+// * `member` - Membership
+// * `guest` - Test
 type MemberV2DetailRole string
 
 // MemberV2List 목록용.
 type MemberV2List struct {
 	Id *int `json:"id,omitempty"`
 
-	// Role * `owner` - 소유자
-	// * `admin` - 관리자
-	// * `member` - 멤버
-	// * `guest` - 게스트
+	// Role * `owner` - Owner
+	// * `admin` - Manager
+	// * `member` - Membership
+	// * `guest` - Test
 	Role   *MemberV2ListRole `json:"role,omitempty"`
 	UserId *int              `json:"user_id,omitempty"`
 }
 
-// MemberV2ListRole * `owner` - 소유자
-// * `admin` - 관리자
-// * `member` - 멤버
-// * `guest` - 게스트
+// MemberV2ListRole * `owner` - Owner
+// * `admin` - Manager
+// * `member` - Membership
+// * `guest` - Test
 type MemberV2ListRole string
 
 // ModelV2Detail 상세용 — 전체 필드.
@@ -2492,6 +2765,13 @@ type PaginatedTenantV2ListList struct {
 	Results  *[]TenantV2List `json:"results,omitempty"`
 }
 
+// PaginatedValidationScriptV2ListList defines model for PaginatedValidationScriptV2ListList.
+type PaginatedValidationScriptV2ListList struct {
+	Next     *string                   `json:"next,omitempty"`
+	Previous *string                   `json:"previous,omitempty"`
+	Results  *[]ValidationScriptV2List `json:"results,omitempty"`
+}
+
 // PaginatedWorkshopV2ListList defines model for PaginatedWorkshopV2ListList.
 type PaginatedWorkshopV2ListList struct {
 	Next     *string           `json:"next,omitempty"`
@@ -2499,46 +2779,47 @@ type PaginatedWorkshopV2ListList struct {
 	Results  *[]WorkshopV2List `json:"results,omitempty"`
 }
 
-// PatchedDataCollectionV2CreateRequest 생성용 — 단일 요청 완결.
+// PatchedDataCollectionV2UpdateRequest 수정용 — file_specifications 업데이트 지원.
 //
-// v1에서 Phase 1/2/3 다단계로 수행하던 데이터 컬렉션 생성을
-// 단일 POST로 처리.
-type PatchedDataCollectionV2CreateRequest struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
-	AccessLevel *PatchedDataCollectionV2CreateRequestAccessLevel `json:"access_level,omitempty"`
+// v1의 DataCollectionUpdateSerializer 패턴을 v2로 이식.
+// file_specifications 제공 시 get_or_create + 삭제 로직 적용.
+type PatchedDataCollectionV2UpdateRequest struct {
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
+	AccessLevel *PatchedDataCollectionV2UpdateRequestAccessLevel `json:"access_level,omitempty"`
 
-	// Category * `image` - 이미지
-	// * `video` - 비디오
-	// * `audio` - 오디오
-	// * `text` - 텍스트
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
 	// * `pcd` - PCD
-	// * `data` - 데이터
-	Category *PatchedDataCollectionV2CreateRequestCategory `json:"category,omitempty"`
+	// * `data` - Data
+	Category *PatchedDataCollectionV2UpdateRequestCategory `json:"category,omitempty"`
 
-	// Caution * `sensitive_content` - 민감한 콘텐츠
-	Caution     *PatchedDataCollectionV2CreateRequestCaution `json:"caution,omitempty"`
-	Description *string                                      `json:"description,omitempty"`
-	Meta        interface{}                                  `json:"meta,omitempty"`
-	Name        *string                                      `json:"name,omitempty"`
+	// Caution * `sensitive_content` - Sensitive Content
+	Caution            *PatchedDataCollectionV2UpdateRequestCaution `json:"caution,omitempty"`
+	Description        *string                                      `json:"description,omitempty"`
+	FileSpecifications *[]DataCollectionFileSpecificationV2Request  `json:"file_specifications,omitempty"`
+	Meta               interface{}                                  `json:"meta,omitempty"`
+	Name               *string                                      `json:"name,omitempty"`
 }
 
-// PatchedDataCollectionV2CreateRequestAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
-type PatchedDataCollectionV2CreateRequestAccessLevel string
+// PatchedDataCollectionV2UpdateRequestAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
+type PatchedDataCollectionV2UpdateRequestAccessLevel string
 
-// PatchedDataCollectionV2CreateRequestCategory * `image` - 이미지
-// * `video` - 비디오
-// * `audio` - 오디오
-// * `text` - 텍스트
+// PatchedDataCollectionV2UpdateRequestCategory * `image` - Image
+// * `video` - Video
+// * `audio` - Audio
+// * `text` - Text
 // * `pcd` - PCD
-// * `data` - 데이터
-type PatchedDataCollectionV2CreateRequestCategory string
+// * `data` - Data
+type PatchedDataCollectionV2UpdateRequestCategory string
 
-// PatchedDataCollectionV2CreateRequestCaution * `sensitive_content` - 민감한 콘텐츠
-type PatchedDataCollectionV2CreateRequestCaution string
+// PatchedDataCollectionV2UpdateRequestCaution * `sensitive_content` - Sensitive Content
+type PatchedDataCollectionV2UpdateRequestCaution string
 
 // PatchedDataUnitV2CreateRequest 생성용.
 type PatchedDataUnitV2CreateRequest struct {
@@ -2549,18 +2830,18 @@ type PatchedDataUnitV2CreateRequest struct {
 
 // PatchedExperimentV2CreateRequest 생성/수정용.
 type PatchedExperimentV2CreateRequest struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
 	AccessLevel *PatchedExperimentV2CreateRequestAccessLevel `json:"access_level,omitempty"`
 	Description *string                                      `json:"description,omitempty"`
 	Name        *string                                      `json:"name,omitempty"`
 	Task        *int                                         `json:"task,omitempty"`
 }
 
-// PatchedExperimentV2CreateRequestAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
+// PatchedExperimentV2CreateRequestAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
 type PatchedExperimentV2CreateRequestAccessLevel string
 
 // PatchedGroundTruthDatasetV2CreateRequest 생성/수정용.
@@ -2581,47 +2862,47 @@ type PatchedGroupV2UpdateRequest struct {
 // v1에서 다단계로 수행하던 프로젝트 생성을:
 // config + members + auto_start를 단일 POST로 처리.
 type PatchedProjectV2CreateRequest struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
 	AccessLevel *PatchedProjectV2CreateRequestAccessLevel `json:"access_level,omitempty"`
 	CanDiscard  *bool                                     `json:"can_discard,omitempty"`
 
-	// Category * `image` - 이미지
-	// * `video` - 비디오
-	// * `audio` - 오디오
-	// * `text` - 텍스트
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
 	// * `pcd` - PCD
-	// * `prompt` - 프롬프트
+	// * `prompt` - Prompt
 	// * `time_series` - 시계열
 	Category *PatchedProjectV2CreateRequestCategory `json:"category,omitempty"`
 
-	// Caution * `sensitive_content` - 민감한 콘텐츠
+	// Caution * `sensitive_content` - Sensitive Content
 	Caution       *PatchedProjectV2CreateRequestCaution `json:"caution,omitempty"`
 	Configuration interface{}                           `json:"configuration,omitempty"`
 
-	// CountMaxAssignmentsPerTask 0인 경우 무한대의 어노테이션을 추가할 수 있습니다.
+	// CountMaxAssignmentsPerTask If set to 0, unlimited annotations can be assigned.
 	CountMaxAssignmentsPerTask *int    `json:"count_max_assignments_per_task,omitempty"`
 	DataCollection             *int    `json:"data_collection,omitempty"`
 	Description                *string `json:"description,omitempty"`
 	Title                      *string `json:"title,omitempty"`
 }
 
-// PatchedProjectV2CreateRequestAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
+// PatchedProjectV2CreateRequestAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
 type PatchedProjectV2CreateRequestAccessLevel string
 
-// PatchedProjectV2CreateRequestCategory * `image` - 이미지
-// * `video` - 비디오
-// * `audio` - 오디오
-// * `text` - 텍스트
+// PatchedProjectV2CreateRequestCategory * `image` - Image
+// * `video` - Video
+// * `audio` - Audio
+// * `text` - Text
 // * `pcd` - PCD
-// * `prompt` - 프롬프트
+// * `prompt` - Prompt
 // * `time_series` - 시계열
 type PatchedProjectV2CreateRequestCategory string
 
-// PatchedProjectV2CreateRequestCaution * `sensitive_content` - 민감한 콘텐츠
+// PatchedProjectV2CreateRequestCaution * `sensitive_content` - Sensitive Content
 type PatchedProjectV2CreateRequestCaution string
 
 // PatchedTaskV2CreateRequest 생성용.
@@ -2630,6 +2911,15 @@ type PatchedTaskV2CreateRequest struct {
 	Meta     interface{} `json:"meta,omitempty"`
 	Project  *int        `json:"project,omitempty"`
 	Workshop *int        `json:"workshop,omitempty"`
+}
+
+// PatchedValidationScriptV2WriteRequest 생성/수정용.
+type PatchedValidationScriptV2WriteRequest struct {
+	Code        *string `json:"code,omitempty"`
+	Description *string `json:"description,omitempty"`
+	IsActive    *bool   `json:"is_active,omitempty"`
+	Name        *string `json:"name,omitempty"`
+	Timeout     *int    `json:"timeout,omitempty"`
 }
 
 // PluginReleaseV2Detail 상세용 — 전체 필드.
@@ -2659,13 +2949,13 @@ type PluginReleaseV2List struct {
 
 // PluginV2Detail 상세용.
 type PluginV2Detail struct {
-	// Category * `neural_net` - 인공신경망
-	// * `export` - 내보내기
-	// * `upload` - 불러오기
-	// * `smart_tool` - 스마트툴
-	// * `pre_annotation` - 작업 전처리
-	// * `post_annotation` - 작업 후처리
-	// * `data_validation` - 데이터 검증
+	// Category * `neural_net` - Neural Network
+	// * `export` - Export
+	// * `upload` - Exports
+	// * `smart_tool` - Smart Tool
+	// * `pre_annotation` - Task Preprocessing
+	// * `post_annotation` - Task Postprocessing
+	// * `data_validation` - Data File
 	// * `converter` - 데이터 변환기
 	Category    *PluginV2DetailCategory `json:"category,omitempty"`
 	Code        *string                 `json:"code,omitempty"`
@@ -2676,30 +2966,30 @@ type PluginV2Detail struct {
 	IsPublic    *bool                   `json:"is_public,omitempty"`
 	Name        *string                 `json:"name,omitempty"`
 
-	// SystemOnly 사용자가 아닌 시스템에 의해서만 동작되는 플러그인 여부
+	// SystemOnly Plugin operated only by system, not by users
 	SystemOnly *bool `json:"system_only,omitempty"`
 	TenantId   *int  `json:"tenant_id,omitempty"`
 }
 
-// PluginV2DetailCategory * `neural_net` - 인공신경망
-// * `export` - 내보내기
-// * `upload` - 불러오기
-// * `smart_tool` - 스마트툴
-// * `pre_annotation` - 작업 전처리
-// * `post_annotation` - 작업 후처리
-// * `data_validation` - 데이터 검증
+// PluginV2DetailCategory * `neural_net` - Neural Network
+// * `export` - Export
+// * `upload` - Exports
+// * `smart_tool` - Smart Tool
+// * `pre_annotation` - Task Preprocessing
+// * `post_annotation` - Task Postprocessing
+// * `data_validation` - Data File
 // * `converter` - 데이터 변환기
 type PluginV2DetailCategory string
 
 // PluginV2List 목록용.
 type PluginV2List struct {
-	// Category * `neural_net` - 인공신경망
-	// * `export` - 내보내기
-	// * `upload` - 불러오기
-	// * `smart_tool` - 스마트툴
-	// * `pre_annotation` - 작업 전처리
-	// * `post_annotation` - 작업 후처리
-	// * `data_validation` - 데이터 검증
+	// Category * `neural_net` - Neural Network
+	// * `export` - Export
+	// * `upload` - Exports
+	// * `smart_tool` - Smart Tool
+	// * `pre_annotation` - Task Preprocessing
+	// * `post_annotation` - Task Postprocessing
+	// * `data_validation` - Data File
 	// * `converter` - 데이터 변환기
 	Category *PluginV2ListCategory `json:"category,omitempty"`
 	Code     *string               `json:"code,omitempty"`
@@ -2709,13 +2999,13 @@ type PluginV2List struct {
 	Name     *string               `json:"name,omitempty"`
 }
 
-// PluginV2ListCategory * `neural_net` - 인공신경망
-// * `export` - 내보내기
-// * `upload` - 불러오기
-// * `smart_tool` - 스마트툴
-// * `pre_annotation` - 작업 전처리
-// * `post_annotation` - 작업 후처리
-// * `data_validation` - 데이터 검증
+// PluginV2ListCategory * `neural_net` - Neural Network
+// * `export` - Export
+// * `upload` - Exports
+// * `smart_tool` - Smart Tool
+// * `pre_annotation` - Task Preprocessing
+// * `post_annotation` - Task Postprocessing
+// * `data_validation` - Data File
 // * `converter` - 데이터 변환기
 type PluginV2ListCategory string
 
@@ -2724,72 +3014,72 @@ type PluginV2ListCategory string
 // v1에서 다단계로 수행하던 프로젝트 생성을:
 // config + members + auto_start를 단일 POST로 처리.
 type ProjectV2CreateRequest struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
 	AccessLevel *ProjectV2CreateRequestAccessLevel `json:"access_level,omitempty"`
 	CanDiscard  *bool                              `json:"can_discard,omitempty"`
 
-	// Category * `image` - 이미지
-	// * `video` - 비디오
-	// * `audio` - 오디오
-	// * `text` - 텍스트
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
 	// * `pcd` - PCD
-	// * `prompt` - 프롬프트
+	// * `prompt` - Prompt
 	// * `time_series` - 시계열
 	Category ProjectV2CreateRequestCategory `json:"category"`
 
-	// Caution * `sensitive_content` - 민감한 콘텐츠
+	// Caution * `sensitive_content` - Sensitive Content
 	Caution       *ProjectV2CreateRequestCaution `json:"caution,omitempty"`
 	Configuration interface{}                    `json:"configuration"`
 
-	// CountMaxAssignmentsPerTask 0인 경우 무한대의 어노테이션을 추가할 수 있습니다.
+	// CountMaxAssignmentsPerTask If set to 0, unlimited annotations can be assigned.
 	CountMaxAssignmentsPerTask *int    `json:"count_max_assignments_per_task,omitempty"`
 	DataCollection             *int    `json:"data_collection,omitempty"`
 	Description                *string `json:"description,omitempty"`
 	Title                      string  `json:"title"`
 }
 
-// ProjectV2CreateRequestAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
+// ProjectV2CreateRequestAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
 type ProjectV2CreateRequestAccessLevel string
 
-// ProjectV2CreateRequestCategory * `image` - 이미지
-// * `video` - 비디오
-// * `audio` - 오디오
-// * `text` - 텍스트
+// ProjectV2CreateRequestCategory * `image` - Image
+// * `video` - Video
+// * `audio` - Audio
+// * `text` - Text
 // * `pcd` - PCD
-// * `prompt` - 프롬프트
+// * `prompt` - Prompt
 // * `time_series` - 시계열
 type ProjectV2CreateRequestCategory string
 
-// ProjectV2CreateRequestCaution * `sensitive_content` - 민감한 콘텐츠
+// ProjectV2CreateRequestCaution * `sensitive_content` - Sensitive Content
 type ProjectV2CreateRequestCaution string
 
 // ProjectV2Detail 상세용 — 전체 필드.
 type ProjectV2Detail struct {
-	// AccessLevel * `public` - 전체 공개
-	// * `partially_public` - 부분 공개
-	// * `private` - 비공개
+	// AccessLevel * `public` - Public
+	// * `partially_public` - Partially public
+	// * `private` - Private
 	AccessLevel *ProjectV2DetailAccessLevel `json:"access_level,omitempty"`
 	CanDiscard  *bool                       `json:"can_discard,omitempty"`
 
-	// Category * `image` - 이미지
-	// * `video` - 비디오
-	// * `audio` - 오디오
-	// * `text` - 텍스트
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
 	// * `pcd` - PCD
-	// * `prompt` - 프롬프트
+	// * `prompt` - Prompt
 	// * `time_series` - 시계열
 	Category        *ProjectV2DetailCategory `json:"category,omitempty"`
 	CategoryDisplay *string                  `json:"category_display,omitempty"`
 
-	// Caution * `sensitive_content` - 민감한 콘텐츠
+	// Caution * `sensitive_content` - Sensitive Content
 	Caution       *ProjectV2DetailCaution `json:"caution,omitempty"`
 	Configuration interface{}             `json:"configuration,omitempty"`
 
-	// CountMaxAssignmentsPerTask 0인 경우 무한대의 어노테이션을 추가할 수 있습니다.
+	// CountMaxAssignmentsPerTask If set to 0, unlimited annotations can be assigned.
 	CountMaxAssignmentsPerTask *int        `json:"count_max_assignments_per_task,omitempty"`
 	Created                    *time.Time  `json:"created,omitempty"`
 	DataCollectionId           *int        `json:"data_collection_id,omitempty"`
@@ -2802,31 +3092,31 @@ type ProjectV2Detail struct {
 	Title                      *string     `json:"title,omitempty"`
 }
 
-// ProjectV2DetailAccessLevel * `public` - 전체 공개
-// * `partially_public` - 부분 공개
-// * `private` - 비공개
+// ProjectV2DetailAccessLevel * `public` - Public
+// * `partially_public` - Partially public
+// * `private` - Private
 type ProjectV2DetailAccessLevel string
 
-// ProjectV2DetailCategory * `image` - 이미지
-// * `video` - 비디오
-// * `audio` - 오디오
-// * `text` - 텍스트
+// ProjectV2DetailCategory * `image` - Image
+// * `video` - Video
+// * `audio` - Audio
+// * `text` - Text
 // * `pcd` - PCD
-// * `prompt` - 프롬프트
+// * `prompt` - Prompt
 // * `time_series` - 시계열
 type ProjectV2DetailCategory string
 
-// ProjectV2DetailCaution * `sensitive_content` - 민감한 콘텐츠
+// ProjectV2DetailCaution * `sensitive_content` - Sensitive Content
 type ProjectV2DetailCaution string
 
 // ProjectV2List 목록용 — context window 최적화를 위한 최소 필드.
 type ProjectV2List struct {
-	// Category * `image` - 이미지
-	// * `video` - 비디오
-	// * `audio` - 오디오
-	// * `text` - 텍스트
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
 	// * `pcd` - PCD
-	// * `prompt` - 프롬프트
+	// * `prompt` - Prompt
 	// * `time_series` - 시계열
 	Category        *ProjectV2ListCategory `json:"category,omitempty"`
 	CategoryDisplay *string                `json:"category_display,omitempty"`
@@ -2837,12 +3127,12 @@ type ProjectV2List struct {
 	Title           *string                `json:"title,omitempty"`
 }
 
-// ProjectV2ListCategory * `image` - 이미지
-// * `video` - 비디오
-// * `audio` - 오디오
-// * `text` - 텍스트
+// ProjectV2ListCategory * `image` - Image
+// * `video` - Video
+// * `audio` - Audio
+// * `text` - Text
 // * `pcd` - PCD
-// * `prompt` - 프롬프트
+// * `prompt` - Prompt
 // * `time_series` - 시계열
 type ProjectV2ListCategory string
 
@@ -2855,18 +3145,18 @@ type ReviewV2CreateRequest struct {
 	ObjectId    *string     `json:"object_id,omitempty"`
 	Position    interface{} `json:"position,omitempty"`
 
-	// Scope * `project` - 프로젝트
-	// * `group` - 그룹
-	// * `assignment` - 작업
-	// * `annotation` - 어노테이션
+	// Scope * `project` - Project
+	// * `group` - Group
+	// * `assignment` - Task
+	// * `annotation` - Annotation
 	Scope *ReviewV2CreateRequestScope `json:"scope,omitempty"`
 	Tags  *[]int                      `json:"tags,omitempty"`
 }
 
-// ReviewV2CreateRequestScope * `project` - 프로젝트
-// * `group` - 그룹
-// * `assignment` - 작업
-// * `annotation` - 어노테이션
+// ReviewV2CreateRequestScope * `project` - Project
+// * `group` - Group
+// * `assignment` - Task
+// * `annotation` - Annotation
 type ReviewV2CreateRequestScope string
 
 // ReviewV2Detail 상세용 — 전체 필드.
@@ -2879,19 +3169,19 @@ type ReviewV2Detail struct {
 	ObjectId     *string     `json:"object_id,omitempty"`
 	Position     interface{} `json:"position,omitempty"`
 
-	// Scope * `project` - 프로젝트
-	// * `group` - 그룹
-	// * `assignment` - 작업
-	// * `annotation` - 어노테이션
+	// Scope * `project` - Project
+	// * `group` - Group
+	// * `assignment` - Task
+	// * `annotation` - Annotation
 	Scope  *ReviewV2DetailScope `json:"scope,omitempty"`
 	Tags   *[]int               `json:"tags,omitempty"`
 	UserId *int                 `json:"user_id,omitempty"`
 }
 
-// ReviewV2DetailScope * `project` - 프로젝트
-// * `group` - 그룹
-// * `assignment` - 작업
-// * `annotation` - 어노테이션
+// ReviewV2DetailScope * `project` - Project
+// * `group` - Group
+// * `assignment` - Task
+// * `annotation` - Annotation
 type ReviewV2DetailScope string
 
 // ReviewV2List 목록용 — context window 최적화를 위한 최소 필드.
@@ -2901,25 +3191,18 @@ type ReviewV2List struct {
 	Id           *int       `json:"id,omitempty"`
 	IsActive     *bool      `json:"is_active,omitempty"`
 
-	// Scope * `project` - 프로젝트
-	// * `group` - 그룹
-	// * `assignment` - 작업
-	// * `annotation` - 어노테이션
+	// Scope * `project` - Project
+	// * `group` - Group
+	// * `assignment` - Task
+	// * `annotation` - Annotation
 	Scope *ReviewV2ListScope `json:"scope,omitempty"`
 }
 
-// ReviewV2ListScope * `project` - 프로젝트
-// * `group` - 그룹
-// * `assignment` - 작업
-// * `annotation` - 어노테이션
+// ReviewV2ListScope * `project` - Project
+// * `group` - Group
+// * `assignment` - Task
+// * `annotation` - Annotation
 type ReviewV2ListScope string
-
-// Role 역할명, 코드를 제공하는 시리얼라이저.
-type Role struct {
-	Code        string `json:"code"`
-	DisplayName string `json:"display_name"`
-	Id          *int   `json:"id,omitempty"`
-}
 
 // TargetRoleCreate 기존 target model 에 MemberRole 과 GroupRole 추가로 생성하는 Serializer.
 type TargetRoleCreate struct {
@@ -2937,22 +3220,22 @@ type TargetRoleCreateRequest struct {
 //
 // “project“\ 는 URL path에서 주입되므로 직접 입력하지 않는다.
 type TaskTagV2CreateRequest struct {
-	// Category * `export` - 내보내기
-	// * `project` - 프로젝트
+	// Category * `export` - Export
+	// * `project` - Project
 	Category    TaskTagV2CreateRequestCategory `json:"category"`
 	Description *string                        `json:"description,omitempty"`
 	Meta        interface{}                    `json:"meta,omitempty"`
 	Name        string                         `json:"name"`
 }
 
-// TaskTagV2CreateRequestCategory * `export` - 내보내기
-// * `project` - 프로젝트
+// TaskTagV2CreateRequestCategory * `export` - Export
+// * `project` - Project
 type TaskTagV2CreateRequestCategory string
 
 // TaskTagV2Detail 상세용.
 type TaskTagV2Detail struct {
-	// Category * `export` - 내보내기
-	// * `project` - 프로젝트
+	// Category * `export` - Export
+	// * `project` - Project
 	Category    *TaskTagV2DetailCategory `json:"category,omitempty"`
 	Created     *time.Time               `json:"created,omitempty"`
 	Description *string                  `json:"description,omitempty"`
@@ -2962,22 +3245,22 @@ type TaskTagV2Detail struct {
 	ProjectId   *int                     `json:"project_id,omitempty"`
 }
 
-// TaskTagV2DetailCategory * `export` - 내보내기
-// * `project` - 프로젝트
+// TaskTagV2DetailCategory * `export` - Export
+// * `project` - Project
 type TaskTagV2DetailCategory string
 
 // TaskTagV2List 목록용.
 type TaskTagV2List struct {
-	// Category * `export` - 내보내기
-	// * `project` - 프로젝트
+	// Category * `export` - Export
+	// * `project` - Project
 	Category *TaskTagV2ListCategory `json:"category,omitempty"`
 	Created  *time.Time             `json:"created,omitempty"`
 	Id       *int                   `json:"id,omitempty"`
 	Name     *string                `json:"name,omitempty"`
 }
 
-// TaskTagV2ListCategory * `export` - 내보내기
-// * `project` - 프로젝트
+// TaskTagV2ListCategory * `export` - Export
+// * `project` - Project
 type TaskTagV2ListCategory string
 
 // TaskV2CreateRequest 생성용.
@@ -3030,6 +3313,39 @@ type TenantV2List struct {
 	Slug     *string `json:"slug,omitempty"`
 }
 
+// ValidationScriptV2Detail 상세용 — code, description 포함.
+type ValidationScriptV2Detail struct {
+	Code        *string    `json:"code,omitempty"`
+	Created     *time.Time `json:"created,omitempty"`
+	CreatedById *int       `json:"created_by_id,omitempty"`
+	Description *string    `json:"description,omitempty"`
+	Id          *int       `json:"id,omitempty"`
+	IsActive    *bool      `json:"is_active,omitempty"`
+	Name        *string    `json:"name,omitempty"`
+	Timeout     *int       `json:"timeout,omitempty"`
+	Updated     *time.Time `json:"updated,omitempty"`
+}
+
+// ValidationScriptV2List 목록용 — context window 최적화를 위한 최소 필드.
+type ValidationScriptV2List struct {
+	Created     *time.Time `json:"created,omitempty"`
+	CreatedById *int       `json:"created_by_id,omitempty"`
+	Id          *int       `json:"id,omitempty"`
+	IsActive    *bool      `json:"is_active,omitempty"`
+	Name        *string    `json:"name,omitempty"`
+	Timeout     *int       `json:"timeout,omitempty"`
+	Updated     *time.Time `json:"updated,omitempty"`
+}
+
+// ValidationScriptV2WriteRequest 생성/수정용.
+type ValidationScriptV2WriteRequest struct {
+	Code        *string `json:"code,omitempty"`
+	Description *string `json:"description,omitempty"`
+	IsActive    *bool   `json:"is_active,omitempty"`
+	Name        string  `json:"name"`
+	Timeout     *int    `json:"timeout,omitempty"`
+}
+
 // WorkshopV2Detail 상세용 — 전체 필드.
 type WorkshopV2Detail struct {
 	CanSkipLabeler  *bool       `json:"can_skip_labeler,omitempty"`
@@ -3039,37 +3355,37 @@ type WorkshopV2Detail struct {
 	Id              *int        `json:"id,omitempty"`
 	IsReviewable    *bool       `json:"is_reviewable,omitempty"`
 
-	// LevelDistribution * `0` - 개별
-	// * `1` - 묶음 (1단계)
-	// * `2` - 묶음 (2단계)
+	// LevelDistribution * `0` - Default
+	// * `1` - Group Distribution (Stage 1)
+	// * `2` - Group Distribution (Stage 2)
 	LevelDistribution *WorkshopV2DetailLevelDistribution `json:"level_distribution,omitempty"`
 	Name              *string                            `json:"name,omitempty"`
 	ProjectId         *int                               `json:"project_id,omitempty"`
 
-	// Status * `0` - 차단
-	// * `1` - 활성
-	// * `2` - 작업 제한
-	// * `3` - 비활성
+	// Status * `0` - Block
+	// * `1` - Active
+	// * `2` - Task Limitation
+	// * `3` - Inactive
 	Status *WorkshopV2DetailStatus `json:"status,omitempty"`
 
-	// Visibility * `public` - 공개
-	// * `private` - 비공개
+	// Visibility * `public` - Public
+	// * `private` - Private
 	Visibility *WorkshopV2DetailVisibility `json:"visibility,omitempty"`
 }
 
-// WorkshopV2DetailLevelDistribution * `0` - 개별
-// * `1` - 묶음 (1단계)
-// * `2` - 묶음 (2단계)
+// WorkshopV2DetailLevelDistribution * `0` - Default
+// * `1` - Group Distribution (Stage 1)
+// * `2` - Group Distribution (Stage 2)
 type WorkshopV2DetailLevelDistribution int
 
-// WorkshopV2DetailStatus * `0` - 차단
-// * `1` - 활성
-// * `2` - 작업 제한
-// * `3` - 비활성
+// WorkshopV2DetailStatus * `0` - Block
+// * `1` - Active
+// * `2` - Task Limitation
+// * `3` - Inactive
 type WorkshopV2DetailStatus int
 
-// WorkshopV2DetailVisibility * `public` - 공개
-// * `private` - 비공개
+// WorkshopV2DetailVisibility * `public` - Public
+// * `private` - Private
 type WorkshopV2DetailVisibility string
 
 // WorkshopV2List 목록용 — context window 최적화를 위한 최소 필드.
@@ -3080,17 +3396,17 @@ type WorkshopV2List struct {
 	Name         *string    `json:"name,omitempty"`
 	ProjectId    *int       `json:"project_id,omitempty"`
 
-	// Status * `0` - 차단
-	// * `1` - 활성
-	// * `2` - 작업 제한
-	// * `3` - 비활성
+	// Status * `0` - Block
+	// * `1` - Active
+	// * `2` - Task Limitation
+	// * `3` - Inactive
 	Status *WorkshopV2ListStatus `json:"status,omitempty"`
 }
 
-// WorkshopV2ListStatus * `0` - 차단
-// * `1` - 활성
-// * `2` - 작업 제한
-// * `3` - 비활성
+// WorkshopV2ListStatus * `0` - Block
+// * `1` - Active
+// * `2` - Task Limitation
+// * `3` - Inactive
 type WorkshopV2ListStatus int
 
 // UserLoginJSONBody defines parameters for UserLogin.
@@ -3109,17 +3425,17 @@ type AssignmentListParams struct {
 	// PerPage Number of results to return per page.
 	PerPage *int `form:"per_page,omitempty" json:"per_page,omitempty"`
 
-	// StatusLabel * `stand_by` - 대기
-	// * `in_progress` - 진행중
-	// * `completed` - 완료
-	// * `skipped` - 보류
+	// StatusLabel * `stand_by` - Stand By
+	// * `in_progress` - In Progress
+	// * `completed` - Completed
+	// * `skipped` - Skipped
 	StatusLabel *AssignmentListParamsStatusLabel `form:"status_label,omitempty" json:"status_label,omitempty"`
 
-	// StatusReview * `stand_by` - 대기
-	// * `in_progress` - 진행중
-	// * `rejected` - 반려
-	// * `completed` - 완료
-	// * `skipped` - 보류
+	// StatusReview * `stand_by` - Stand By
+	// * `in_progress` - In Progress
+	// * `rejected` - Rejected
+	// * `completed` - Completed
+	// * `skipped` - Skipped
 	StatusReview *AssignmentListParamsStatusReview `form:"status_review,omitempty" json:"status_review,omitempty"`
 	Task         *int                              `form:"task,omitempty" json:"task,omitempty"`
 }
@@ -3132,12 +3448,12 @@ type AssignmentListParamsStatusReview string
 
 // DataCollectionListParams defines parameters for DataCollectionList.
 type DataCollectionListParams struct {
-	// Category * `image` - 이미지
-	// * `video` - 비디오
-	// * `audio` - 오디오
-	// * `text` - 텍스트
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
 	// * `pcd` - PCD
-	// * `data` - 데이터
+	// * `data` - Data
 	Category *DataCollectionListParamsCategory `form:"category,omitempty" json:"category,omitempty"`
 
 	// Cursor The pagination cursor value.
@@ -3220,18 +3536,13 @@ type DataFileListParams struct {
 	// Cursor The pagination cursor value.
 	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
 
+	// DataCollection 데이터 컬렉션 ID로 필터링. 해당 컬렉션의 데이터 유닛에 연결된 파일만 반환합니다.
+	DataCollection *int `form:"data_collection,omitempty" json:"data_collection,omitempty"`
+
 	// PerPage Number of results to return per page.
-	PerPage *int `form:"per_page,omitempty" json:"per_page,omitempty"`
-
-	// ProcessingStatus * `pending` - 대기중
-	// * `processing` - 처리중
-	// * `completed` - 완료
-	// * `failed` - 실패
-	ProcessingStatus *DataFileListParamsProcessingStatus `form:"processing_status,omitempty" json:"processing_status,omitempty"`
+	PerPage          *int    `form:"per_page,omitempty" json:"per_page,omitempty"`
+	ProcessingStatus *string `form:"processing_status,omitempty" json:"processing_status,omitempty"`
 }
-
-// DataFileListParamsProcessingStatus defines parameters for DataFileList.
-type DataFileListParamsProcessingStatus string
 
 // DataUnitListParams defines parameters for DataUnitList.
 type DataUnitListParams struct {
@@ -3371,9 +3682,9 @@ type GroundTruthDatasetUpdateParams struct {
 
 // GroundTruthListParams defines parameters for GroundTruthList.
 type GroundTruthListParams struct {
-	// Category * `train` - 학습
-	// * `validation` - 검증
-	// * `test` - 테스트
+	// Category * `train` - Train
+	// * `validation` - Validation
+	// * `test` - Test
 	Category *GroundTruthListParamsCategory `form:"category,omitempty" json:"category,omitempty"`
 
 	// Cursor The pagination cursor value.
@@ -3453,11 +3764,11 @@ type JobListParams struct {
 	// PerPage Number of results to return per page.
 	PerPage *int `form:"per_page,omitempty" json:"per_page,omitempty"`
 
-	// Status * `PENDING` - 대기
-	// * `RUNNING` - 진행중
-	// * `STOPPED` - 중지
-	// * `SUCCEEDED` - 성공
-	// * `FAILED` - 실패
+	// Status * `PENDING` - Stand By
+	// * `RUNNING` - In Progress
+	// * `STOPPED` - Stopped
+	// * `SUCCEEDED` - Sucess
+	// * `FAILED` - Failure
 	Status *JobListParamsStatus `form:"status,omitempty" json:"status,omitempty"`
 }
 
@@ -3472,10 +3783,10 @@ type MemberListParams struct {
 	// PerPage Number of results to return per page.
 	PerPage *int `form:"per_page,omitempty" json:"per_page,omitempty"`
 
-	// Role * `owner` - 소유자
-	// * `admin` - 관리자
-	// * `member` - 멤버
-	// * `guest` - 게스트
+	// Role * `owner` - Owner
+	// * `admin` - Manager
+	// * `member` - Membership
+	// * `guest` - Test
 	Role *MemberListParamsRole `form:"role,omitempty" json:"role,omitempty"`
 }
 
@@ -3511,13 +3822,13 @@ type PluginReleaseListParams struct {
 
 // PluginListParams defines parameters for PluginList.
 type PluginListParams struct {
-	// Category * `neural_net` - 인공신경망
-	// * `export` - 내보내기
-	// * `upload` - 불러오기
-	// * `smart_tool` - 스마트툴
-	// * `pre_annotation` - 작업 전처리
-	// * `post_annotation` - 작업 후처리
-	// * `data_validation` - 데이터 검증
+	// Category * `neural_net` - Neural Network
+	// * `export` - Export
+	// * `upload` - Exports
+	// * `smart_tool` - Smart Tool
+	// * `pre_annotation` - Task Preprocessing
+	// * `post_annotation` - Task Postprocessing
+	// * `data_validation` - Data File
 	// * `converter` - 데이터 변환기
 	Category *PluginListParamsCategory `form:"category,omitempty" json:"category,omitempty"`
 
@@ -3534,12 +3845,12 @@ type PluginListParamsCategory string
 
 // ProjectListParams defines parameters for ProjectList.
 type ProjectListParams struct {
-	// Category * `image` - 이미지
-	// * `video` - 비디오
-	// * `audio` - 오디오
-	// * `text` - 텍스트
+	// Category * `image` - Image
+	// * `video` - Video
+	// * `audio` - Audio
+	// * `text` - Text
 	// * `pcd` - PCD
-	// * `prompt` - 프롬프트
+	// * `prompt` - Prompt
 	// * `time_series` - 시계열
 	Category *ProjectListParamsCategory `form:"category,omitempty" json:"category,omitempty"`
 
@@ -3598,8 +3909,8 @@ type ProjectJoinRequestsParams struct {
 
 // TaskTagListParams defines parameters for TaskTagList.
 type TaskTagListParams struct {
-	// Category * `export` - 내보내기
-	// * `project` - 프로젝트
+	// Category * `export` - Export
+	// * `project` - Project
 	Category *TaskTagListParamsCategory `form:"category,omitempty" json:"category,omitempty"`
 
 	// Cursor The pagination cursor value.
@@ -3634,10 +3945,10 @@ type ReviewListParams struct {
 	// PerPage Number of results to return per page.
 	PerPage *int `form:"per_page,omitempty" json:"per_page,omitempty"`
 
-	// Scope * `project` - 프로젝트
-	// * `group` - 그룹
-	// * `assignment` - 작업
-	// * `annotation` - 어노테이션
+	// Scope * `project` - Project
+	// * `group` - Group
+	// * `assignment` - Task
+	// * `annotation` - Annotation
 	Scope *ReviewListParamsScope `form:"scope,omitempty" json:"scope,omitempty"`
 }
 
@@ -3733,6 +4044,41 @@ type TokenDestroyParams struct {
 	DryRun *bool `form:"dry_run,omitempty" json:"dry_run,omitempty"`
 }
 
+// ValidationScriptListParams defines parameters for ValidationScriptList.
+type ValidationScriptListParams struct {
+	// Cursor The pagination cursor value.
+	Cursor   *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+	IsActive *bool   `form:"is_active,omitempty" json:"is_active,omitempty"`
+
+	// PerPage Number of results to return per page.
+	PerPage *int    `form:"per_page,omitempty" json:"per_page,omitempty"`
+	Search  *string `form:"search,omitempty" json:"search,omitempty"`
+}
+
+// ValidationScriptCreateParams defines parameters for ValidationScriptCreate.
+type ValidationScriptCreateParams struct {
+	// DryRun Validate request without executing. Returns validation result.
+	DryRun *bool `form:"dry_run,omitempty" json:"dry_run,omitempty"`
+}
+
+// ValidationScriptDestroyParams defines parameters for ValidationScriptDestroy.
+type ValidationScriptDestroyParams struct {
+	// DryRun Validate request without executing. Returns validation result.
+	DryRun *bool `form:"dry_run,omitempty" json:"dry_run,omitempty"`
+}
+
+// ValidationScriptPartialUpdateParams defines parameters for ValidationScriptPartialUpdate.
+type ValidationScriptPartialUpdateParams struct {
+	// DryRun Validate request without executing. Returns validation result.
+	DryRun *bool `form:"dry_run,omitempty" json:"dry_run,omitempty"`
+}
+
+// ValidationScriptUpdateParams defines parameters for ValidationScriptUpdate.
+type ValidationScriptUpdateParams struct {
+	// DryRun Validate request without executing. Returns validation result.
+	DryRun *bool `form:"dry_run,omitempty" json:"dry_run,omitempty"`
+}
+
 // WorkshopListParams defines parameters for WorkshopList.
 type WorkshopListParams struct {
 	// Cursor The pagination cursor value.
@@ -3742,10 +4088,10 @@ type WorkshopListParams struct {
 	PerPage *int `form:"per_page,omitempty" json:"per_page,omitempty"`
 	Project *int `form:"project,omitempty" json:"project,omitempty"`
 
-	// Status * `0` - 차단
-	// * `1` - 활성
-	// * `2` - 작업 제한
-	// * `3` - 비활성
+	// Status * `0` - Block
+	// * `1` - Active
+	// * `2` - Task Limitation
+	// * `3` - Inactive
 	Status *WorkshopListParamsStatus `form:"status,omitempty" json:"status,omitempty"`
 }
 
@@ -3774,22 +4120,22 @@ type DataGroupCreateFormdataRequestBody = DataGroupV2CreateRequest
 type DataGroupCreateMultipartRequestBody = DataGroupV2CreateRequest
 
 // DataCollectionPartialUpdateJSONRequestBody defines body for DataCollectionPartialUpdate for application/json ContentType.
-type DataCollectionPartialUpdateJSONRequestBody = PatchedDataCollectionV2CreateRequest
+type DataCollectionPartialUpdateJSONRequestBody = PatchedDataCollectionV2UpdateRequest
 
 // DataCollectionPartialUpdateFormdataRequestBody defines body for DataCollectionPartialUpdate for application/x-www-form-urlencoded ContentType.
-type DataCollectionPartialUpdateFormdataRequestBody = PatchedDataCollectionV2CreateRequest
+type DataCollectionPartialUpdateFormdataRequestBody = PatchedDataCollectionV2UpdateRequest
 
 // DataCollectionPartialUpdateMultipartRequestBody defines body for DataCollectionPartialUpdate for multipart/form-data ContentType.
-type DataCollectionPartialUpdateMultipartRequestBody = PatchedDataCollectionV2CreateRequest
+type DataCollectionPartialUpdateMultipartRequestBody = PatchedDataCollectionV2UpdateRequest
 
 // DataCollectionUpdateJSONRequestBody defines body for DataCollectionUpdate for application/json ContentType.
-type DataCollectionUpdateJSONRequestBody = DataCollectionV2CreateRequest
+type DataCollectionUpdateJSONRequestBody = DataCollectionV2UpdateRequest
 
 // DataCollectionUpdateFormdataRequestBody defines body for DataCollectionUpdate for application/x-www-form-urlencoded ContentType.
-type DataCollectionUpdateFormdataRequestBody = DataCollectionV2CreateRequest
+type DataCollectionUpdateFormdataRequestBody = DataCollectionV2UpdateRequest
 
 // DataCollectionUpdateMultipartRequestBody defines body for DataCollectionUpdate for multipart/form-data ContentType.
-type DataCollectionUpdateMultipartRequestBody = DataCollectionV2CreateRequest
+type DataCollectionUpdateMultipartRequestBody = DataCollectionV2UpdateRequest
 
 // DataCollectionInviteJSONRequestBody defines body for DataCollectionInvite for application/json ContentType.
 type DataCollectionInviteJSONRequestBody = TargetRoleCreateRequest
@@ -4024,6 +4370,33 @@ type TokenCreateFormdataRequestBody = AccessTokenV2CreateRequest
 
 // TokenCreateMultipartRequestBody defines body for TokenCreate for multipart/form-data ContentType.
 type TokenCreateMultipartRequestBody = AccessTokenV2CreateRequest
+
+// ValidationScriptCreateJSONRequestBody defines body for ValidationScriptCreate for application/json ContentType.
+type ValidationScriptCreateJSONRequestBody = ValidationScriptV2WriteRequest
+
+// ValidationScriptCreateFormdataRequestBody defines body for ValidationScriptCreate for application/x-www-form-urlencoded ContentType.
+type ValidationScriptCreateFormdataRequestBody = ValidationScriptV2WriteRequest
+
+// ValidationScriptCreateMultipartRequestBody defines body for ValidationScriptCreate for multipart/form-data ContentType.
+type ValidationScriptCreateMultipartRequestBody = ValidationScriptV2WriteRequest
+
+// ValidationScriptPartialUpdateJSONRequestBody defines body for ValidationScriptPartialUpdate for application/json ContentType.
+type ValidationScriptPartialUpdateJSONRequestBody = PatchedValidationScriptV2WriteRequest
+
+// ValidationScriptPartialUpdateFormdataRequestBody defines body for ValidationScriptPartialUpdate for application/x-www-form-urlencoded ContentType.
+type ValidationScriptPartialUpdateFormdataRequestBody = PatchedValidationScriptV2WriteRequest
+
+// ValidationScriptPartialUpdateMultipartRequestBody defines body for ValidationScriptPartialUpdate for multipart/form-data ContentType.
+type ValidationScriptPartialUpdateMultipartRequestBody = PatchedValidationScriptV2WriteRequest
+
+// ValidationScriptUpdateJSONRequestBody defines body for ValidationScriptUpdate for application/json ContentType.
+type ValidationScriptUpdateJSONRequestBody = ValidationScriptV2WriteRequest
+
+// ValidationScriptUpdateFormdataRequestBody defines body for ValidationScriptUpdate for application/x-www-form-urlencoded ContentType.
+type ValidationScriptUpdateFormdataRequestBody = ValidationScriptV2WriteRequest
+
+// ValidationScriptUpdateMultipartRequestBody defines body for ValidationScriptUpdate for multipart/form-data ContentType.
+type ValidationScriptUpdateMultipartRequestBody = ValidationScriptV2WriteRequest
 
 // RequestEditorFn  is the function signature for the RequestEditor callback function
 type RequestEditorFn func(ctx context.Context, req *http.Request) error
@@ -4609,6 +4982,36 @@ type ClientInterface interface {
 
 	// TokenRetrieve request
 	TokenRetrieve(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ValidationScriptList request
+	ValidationScriptList(ctx context.Context, params *ValidationScriptListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ValidationScriptCreateWithBody request with any body
+	ValidationScriptCreateWithBody(ctx context.Context, params *ValidationScriptCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	ValidationScriptCreate(ctx context.Context, params *ValidationScriptCreateParams, body ValidationScriptCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	ValidationScriptCreateWithFormdataBody(ctx context.Context, params *ValidationScriptCreateParams, body ValidationScriptCreateFormdataRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ValidationScriptDestroy request
+	ValidationScriptDestroy(ctx context.Context, id int, params *ValidationScriptDestroyParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ValidationScriptRetrieve request
+	ValidationScriptRetrieve(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ValidationScriptPartialUpdateWithBody request with any body
+	ValidationScriptPartialUpdateWithBody(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	ValidationScriptPartialUpdate(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, body ValidationScriptPartialUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	ValidationScriptPartialUpdateWithFormdataBody(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, body ValidationScriptPartialUpdateFormdataRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ValidationScriptUpdateWithBody request with any body
+	ValidationScriptUpdateWithBody(ctx context.Context, id int, params *ValidationScriptUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	ValidationScriptUpdate(ctx context.Context, id int, params *ValidationScriptUpdateParams, body ValidationScriptUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	ValidationScriptUpdateWithFormdataBody(ctx context.Context, id int, params *ValidationScriptUpdateParams, body ValidationScriptUpdateFormdataRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// WorkshopList request
 	WorkshopList(ctx context.Context, params *WorkshopListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -6918,6 +7321,150 @@ func (c *Client) TokenRetrieve(ctx context.Context, id int, reqEditors ...Reques
 	return c.Client.Do(req)
 }
 
+func (c *Client) ValidationScriptList(ctx context.Context, params *ValidationScriptListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptListRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptCreateWithBody(ctx context.Context, params *ValidationScriptCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptCreateRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptCreate(ctx context.Context, params *ValidationScriptCreateParams, body ValidationScriptCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptCreateRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptCreateWithFormdataBody(ctx context.Context, params *ValidationScriptCreateParams, body ValidationScriptCreateFormdataRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptCreateRequestWithFormdataBody(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptDestroy(ctx context.Context, id int, params *ValidationScriptDestroyParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptDestroyRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptRetrieve(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptRetrieveRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptPartialUpdateWithBody(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptPartialUpdateRequestWithBody(c.Server, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptPartialUpdate(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, body ValidationScriptPartialUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptPartialUpdateRequest(c.Server, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptPartialUpdateWithFormdataBody(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, body ValidationScriptPartialUpdateFormdataRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptPartialUpdateRequestWithFormdataBody(c.Server, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptUpdateWithBody(ctx context.Context, id int, params *ValidationScriptUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptUpdateRequestWithBody(c.Server, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptUpdate(ctx context.Context, id int, params *ValidationScriptUpdateParams, body ValidationScriptUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptUpdateRequest(c.Server, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ValidationScriptUpdateWithFormdataBody(ctx context.Context, id int, params *ValidationScriptUpdateParams, body ValidationScriptUpdateFormdataRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidationScriptUpdateRequestWithFormdataBody(c.Server, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) WorkshopList(ctx context.Context, params *WorkshopListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewWorkshopListRequest(c.Server, params)
 	if err != nil {
@@ -8512,6 +9059,22 @@ func NewDataFileListRequest(server string, params *DataFileListParams) (*http.Re
 		if params.Cursor != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.DataCollection != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "data_collection", *params.DataCollection, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
 				return nil, err
 			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
 				return nil, err
@@ -14422,6 +14985,426 @@ func NewTokenRetrieveRequest(server string, id int) (*http.Request, error) {
 	return req, nil
 }
 
+// NewValidationScriptListRequest generates requests for ValidationScriptList
+func NewValidationScriptListRequest(server string, params *ValidationScriptListParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/validation-scripts/")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Cursor != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.IsActive != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "is_active", *params.IsActive, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.PerPage != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "per_page", *params.PerPage, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Search != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "search", *params.Search, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewValidationScriptCreateRequest calls the generic ValidationScriptCreate builder with application/json body
+func NewValidationScriptCreateRequest(server string, params *ValidationScriptCreateParams, body ValidationScriptCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewValidationScriptCreateRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewValidationScriptCreateRequestWithFormdataBody calls the generic ValidationScriptCreate builder with application/x-www-form-urlencoded body
+func NewValidationScriptCreateRequestWithFormdataBody(server string, params *ValidationScriptCreateParams, body ValidationScriptCreateFormdataRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	bodyStr, err := runtime.MarshalForm(body, nil)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = strings.NewReader(bodyStr.Encode())
+	return NewValidationScriptCreateRequestWithBody(server, params, "application/x-www-form-urlencoded", bodyReader)
+}
+
+// NewValidationScriptCreateRequestWithBody generates requests for ValidationScriptCreate with any type of body
+func NewValidationScriptCreateRequestWithBody(server string, params *ValidationScriptCreateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/validation-scripts/")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.DryRun != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "dry_run", *params.DryRun, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewValidationScriptDestroyRequest generates requests for ValidationScriptDestroy
+func NewValidationScriptDestroyRequest(server string, id int, params *ValidationScriptDestroyParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/validation-scripts/%s/", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.DryRun != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "dry_run", *params.DryRun, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewValidationScriptRetrieveRequest generates requests for ValidationScriptRetrieve
+func NewValidationScriptRetrieveRequest(server string, id int) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/validation-scripts/%s/", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewValidationScriptPartialUpdateRequest calls the generic ValidationScriptPartialUpdate builder with application/json body
+func NewValidationScriptPartialUpdateRequest(server string, id int, params *ValidationScriptPartialUpdateParams, body ValidationScriptPartialUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewValidationScriptPartialUpdateRequestWithBody(server, id, params, "application/json", bodyReader)
+}
+
+// NewValidationScriptPartialUpdateRequestWithFormdataBody calls the generic ValidationScriptPartialUpdate builder with application/x-www-form-urlencoded body
+func NewValidationScriptPartialUpdateRequestWithFormdataBody(server string, id int, params *ValidationScriptPartialUpdateParams, body ValidationScriptPartialUpdateFormdataRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	bodyStr, err := runtime.MarshalForm(body, nil)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = strings.NewReader(bodyStr.Encode())
+	return NewValidationScriptPartialUpdateRequestWithBody(server, id, params, "application/x-www-form-urlencoded", bodyReader)
+}
+
+// NewValidationScriptPartialUpdateRequestWithBody generates requests for ValidationScriptPartialUpdate with any type of body
+func NewValidationScriptPartialUpdateRequestWithBody(server string, id int, params *ValidationScriptPartialUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/validation-scripts/%s/", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.DryRun != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "dry_run", *params.DryRun, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewValidationScriptUpdateRequest calls the generic ValidationScriptUpdate builder with application/json body
+func NewValidationScriptUpdateRequest(server string, id int, params *ValidationScriptUpdateParams, body ValidationScriptUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewValidationScriptUpdateRequestWithBody(server, id, params, "application/json", bodyReader)
+}
+
+// NewValidationScriptUpdateRequestWithFormdataBody calls the generic ValidationScriptUpdate builder with application/x-www-form-urlencoded body
+func NewValidationScriptUpdateRequestWithFormdataBody(server string, id int, params *ValidationScriptUpdateParams, body ValidationScriptUpdateFormdataRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	bodyStr, err := runtime.MarshalForm(body, nil)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = strings.NewReader(bodyStr.Encode())
+	return NewValidationScriptUpdateRequestWithBody(server, id, params, "application/x-www-form-urlencoded", bodyReader)
+}
+
+// NewValidationScriptUpdateRequestWithBody generates requests for ValidationScriptUpdate with any type of body
+func NewValidationScriptUpdateRequestWithBody(server string, id int, params *ValidationScriptUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/validation-scripts/%s/", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.DryRun != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "dry_run", *params.DryRun, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewWorkshopListRequest generates requests for WorkshopList
 func NewWorkshopListRequest(server string, params *WorkshopListParams) (*http.Request, error) {
 	var err error
@@ -15210,6 +16193,36 @@ type ClientWithResponsesInterface interface {
 	// TokenRetrieveWithResponse request
 	TokenRetrieveWithResponse(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*TokenRetrieveResponse, error)
 
+	// ValidationScriptListWithResponse request
+	ValidationScriptListWithResponse(ctx context.Context, params *ValidationScriptListParams, reqEditors ...RequestEditorFn) (*ValidationScriptListResponse, error)
+
+	// ValidationScriptCreateWithBodyWithResponse request with any body
+	ValidationScriptCreateWithBodyWithResponse(ctx context.Context, params *ValidationScriptCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ValidationScriptCreateResponse, error)
+
+	ValidationScriptCreateWithResponse(ctx context.Context, params *ValidationScriptCreateParams, body ValidationScriptCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptCreateResponse, error)
+
+	ValidationScriptCreateWithFormdataBodyWithResponse(ctx context.Context, params *ValidationScriptCreateParams, body ValidationScriptCreateFormdataRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptCreateResponse, error)
+
+	// ValidationScriptDestroyWithResponse request
+	ValidationScriptDestroyWithResponse(ctx context.Context, id int, params *ValidationScriptDestroyParams, reqEditors ...RequestEditorFn) (*ValidationScriptDestroyResponse, error)
+
+	// ValidationScriptRetrieveWithResponse request
+	ValidationScriptRetrieveWithResponse(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*ValidationScriptRetrieveResponse, error)
+
+	// ValidationScriptPartialUpdateWithBodyWithResponse request with any body
+	ValidationScriptPartialUpdateWithBodyWithResponse(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ValidationScriptPartialUpdateResponse, error)
+
+	ValidationScriptPartialUpdateWithResponse(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, body ValidationScriptPartialUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptPartialUpdateResponse, error)
+
+	ValidationScriptPartialUpdateWithFormdataBodyWithResponse(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, body ValidationScriptPartialUpdateFormdataRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptPartialUpdateResponse, error)
+
+	// ValidationScriptUpdateWithBodyWithResponse request with any body
+	ValidationScriptUpdateWithBodyWithResponse(ctx context.Context, id int, params *ValidationScriptUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ValidationScriptUpdateResponse, error)
+
+	ValidationScriptUpdateWithResponse(ctx context.Context, id int, params *ValidationScriptUpdateParams, body ValidationScriptUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptUpdateResponse, error)
+
+	ValidationScriptUpdateWithFormdataBodyWithResponse(ctx context.Context, id int, params *ValidationScriptUpdateParams, body ValidationScriptUpdateFormdataRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptUpdateResponse, error)
+
 	// WorkshopListWithResponse request
 	WorkshopListWithResponse(ctx context.Context, params *WorkshopListParams, reqEditors ...RequestEditorFn) (*WorkshopListResponse, error)
 
@@ -15255,6 +16268,19 @@ type AssignmentListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedAssignmentV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15311,6 +16337,19 @@ func (r AssignmentRetrieveResponse) StatusCode() int {
 type AssignmentCheckPermissionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15333,6 +16372,19 @@ type AssignmentPermissionsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15354,6 +16406,20 @@ func (r AssignmentPermissionsResponse) StatusCode() int {
 type AssignmentRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15376,6 +16442,19 @@ type DataCollectionListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedDataCollectionV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15432,6 +16511,20 @@ func (r DataCollectionCreateResponse) StatusCode() int {
 type DataCollectionDefaultRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15454,6 +16547,19 @@ type DataGroupListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedDataGroupV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15579,6 +16685,19 @@ func (r DataGroupRetrieveResponse) StatusCode() int {
 type DataCollectionCheckPermissionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15601,6 +16720,19 @@ type DataCollectionPermissionsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15622,6 +16754,20 @@ func (r DataCollectionPermissionsResponse) StatusCode() int {
 type DataCollectionRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15782,6 +16928,19 @@ func (r DataCollectionUpdateResponse) StatusCode() int {
 type DataCollectionCheckPermission2Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15803,7 +16962,20 @@ func (r DataCollectionCheckPermission2Response) StatusCode() int {
 type DataCollectionGrantableRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *Role
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15826,6 +16998,19 @@ type DataCollectionInviteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *TargetRoleCreate
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15847,6 +17032,19 @@ func (r DataCollectionInviteResponse) StatusCode() int {
 type DataCollectionGetJoinRequestsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15868,6 +17066,19 @@ func (r DataCollectionGetJoinRequestsResponse) StatusCode() int {
 type DataCollectionConfirmJoinRequestResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15889,6 +17100,19 @@ func (r DataCollectionConfirmJoinRequestResponse) StatusCode() int {
 type DataCollectionJoinRequestsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15911,6 +17135,19 @@ type DataCollectionPermissions2Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15932,7 +17169,20 @@ func (r DataCollectionPermissions2Response) StatusCode() int {
 type DataCollectionRoles2Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *Role
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -15955,6 +17205,19 @@ type DataFileListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedDataFileV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16012,6 +17275,19 @@ type DataUnitListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedDataUnitV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16207,6 +17483,19 @@ func (r DataUnitUpdateResponse) StatusCode() int {
 type DataUnitCheckPermissionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16229,6 +17518,19 @@ type DataUnitPermissionsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16250,6 +17552,20 @@ func (r DataUnitPermissionsResponse) StatusCode() int {
 type DataUnitRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16272,6 +17588,19 @@ type ExperimentListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedExperimentV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16328,6 +17657,20 @@ func (r ExperimentCreateResponse) StatusCode() int {
 type ExperimentDefaultRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16488,6 +17831,19 @@ func (r ExperimentUpdateResponse) StatusCode() int {
 type ExperimentCheckPermissionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16509,7 +17865,20 @@ func (r ExperimentCheckPermissionResponse) StatusCode() int {
 type ExperimentGrantableRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *Role
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16532,6 +17901,19 @@ type ExperimentInviteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *TargetRoleCreate
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16553,6 +17935,19 @@ func (r ExperimentInviteResponse) StatusCode() int {
 type ExperimentGetJoinRequestsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16574,6 +17969,19 @@ func (r ExperimentGetJoinRequestsResponse) StatusCode() int {
 type ExperimentConfirmJoinRequestResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16595,6 +18003,19 @@ func (r ExperimentConfirmJoinRequestResponse) StatusCode() int {
 type ExperimentJoinRequestsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16617,6 +18038,19 @@ type ExperimentPermissionsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16638,7 +18072,20 @@ func (r ExperimentPermissionsResponse) StatusCode() int {
 type ExperimentRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *Role
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16661,6 +18108,19 @@ type GroundTruthDatasetListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedGroundTruthDatasetV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16718,6 +18178,19 @@ type GroundTruthDatasetVersionListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedGroundTruthDatasetVersionV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16809,6 +18282,19 @@ func (r GroundTruthDatasetVersionRetrieveResponse) StatusCode() int {
 type GroundTruthDatasetCheckPermissionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16831,6 +18317,19 @@ type GroundTruthDatasetPermissionsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -16852,6 +18351,20 @@ func (r GroundTruthDatasetPermissionsResponse) StatusCode() int {
 type GroundTruthDatasetRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17013,6 +18526,19 @@ type GroundTruthListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedGroundTruthV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17070,6 +18596,19 @@ type GroupListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedGroupV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17266,6 +18805,19 @@ type JobLogListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedJobLogV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17323,6 +18875,19 @@ type JobListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedJobV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17380,6 +18945,19 @@ type MemberListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedMemberV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17472,6 +19050,19 @@ type ModelListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedModelV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17529,6 +19120,19 @@ type PluginReleaseListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedPluginReleaseV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17586,6 +19190,19 @@ type PluginListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedPluginV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17643,6 +19260,19 @@ type ProjectListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedProjectV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17699,6 +19329,20 @@ func (r ProjectCreateResponse) StatusCode() int {
 type ProjectDefaultRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17859,6 +19503,19 @@ func (r ProjectUpdateResponse) StatusCode() int {
 type ProjectCheckPermissionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17880,7 +19537,20 @@ func (r ProjectCheckPermissionResponse) StatusCode() int {
 type ProjectGrantableRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *Role
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17903,6 +19573,19 @@ type ProjectInviteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *TargetRoleCreate
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17924,6 +19607,19 @@ func (r ProjectInviteResponse) StatusCode() int {
 type ProjectGetJoinRequestsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17945,6 +19641,19 @@ func (r ProjectGetJoinRequestsResponse) StatusCode() int {
 type ProjectConfirmJoinRequestResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17966,6 +19675,19 @@ func (r ProjectConfirmJoinRequestResponse) StatusCode() int {
 type ProjectJoinRequestsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -17988,6 +19710,19 @@ type ProjectPermissionsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18009,7 +19744,20 @@ func (r ProjectPermissionsResponse) StatusCode() int {
 type ProjectRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *Role
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18032,6 +19780,19 @@ type TaskTagListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedTaskTagV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18157,6 +19918,19 @@ func (r TaskTagRetrieveResponse) StatusCode() int {
 type ProjectCheckPermission2Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18179,6 +19953,19 @@ type ProjectPermissions2Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18200,6 +19987,20 @@ func (r ProjectPermissions2Response) StatusCode() int {
 type ProjectRoles2Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18222,6 +20023,19 @@ type ReviewListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedReviewV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18313,6 +20127,19 @@ func (r ReviewRetrieveResponse) StatusCode() int {
 type ReviewCheckPermissionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18335,6 +20162,19 @@ type ReviewPermissionsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18356,6 +20196,20 @@ func (r ReviewPermissionsResponse) StatusCode() int {
 type ReviewRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18378,6 +20232,19 @@ type TaskListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedTaskV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18573,6 +20440,19 @@ func (r TaskUpdateResponse) StatusCode() int {
 type TaskCheckPermissionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18595,6 +20475,19 @@ type TaskPermissionsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18616,6 +20509,20 @@ func (r TaskPermissionsResponse) StatusCode() int {
 type TaskRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18638,6 +20545,19 @@ type TenantListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedTenantV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18695,6 +20615,19 @@ type TokenListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedAccessTokenV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18817,10 +20750,232 @@ func (r TokenRetrieveResponse) StatusCode() int {
 	return 0
 }
 
+type ValidationScriptListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *PaginatedValidationScriptV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r ValidationScriptListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ValidationScriptListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ValidationScriptCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *ValidationScriptV2Detail
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r ValidationScriptCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ValidationScriptCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ValidationScriptDestroyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r ValidationScriptDestroyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ValidationScriptDestroyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ValidationScriptRetrieveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *ValidationScriptV2Detail
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r ValidationScriptRetrieveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ValidationScriptRetrieveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ValidationScriptPartialUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *ValidationScriptV2Detail
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r ValidationScriptPartialUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ValidationScriptPartialUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ValidationScriptUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *ValidationScriptV2Detail
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r ValidationScriptUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ValidationScriptUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type WorkshopListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *PaginatedWorkshopV2ListList
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18877,6 +21032,19 @@ func (r WorkshopRetrieveResponse) StatusCode() int {
 type WorkshopCheckPermissionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18899,6 +21067,19 @@ type WorkshopPermissionsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -18920,6 +21101,20 @@ func (r WorkshopPermissionsResponse) StatusCode() int {
 type WorkshopRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *map[string]interface{}
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
 }
 
 // Status returns HTTPResponse.Status
@@ -20596,6 +22791,108 @@ func (c *ClientWithResponses) TokenRetrieveWithResponse(ctx context.Context, id 
 	return ParseTokenRetrieveResponse(rsp)
 }
 
+// ValidationScriptListWithResponse request returning *ValidationScriptListResponse
+func (c *ClientWithResponses) ValidationScriptListWithResponse(ctx context.Context, params *ValidationScriptListParams, reqEditors ...RequestEditorFn) (*ValidationScriptListResponse, error) {
+	rsp, err := c.ValidationScriptList(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptListResponse(rsp)
+}
+
+// ValidationScriptCreateWithBodyWithResponse request with arbitrary body returning *ValidationScriptCreateResponse
+func (c *ClientWithResponses) ValidationScriptCreateWithBodyWithResponse(ctx context.Context, params *ValidationScriptCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ValidationScriptCreateResponse, error) {
+	rsp, err := c.ValidationScriptCreateWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) ValidationScriptCreateWithResponse(ctx context.Context, params *ValidationScriptCreateParams, body ValidationScriptCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptCreateResponse, error) {
+	rsp, err := c.ValidationScriptCreate(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) ValidationScriptCreateWithFormdataBodyWithResponse(ctx context.Context, params *ValidationScriptCreateParams, body ValidationScriptCreateFormdataRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptCreateResponse, error) {
+	rsp, err := c.ValidationScriptCreateWithFormdataBody(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptCreateResponse(rsp)
+}
+
+// ValidationScriptDestroyWithResponse request returning *ValidationScriptDestroyResponse
+func (c *ClientWithResponses) ValidationScriptDestroyWithResponse(ctx context.Context, id int, params *ValidationScriptDestroyParams, reqEditors ...RequestEditorFn) (*ValidationScriptDestroyResponse, error) {
+	rsp, err := c.ValidationScriptDestroy(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptDestroyResponse(rsp)
+}
+
+// ValidationScriptRetrieveWithResponse request returning *ValidationScriptRetrieveResponse
+func (c *ClientWithResponses) ValidationScriptRetrieveWithResponse(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*ValidationScriptRetrieveResponse, error) {
+	rsp, err := c.ValidationScriptRetrieve(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptRetrieveResponse(rsp)
+}
+
+// ValidationScriptPartialUpdateWithBodyWithResponse request with arbitrary body returning *ValidationScriptPartialUpdateResponse
+func (c *ClientWithResponses) ValidationScriptPartialUpdateWithBodyWithResponse(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ValidationScriptPartialUpdateResponse, error) {
+	rsp, err := c.ValidationScriptPartialUpdateWithBody(ctx, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptPartialUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) ValidationScriptPartialUpdateWithResponse(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, body ValidationScriptPartialUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptPartialUpdateResponse, error) {
+	rsp, err := c.ValidationScriptPartialUpdate(ctx, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptPartialUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) ValidationScriptPartialUpdateWithFormdataBodyWithResponse(ctx context.Context, id int, params *ValidationScriptPartialUpdateParams, body ValidationScriptPartialUpdateFormdataRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptPartialUpdateResponse, error) {
+	rsp, err := c.ValidationScriptPartialUpdateWithFormdataBody(ctx, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptPartialUpdateResponse(rsp)
+}
+
+// ValidationScriptUpdateWithBodyWithResponse request with arbitrary body returning *ValidationScriptUpdateResponse
+func (c *ClientWithResponses) ValidationScriptUpdateWithBodyWithResponse(ctx context.Context, id int, params *ValidationScriptUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ValidationScriptUpdateResponse, error) {
+	rsp, err := c.ValidationScriptUpdateWithBody(ctx, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) ValidationScriptUpdateWithResponse(ctx context.Context, id int, params *ValidationScriptUpdateParams, body ValidationScriptUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptUpdateResponse, error) {
+	rsp, err := c.ValidationScriptUpdate(ctx, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) ValidationScriptUpdateWithFormdataBodyWithResponse(ctx context.Context, id int, params *ValidationScriptUpdateParams, body ValidationScriptUpdateFormdataRequestBody, reqEditors ...RequestEditorFn) (*ValidationScriptUpdateResponse, error) {
+	rsp, err := c.ValidationScriptUpdateWithFormdataBody(ctx, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseValidationScriptUpdateResponse(rsp)
+}
+
 // WorkshopListWithResponse request returning *WorkshopListResponse
 func (c *ClientWithResponses) WorkshopListWithResponse(ctx context.Context, params *WorkshopListParams, reqEditors ...RequestEditorFn) (*WorkshopListResponse, error) {
 	rsp, err := c.WorkshopList(ctx, params, reqEditors...)
@@ -20691,6 +22988,25 @@ func ParseAssignmentListResponse(rsp *http.Response) (*AssignmentListResponse, e
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -20754,6 +23070,28 @@ func ParseAssignmentCheckPermissionResponse(rsp *http.Response) (*AssignmentChec
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -20778,6 +23116,25 @@ func ParseAssignmentPermissionsResponse(rsp *http.Response) (*AssignmentPermissi
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -20794,6 +23151,35 @@ func ParseAssignmentRolesResponse(rsp *http.Response) (*AssignmentRolesResponse,
 	response := &AssignmentRolesResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -20819,6 +23205,25 @@ func ParseDataCollectionListResponse(rsp *http.Response) (*DataCollectionListRes
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -20883,6 +23288,35 @@ func ParseDataCollectionDefaultRolesResponse(rsp *http.Response) (*DataCollectio
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -20906,6 +23340,25 @@ func ParseDataGroupListResponse(rsp *http.Response) (*DataGroupListResponse, err
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -21053,6 +23506,28 @@ func ParseDataCollectionCheckPermissionResponse(rsp *http.Response) (*DataCollec
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -21077,6 +23552,25 @@ func ParseDataCollectionPermissionsResponse(rsp *http.Response) (*DataCollection
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -21093,6 +23587,35 @@ func ParseDataCollectionRolesResponse(rsp *http.Response) (*DataCollectionRolesR
 	response := &DataCollectionRolesResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -21284,6 +23807,28 @@ func ParseDataCollectionCheckPermission2Response(rsp *http.Response) (*DataColle
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -21302,11 +23847,30 @@ func ParseDataCollectionGrantableRolesResponse(rsp *http.Response) (*DataCollect
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Role
+		var dest map[string]interface{}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -21334,6 +23898,25 @@ func ParseDataCollectionInviteResponse(rsp *http.Response) (*DataCollectionInvit
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -21352,6 +23935,28 @@ func ParseDataCollectionGetJoinRequestsResponse(rsp *http.Response) (*DataCollec
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -21368,6 +23973,28 @@ func ParseDataCollectionConfirmJoinRequestResponse(rsp *http.Response) (*DataCol
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -21382,6 +24009,28 @@ func ParseDataCollectionJoinRequestsResponse(rsp *http.Response) (*DataCollectio
 	response := &DataCollectionJoinRequestsResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -21408,6 +24057,25 @@ func ParseDataCollectionPermissions2Response(rsp *http.Response) (*DataCollectio
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -21428,11 +24096,30 @@ func ParseDataCollectionRoles2Response(rsp *http.Response) (*DataCollectionRoles
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Role
+		var dest map[string]interface{}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -21459,6 +24146,25 @@ func ParseDataFileListResponse(rsp *http.Response) (*DataFileListResponse, error
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -21530,6 +24236,25 @@ func ParseDataUnitListResponse(rsp *http.Response) (*DataUnitListResponse, error
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -21767,6 +24492,28 @@ func ParseDataUnitCheckPermissionResponse(rsp *http.Response) (*DataUnitCheckPer
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -21791,6 +24538,25 @@ func ParseDataUnitPermissionsResponse(rsp *http.Response) (*DataUnitPermissionsR
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -21807,6 +24573,35 @@ func ParseDataUnitRolesResponse(rsp *http.Response) (*DataUnitRolesResponse, err
 	response := &DataUnitRolesResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -21832,6 +24627,25 @@ func ParseExperimentListResponse(rsp *http.Response) (*ExperimentListResponse, e
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -21894,6 +24708,35 @@ func ParseExperimentDefaultRolesResponse(rsp *http.Response) (*ExperimentDefault
 	response := &ExperimentDefaultRolesResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -22085,6 +24928,28 @@ func ParseExperimentCheckPermissionResponse(rsp *http.Response) (*ExperimentChec
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -22103,11 +24968,30 @@ func ParseExperimentGrantableRolesResponse(rsp *http.Response) (*ExperimentGrant
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Role
+		var dest map[string]interface{}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -22135,6 +25019,25 @@ func ParseExperimentInviteResponse(rsp *http.Response) (*ExperimentInviteRespons
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -22153,6 +25056,28 @@ func ParseExperimentGetJoinRequestsResponse(rsp *http.Response) (*ExperimentGetJ
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -22169,6 +25094,28 @@ func ParseExperimentConfirmJoinRequestResponse(rsp *http.Response) (*ExperimentC
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -22183,6 +25130,28 @@ func ParseExperimentJoinRequestsResponse(rsp *http.Response) (*ExperimentJoinReq
 	response := &ExperimentJoinRequestsResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -22209,6 +25178,25 @@ func ParseExperimentPermissionsResponse(rsp *http.Response) (*ExperimentPermissi
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -22229,11 +25217,30 @@ func ParseExperimentRolesResponse(rsp *http.Response) (*ExperimentRolesResponse,
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Role
+		var dest map[string]interface{}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -22260,6 +25267,25 @@ func ParseGroundTruthDatasetListResponse(rsp *http.Response) (*GroundTruthDatase
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -22331,6 +25357,25 @@ func ParseGroundTruthDatasetVersionListResponse(rsp *http.Response) (*GroundTrut
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -22440,6 +25485,28 @@ func ParseGroundTruthDatasetCheckPermissionResponse(rsp *http.Response) (*Ground
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -22464,6 +25531,25 @@ func ParseGroundTruthDatasetPermissionsResponse(rsp *http.Response) (*GroundTrut
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -22480,6 +25566,35 @@ func ParseGroundTruthDatasetRolesResponse(rsp *http.Response) (*GroundTruthDatas
 	response := &GroundTruthDatasetRolesResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -22679,6 +25794,25 @@ func ParseGroundTruthListResponse(rsp *http.Response) (*GroundTruthListResponse,
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -22749,6 +25883,25 @@ func ParseGroupListResponse(rsp *http.Response) (*GroupListResponse, error) {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -22994,6 +26147,25 @@ func ParseJobLogListResponse(rsp *http.Response) (*JobLogListResponse, error) {
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -23065,6 +26237,25 @@ func ParseJobListResponse(rsp *http.Response) (*JobListResponse, error) {
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -23135,6 +26326,25 @@ func ParseMemberListResponse(rsp *http.Response) (*MemberListResponse, error) {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -23252,6 +26462,25 @@ func ParseModelListResponse(rsp *http.Response) (*ModelListResponse, error) {
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -23322,6 +26551,25 @@ func ParsePluginReleaseListResponse(rsp *http.Response) (*PluginReleaseListRespo
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -23394,6 +26642,25 @@ func ParsePluginListResponse(rsp *http.Response) (*PluginListResponse, error) {
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -23465,6 +26732,25 @@ func ParseProjectListResponse(rsp *http.Response) (*ProjectListResponse, error) 
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -23526,6 +26812,35 @@ func ParseProjectDefaultRolesResponse(rsp *http.Response) (*ProjectDefaultRolesR
 	response := &ProjectDefaultRolesResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -23717,6 +27032,28 @@ func ParseProjectCheckPermissionResponse(rsp *http.Response) (*ProjectCheckPermi
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -23735,11 +27072,30 @@ func ParseProjectGrantableRolesResponse(rsp *http.Response) (*ProjectGrantableRo
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Role
+		var dest map[string]interface{}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -23767,6 +27123,25 @@ func ParseProjectInviteResponse(rsp *http.Response) (*ProjectInviteResponse, err
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -23785,6 +27160,28 @@ func ParseProjectGetJoinRequestsResponse(rsp *http.Response) (*ProjectGetJoinReq
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -23801,6 +27198,28 @@ func ParseProjectConfirmJoinRequestResponse(rsp *http.Response) (*ProjectConfirm
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -23815,6 +27234,28 @@ func ParseProjectJoinRequestsResponse(rsp *http.Response) (*ProjectJoinRequestsR
 	response := &ProjectJoinRequestsResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -23841,6 +27282,25 @@ func ParseProjectPermissionsResponse(rsp *http.Response) (*ProjectPermissionsRes
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -23861,11 +27321,30 @@ func ParseProjectRolesResponse(rsp *http.Response) (*ProjectRolesResponse, error
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Role
+		var dest map[string]interface{}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -23892,6 +27371,25 @@ func ParseTaskTagListResponse(rsp *http.Response) (*TaskTagListResponse, error) 
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -24039,6 +27537,28 @@ func ParseProjectCheckPermission2Response(rsp *http.Response) (*ProjectCheckPerm
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -24063,6 +27583,25 @@ func ParseProjectPermissions2Response(rsp *http.Response) (*ProjectPermissions2R
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -24079,6 +27618,35 @@ func ParseProjectRoles2Response(rsp *http.Response) (*ProjectRoles2Response, err
 	response := &ProjectRoles2Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -24104,6 +27672,25 @@ func ParseReviewListResponse(rsp *http.Response) (*ReviewListResponse, error) {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -24213,6 +27800,28 @@ func ParseReviewCheckPermissionResponse(rsp *http.Response) (*ReviewCheckPermiss
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -24237,6 +27846,25 @@ func ParseReviewPermissionsResponse(rsp *http.Response) (*ReviewPermissionsRespo
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -24253,6 +27881,35 @@ func ParseReviewRolesResponse(rsp *http.Response) (*ReviewRolesResponse, error) 
 	response := &ReviewRolesResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -24278,6 +27935,25 @@ func ParseTaskListResponse(rsp *http.Response) (*TaskListResponse, error) {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -24515,6 +28191,28 @@ func ParseTaskCheckPermissionResponse(rsp *http.Response) (*TaskCheckPermissionR
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -24539,6 +28237,25 @@ func ParseTaskPermissionsResponse(rsp *http.Response) (*TaskPermissionsResponse,
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -24555,6 +28272,35 @@ func ParseTaskRolesResponse(rsp *http.Response) (*TaskRolesResponse, error) {
 	response := &TaskRolesResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -24580,6 +28326,25 @@ func ParseTenantListResponse(rsp *http.Response) (*TenantListResponse, error) {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -24651,6 +28416,25 @@ func ParseTokenListResponse(rsp *http.Response) (*TokenListResponse, error) {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -24785,6 +28569,269 @@ func ParseTokenRetrieveResponse(rsp *http.Response) (*TokenRetrieveResponse, err
 	return response, nil
 }
 
+// ParseValidationScriptListResponse parses an HTTP response from a ValidationScriptListWithResponse call
+func ParseValidationScriptListResponse(rsp *http.Response) (*ValidationScriptListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ValidationScriptListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest PaginatedValidationScriptV2ListList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseValidationScriptCreateResponse parses an HTTP response from a ValidationScriptCreateWithResponse call
+func ParseValidationScriptCreateResponse(rsp *http.Response) (*ValidationScriptCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ValidationScriptCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest ValidationScriptV2Detail
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseValidationScriptDestroyResponse parses an HTTP response from a ValidationScriptDestroyWithResponse call
+func ParseValidationScriptDestroyResponse(rsp *http.Response) (*ValidationScriptDestroyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ValidationScriptDestroyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseValidationScriptRetrieveResponse parses an HTTP response from a ValidationScriptRetrieveWithResponse call
+func ParseValidationScriptRetrieveResponse(rsp *http.Response) (*ValidationScriptRetrieveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ValidationScriptRetrieveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ValidationScriptV2Detail
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseValidationScriptPartialUpdateResponse parses an HTTP response from a ValidationScriptPartialUpdateWithResponse call
+func ParseValidationScriptPartialUpdateResponse(rsp *http.Response) (*ValidationScriptPartialUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ValidationScriptPartialUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ValidationScriptV2Detail
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseValidationScriptUpdateResponse parses an HTTP response from a ValidationScriptUpdateWithResponse call
+func ParseValidationScriptUpdateResponse(rsp *http.Response) (*ValidationScriptUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ValidationScriptUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ValidationScriptV2Detail
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseWorkshopListResponse parses an HTTP response from a WorkshopListWithResponse call
 func ParseWorkshopListResponse(rsp *http.Response) (*WorkshopListResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -24805,6 +28852,25 @@ func ParseWorkshopListResponse(rsp *http.Response) (*WorkshopListResponse, error
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	}
 
@@ -24869,6 +28935,28 @@ func ParseWorkshopCheckPermissionResponse(rsp *http.Response) (*WorkshopCheckPer
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -24893,6 +28981,25 @@ func ParseWorkshopPermissionsResponse(rsp *http.Response) (*WorkshopPermissionsR
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil
@@ -24909,6 +29016,35 @@ func ParseWorkshopRolesResponse(rsp *http.Response) (*WorkshopRolesResponse, err
 	response := &WorkshopRolesResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	}
 
 	return response, nil

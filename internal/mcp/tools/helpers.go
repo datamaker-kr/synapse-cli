@@ -137,6 +137,18 @@ func fetchAllPages(ctx context.Context, sc *client.SynapseClient, basePath strin
 	return all, nil
 }
 
+// buildListPath appends sort and fields query parameters to a base path.
+func buildListPath(basePath, sort, fields string) string {
+	path := basePath
+	if sort != "" {
+		path = addQueryParam(path, "sort", sort)
+	}
+	if fields != "" {
+		path = addQueryParam(path, "fields", fields)
+	}
+	return path
+}
+
 // doCreate performs a POST request with a JSON body and returns the result.
 func doCreate(ctx context.Context, sc *client.SynapseClient, path string, payload map[string]any) (*mcp.CallToolResult, any, error) {
 	body, _ := json.Marshal(payload)
@@ -157,8 +169,13 @@ func doCreate(ctx context.Context, sc *client.SynapseClient, path string, payloa
 }
 
 // doDelete performs a DELETE request and returns the result.
-func doDelete(ctx context.Context, sc *client.SynapseClient, basePath, id string) (*mcp.CallToolResult, any, error) {
-	resp, err := sc.RawRequest(ctx, "DELETE", basePath+id+"/", nil)
+// If dryRun is true, appends ?dry_run=true to the request (permission check only).
+func doDelete(ctx context.Context, sc *client.SynapseClient, basePath, id string, dryRun bool) (*mcp.CallToolResult, any, error) {
+	path := basePath + id + "/"
+	if dryRun {
+		path += "?dry_run=true"
+	}
+	resp, err := sc.RawRequest(ctx, "DELETE", path, nil)
 	if err != nil {
 		r, _, _ := toolError(err.Error())
 		return r, nil, nil

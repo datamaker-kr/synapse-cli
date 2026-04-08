@@ -45,6 +45,53 @@ MCP tool 사용 전 반드시 인증 상태를 확인한다:
 - `page_all=false` (기본): 첫 페이지만 반환
 - `page_all=true`: 모든 페이지를 한번에 수집하여 반환 (대량 데이터 주의)
 
+### Dry-Run 필수 정책
+
+모든 mutation(create/delete) 전에 반드시 dry-run을 수행해야 한다:
+
+1. 먼저 `dry_run=true` (기본값)로 호출하여 검증 결과를 확인한다.
+2. dry-run 결과를 사용자에게 보여준다.
+3. 사용자가 확인한 후에만 `dry_run=false`로 실제 mutation을 실행한다.
+
+**dry-run 없이 바로 mutation을 실행하지 않는다.**
+
+### sort/fields 파라미터 사용법
+
+목록 조회 시 정렬과 필드 선택을 활용하면 효율적으로 데이터를 조회할 수 있다:
+
+- **정렬**: `sort=-created` (최신 먼저), `sort=name` (이름순), `sort=-created,name` (복합 정렬)
+- **필드 선택**: `fields=id,name,status` (필요한 필드만 조회하여 응답 크기 최적화)
+- **페이지 크기**: `per_page` 기본값 50, 최대 200
+
+### 리소스 생성 순서
+
+리소스는 반드시 상위 리소스부터 순서대로 생성해야 한다:
+
+```
+Tenant → DataCollection → FileSpecification → DataUnit → DataFile
+```
+
+상위 리소스가 존재하지 않으면 422 에러가 반환된다.
+
+### validation-script 리소스
+
+validation-script는 데이터 검증 스크립트를 관리하는 리소스이다:
+- `synapse_validation_script_list`: 검증 스크립트 목록 조회
+- `synapse_validation_script_get`: 검증 스크립트 상세 조회
+
+### 에러 코드 참고
+
+| HTTP 상태 | 에러 코드 | 대응 |
+|-----------|-----------|------|
+| 400 | `VALIDATION_ERROR` | 요청 데이터 확인 (필수 필드, 형식) |
+| 401 | `AUTHENTICATION_REQUIRED` | `synapse login` 실행 |
+| 403 | `PERMISSION_DENIED` | 권한 확인 |
+| 404 | `NOT_FOUND` | ID 확인 |
+| 409 | `CONFLICT` | 리소스 충돌 (중복 이름 등) — 기존 리소스 확인 후 재시도 |
+| 422 | `UNPROCESSABLE_ENTITY` | 전제 조건 미충족 — 상위 리소스 존재 여부 확인 |
+| 429 | `RATE_LIMIT_EXCEEDED` | 속도 제한 초과 — 잠시 후 재시도 |
+| 500 | `INTERNAL_ERROR` | 서버 오류 — 관리자 문의 |
+
 ### 주의 사항
 
 - `synapse_login` tool은 보안상 안내 메시지만 반환. 실제 로그인은 터미널에서 직접 수행

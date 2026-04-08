@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- 최신 v2 OpenAPI 스키마 반영 및 generated client 재생성
+- `validation-script` 리소스 CLI/MCP 지원 (CRUD + `synapse_validation_script_list/get` MCP tool)
+- 모든 MCP list tool에 `sort`, `fields` 파라미터 추가 (API 정책 준수, context window 최적화)
+- MCP delete tool에 `dry_run` 기본 활성화 (API 정책: Agent는 mutation 전 반드시 dry-run 수행)
+- `docs/api-reference/` 디렉토리 — OpenAPI 스키마 및 API 정책 기준 문서 보관
+- AGENTS.md에 API 기준 문서 동기화 규칙 추가
+
+### Changed
+
+- `data-collection get` 결과에 `file_specifications` (유닛당 파일 구성 정의) 포함
+- MCP tool 총 21개 → 23개 (validation-script list/get 추가)
+- `skills/synapse-cli.md` 정책 반영 — dry-run 필수, sort/fields, 리소스 생성 순서, 에러 코드 확장 (409/422/429)
+- `docs/mcp.md` 업데이트 — sort/fields 설명, per_page 기본 50/최대 200
+
 ## [0.1.0] - 2026-04-05
 
 ### Added
