@@ -11,6 +11,8 @@ import (
 
 type DataUnitListInput struct {
 	DataCollectionID string `json:"data_collection_id" jsonschema:"데이터 컬렉션 ID (필수)"`
+	Sort             string `json:"sort,omitempty" jsonschema:"정렬 (예: -created, name). 기본: -created"`
+	Fields           string `json:"fields,omitempty" jsonschema:"반환 필드 선택 (예: id,name). context window 최적화용"`
 	PageAll          bool   `json:"page_all,omitempty" jsonschema:"true이면 모든 페이지를 조회한다"`
 }
 
@@ -22,7 +24,7 @@ type DataUnitGetInput struct {
 func RegisterDataUnit(s *mcp.Server, cfg *config.Config) {
 	mcp.AddTool(s, &mcp.Tool{
 		Name:        "synapse_data_unit_list",
-		Description: "Synapse 데이터 유닛 목록을 조회한다. data_collection_id 필수. 참고: data-unit과 data-file은 data-unit-file bridge 모델로 연결되며, 연결된 파일 수는 data-collection의 file-specification에 의해 결정된다.",
+		Description: "Synapse 데이터 유닛 목록을 조회한다. 기본 per_page=50, 최대 200. data_collection_id 필수. 참고: data-unit에 연결된 파일 구성은 data-collection의 file_specifications로 확인할 수 있다.",
 	},
 		func(ctx context.Context, req *mcp.CallToolRequest, input DataUnitListInput) (*mcp.CallToolResult, any, error) {
 			if input.DataCollectionID == "" {
@@ -35,6 +37,7 @@ func RegisterDataUnit(s *mcp.Server, cfg *config.Config) {
 				return r, nil, nil
 			}
 			path := "/v2/data-units/?data_collection=" + url.QueryEscape(input.DataCollectionID)
+			path = buildListPath(path, input.Sort, input.Fields)
 			r, _, _ := fetchList(ctx, sc, path, input.PageAll)
 			return r, nil, nil
 		})

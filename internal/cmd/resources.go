@@ -79,6 +79,11 @@ var resourceDefinitions = []ResourceDef{
 		Name: "member", Plural: "members", APIPath: "/v2/members/", IDField: "id",
 		ListCols: []output.Column{{Header: "ID", Field: "id"}, {Header: "Name", Field: "name"}, {Header: "Role", Field: "role"}},
 	},
+	{
+		Name: "validation-script", Plural: "validation scripts", APIPath: "/v2/validation-scripts/", IDField: "id",
+		ListCols:  []output.Column{{Header: "ID", Field: "id"}, {Header: "Name", Field: "name"}, {Header: "Active", Field: "is_active"}, {Header: "Timeout", Field: "timeout"}, {Header: "Created", Field: "created"}},
+		HasCreate: true, HasUpdate: true, HasDelete: true,
+	},
 }
 
 // Sub-resources that have permissions/roles/invite patterns

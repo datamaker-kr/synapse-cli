@@ -99,7 +99,7 @@ func TestExperimentDelete_WithForce(t *testing.T) {
 	sc, err := newClient(cfg)
 	require.NoError(t, err)
 
-	r, _, _ := doDelete(context.Background(), sc, "/v2/experiments/", "exp1")
+	r, _, _ := doDelete(context.Background(), sc, "/v2/experiments/", "exp1", false)
 	assert.False(t, r.IsError)
 	assert.Contains(t, textFromResult(r), "삭제")
 }

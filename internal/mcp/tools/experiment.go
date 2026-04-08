@@ -11,6 +11,8 @@ import (
 
 type ExperimentListInput struct {
 	Status  string `json:"status,omitempty" jsonschema:"실험 상태 필터 (running|completed|failed 등)"`
+	Sort    string `json:"sort,omitempty" jsonschema:"정렬 (예: -created, name). 기본: -created"`
+	Fields  string `json:"fields,omitempty" jsonschema:"반환 필드 선택 (예: id,name). context window 최적화용"`
 	PageAll bool   `json:"page_all,omitempty" jsonschema:"true이면 모든 페이지를 조회한다"`
 }
 
@@ -26,15 +28,16 @@ type ExperimentCreateInput struct {
 }
 
 type ExperimentDeleteInput struct {
-	ID    string `json:"id" jsonschema:"삭제할 실험 ID"`
-	Force bool   `json:"force" jsonschema:"true로 설정해야 실제 삭제 실행"`
+	ID     string `json:"id" jsonschema:"삭제할 실험 ID"`
+	Force  bool   `json:"force" jsonschema:"true로 설정해야 삭제 진행"`
+	DryRun *bool  `json:"dry_run,omitempty" jsonschema:"true이면 권한 체크만 수행. 기본값 true"`
 }
 
 // RegisterExperiment registers experiment-related MCP tools.
 func RegisterExperiment(s *mcp.Server, cfg *config.Config) {
 	mcp.AddTool(s, &mcp.Tool{
 		Name:        "synapse_experiment_list",
-		Description: "Synapse 실험 목록을 조회한다. 상태별 필터링 가능.",
+		Description: "Synapse 실험 목록을 조회한다. 기본 per_page=50, 최대 200. 상태별 필터링 가능.",
 	},
 		func(ctx context.Context, req *mcp.CallToolRequest, input ExperimentListInput) (*mcp.CallToolResult, any, error) {
 			sc, err := newClient(cfg)
@@ -46,6 +49,7 @@ func RegisterExperiment(s *mcp.Server, cfg *config.Config) {
 			if input.Status != "" {
 				path += "?status=" + url.QueryEscape(input.Status)
 			}
+			path = buildListPath(path, input.Sort, input.Fields)
 			r, _, _ := fetchList(ctx, sc, path, input.PageAll)
 			return r, nil, nil
 		})
@@ -87,18 +91,19 @@ func RegisterExperiment(s *mcp.Server, cfg *config.Config) {
 
 	mcp.AddTool(s, &mcp.Tool{
 		Name:        "synapse_experiment_delete",
-		Description: "Synapse 실험을 삭제한다. force=true 필수.",
+		Description: "Synapse 실험을 삭제한다. force=true 필수. dry_run 기본 활성화.",
 	},
 		func(ctx context.Context, req *mcp.CallToolRequest, input ExperimentDeleteInput) (*mcp.CallToolResult, any, error) {
 			if !input.Force {
 				r, _, _ := toolText("실험 '" + input.ID + "' 삭제를 요청했습니다. 실제 삭제하려면 force=true로 다시 호출하세요.")
 				return r, nil, nil
 			}
+			isDryRun := input.DryRun == nil || *input.DryRun
 			sc, err := newClient(cfg)
 			if err != nil {
 				r, _, _ := toolError(err.Error())
 				return r, nil, nil
 			}
-			return doDelete(ctx, sc, "/v2/experiments/", input.ID)
+			return doDelete(ctx, sc, "/v2/experiments/", input.ID, isDryRun)
 		})
 }

@@ -127,6 +127,14 @@ func TestAddQueryParam(t *testing.T) {
 	assert.Equal(t, "/v2/test/?status=running&cursor=abc", addQueryParam("/v2/test/?status=running", "cursor", "abc"))
 }
 
+func TestBuildListPath(t *testing.T) {
+	assert.Equal(t, "/v2/test/", buildListPath("/v2/test/", "", ""))
+	assert.Equal(t, "/v2/test/?sort=-created", buildListPath("/v2/test/", "-created", ""))
+	assert.Equal(t, "/v2/test/?fields=id%2Cname", buildListPath("/v2/test/", "", "id,name"))
+	assert.Equal(t, "/v2/test/?sort=-created&fields=id%2Cname", buildListPath("/v2/test/", "-created", "id,name"))
+	assert.Equal(t, "/v2/test/?status=running&sort=name", buildListPath("/v2/test/?status=running", "name", ""))
+}
+
 func TestDoCreate_Success(t *testing.T) {
 	sc, ts := newTestServer(func(w http.ResponseWriter, r *http.Request) {
 		assert.Equal(t, "POST", r.Method)
@@ -148,7 +156,7 @@ func TestDoDelete_Success(t *testing.T) {
 	})
 	defer ts.Close()
 
-	r, _, err := doDelete(context.Background(), sc, "/v2/projects/", "123")
+	r, _, err := doDelete(context.Background(), sc, "/v2/projects/", "123", false)
 	require.NoError(t, err)
 	assert.False(t, r.IsError)
 	assert.Contains(t, textFromResult(r), "삭제")

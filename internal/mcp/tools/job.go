@@ -11,6 +11,8 @@ import (
 
 type JobListInput struct {
 	ExperimentID string `json:"experiment_id,omitempty" jsonschema:"실험 ID로 필터링"`
+	Sort         string `json:"sort,omitempty" jsonschema:"정렬 (예: -created, name). 기본: -created"`
+	Fields       string `json:"fields,omitempty" jsonschema:"반환 필드 선택 (예: id,name). context window 최적화용"`
 	PageAll      bool   `json:"page_all,omitempty" jsonschema:"true이면 모든 페이지를 조회한다"`
 }
 
@@ -22,7 +24,7 @@ type JobLogInput struct {
 func RegisterJob(s *mcp.Server, cfg *config.Config) {
 	mcp.AddTool(s, &mcp.Tool{
 		Name:        "synapse_job_list",
-		Description: "Synapse 잡 목록을 조회한다. 실험 ID로 필터링 가능.",
+		Description: "Synapse 잡 목록을 조회한다. 기본 per_page=50, 최대 200. 실험 ID로 필터링 가능.",
 	},
 		func(ctx context.Context, req *mcp.CallToolRequest, input JobListInput) (*mcp.CallToolResult, any, error) {
 			sc, err := newClient(cfg)
@@ -34,6 +36,7 @@ func RegisterJob(s *mcp.Server, cfg *config.Config) {
 			if input.ExperimentID != "" {
 				path += "?experiment=" + url.QueryEscape(input.ExperimentID)
 			}
+			path = buildListPath(path, input.Sort, input.Fields)
 			r, _, _ := fetchList(ctx, sc, path, input.PageAll)
 			return r, nil, nil
 		})

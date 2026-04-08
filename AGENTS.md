@@ -254,6 +254,15 @@ contexts:
 `synapse mcp` 서브커맨드로 MCP 서버를 실행할 수 있다.
 자세한 내용은 [docs/mcp.md](./docs/mcp.md) 참조.
 
+## API 기준 문서
+
+`docs/api-reference/`에 OpenAPI 스키마와 API 정책 문서를 보관한다.
+이 파일들은 현재 CLI/MCP의 정책과 기능을 반영하는 기준 문서이다.
+기능 업데이트 시 반드시 `docs/api-reference/`의 스키마와 정책 문서도 함께 업데이트해야 한다.
+
+- `docs/api-reference/synapse-v2-openapi.yaml` — v2 API OpenAPI 스키마
+- `docs/api-reference/policy.md` — v2 API 정책 (인증, 페이지네이션, dry-run, 에러 코드 등)
+
 ## Do NOT
 
 - `internal/client/generated/` 코드를 수동 수정하지 말 것 (`make generate`로 재생성)

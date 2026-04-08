@@ -207,9 +207,9 @@ Cursor Settings → MCP에서 서버를 추가한다:
 
 ---
 
-## 사용 가능한 Tool (21개)
+## 사용 가능한 Tool (23개)
 
-### 읽기 전용 (13개)
+### 읽기 전용 (15개)
 
 | Tool | 설명 | 주요 파라미터 |
 |------|------|--------------|
@@ -226,6 +226,8 @@ Cursor Settings → MCP에서 서버를 추가한다:
 | `synapse_data_unit_list` | 데이터 유닛 목록 | `data_collection_id` (필수), `page_all` |
 | `synapse_data_unit_get` | 데이터 유닛 상세 | `id` |
 | `synapse_data_file_list` | 데이터 파일 목록 | `data_collection_id` (필수), `page_all` |
+| `synapse_validation_script_list` | 검증 스크립트 목록 | `page_all` |
+| `synapse_validation_script_get` | 검증 스크립트 상세 | `id` |
 
 ### 쓰기 (4개)
 
@@ -250,6 +252,39 @@ Cursor Settings → MCP에서 서버를 추가한다:
 | URI | 설명 |
 |-----|------|
 | `synapse://skills/synapse-cli` | Synapse 플랫폼 개요 및 워크플로우 가이드 |
+
+---
+
+## sort/fields 파라미터
+
+목록 조회 tool에서 정렬과 필드 선택을 활용할 수 있다.
+
+### 정렬 (sort)
+
+`sort` 파라미터로 정렬 기준을 지정한다. `-` 접두사는 내림차순을 의미한다.
+
+```
+sort=-created        # 최신 먼저
+sort=name            # 이름 오름차순
+sort=-created,name   # 복합 정렬
+```
+
+### 필드 선택 (fields)
+
+`fields` 파라미터로 응답에 포함할 필드를 지정한다. 불필요한 데이터를 줄여 응답 크기를 최적화할 수 있다.
+
+```
+fields=id,name,status
+```
+
+### 페이지 크기 (per_page)
+
+| 설정 | 값 |
+|------|------|
+| 기본값 | 50 |
+| 최대값 | 200 |
+
+> **참고**: `per_page`를 200으로 설정하면 한 번의 호출로 더 많은 데이터를 가져올 수 있지만, 응답 크기가 커지므로 필요에 따라 조절한다.
 
 ---
 

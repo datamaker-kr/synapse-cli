@@ -72,7 +72,7 @@ paths:
       tags:
       - Assignments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -142,7 +142,7 @@ paths:
       tags:
       - Assignments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -211,7 +211,7 @@ paths:
       tags:
       - Assignments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -274,7 +274,7 @@ paths:
       tags:
       - Assignments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -370,7 +370,7 @@ paths:
       tags:
       - Assignments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -476,7 +476,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -578,7 +578,7 @@ paths:
               $ref: '#/components/schemas/DataCollectionV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -655,7 +655,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -740,7 +740,7 @@ paths:
               $ref: '#/components/schemas/DataGroupV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -815,7 +815,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -894,7 +894,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -964,7 +964,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1032,7 +1032,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1133,7 +1133,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1218,7 +1218,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1304,7 +1304,7 @@ paths:
               $ref: '#/components/schemas/DataCollectionV2UpdateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1389,7 +1389,7 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchedDataCollectionV2UpdateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1463,7 +1463,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1528,7 +1528,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1597,7 +1597,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1692,7 +1692,7 @@ paths:
             schema:
               $ref: '#/components/schemas/TargetRoleCreateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1773,7 +1773,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1842,7 +1842,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1913,7 +1913,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -1975,7 +1975,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2060,7 +2060,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2120,7 +2120,7 @@ paths:
       tags:
       - Data Collections
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2207,7 +2207,7 @@ paths:
       tags:
       - Data Files
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2277,7 +2277,7 @@ paths:
       tags:
       - Data Files
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2357,7 +2357,7 @@ paths:
       tags:
       - Data Units
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2449,7 +2449,7 @@ paths:
               $ref: '#/components/schemas/DataUnitV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2519,7 +2519,7 @@ paths:
       tags:
       - Data Units
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2605,7 +2605,7 @@ paths:
               $ref: '#/components/schemas/DataUnitV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2690,7 +2690,7 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchedDataUnitV2CreateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2764,7 +2764,7 @@ paths:
       tags:
       - Data Units
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2829,7 +2829,7 @@ paths:
       tags:
       - Data Units
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2892,7 +2892,7 @@ paths:
       tags:
       - Data Units
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -2988,7 +2988,7 @@ paths:
       tags:
       - Data Units
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3075,7 +3075,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3151,7 +3151,7 @@ paths:
               $ref: '#/components/schemas/ExperimentV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3221,7 +3221,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3307,7 +3307,7 @@ paths:
               $ref: '#/components/schemas/ExperimentV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3392,7 +3392,7 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchedExperimentV2CreateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3466,7 +3466,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3531,7 +3531,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3600,7 +3600,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3695,7 +3695,7 @@ paths:
             schema:
               $ref: '#/components/schemas/TargetRoleCreateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3776,7 +3776,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3845,7 +3845,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3916,7 +3916,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -3978,7 +3978,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4063,7 +4063,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4123,7 +4123,7 @@ paths:
       tags:
       - Experiments
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4201,7 +4201,7 @@ paths:
       tags:
       - Ground Truth Datasets
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4277,7 +4277,7 @@ paths:
               $ref: '#/components/schemas/GroundTruthDatasetV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4354,7 +4354,7 @@ paths:
       tags:
       - Ground Truth Datasets
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4435,7 +4435,7 @@ paths:
               $ref: '#/components/schemas/GroundTruthDatasetVersionV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4510,7 +4510,7 @@ paths:
       tags:
       - Ground Truth Datasets
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4584,7 +4584,7 @@ paths:
       tags:
       - Ground Truth Datasets
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4652,7 +4652,7 @@ paths:
       tags:
       - Ground Truth Datasets
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4753,7 +4753,7 @@ paths:
       tags:
       - Ground Truth Datasets
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4838,7 +4838,7 @@ paths:
       tags:
       - Ground Truth Datasets
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -4924,7 +4924,7 @@ paths:
               $ref: '#/components/schemas/GroundTruthDatasetV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5009,7 +5009,7 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchedGroundTruthDatasetV2CreateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5083,7 +5083,7 @@ paths:
       tags:
       - Ground Truth Datasets
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5170,7 +5170,7 @@ paths:
       tags:
       - Ground Truths
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5240,7 +5240,7 @@ paths:
       tags:
       - Ground Truths
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5312,7 +5312,7 @@ paths:
       tags:
       - Groups
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5392,7 +5392,7 @@ paths:
               $ref: '#/components/schemas/GroupV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5462,7 +5462,7 @@ paths:
       tags:
       - Groups
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5548,7 +5548,7 @@ paths:
               $ref: '#/components/schemas/GroupV2UpdateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5633,7 +5633,7 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchedGroupV2UpdateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5707,7 +5707,7 @@ paths:
       tags:
       - Groups
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5806,7 +5806,7 @@ paths:
       tags:
       - Job Logs
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5876,7 +5876,7 @@ paths:
       tags:
       - Job Logs
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -5970,7 +5970,7 @@ paths:
       tags:
       - Jobs
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6038,7 +6038,7 @@ paths:
       tags:
       - Jobs
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6125,7 +6125,7 @@ paths:
       tags:
       - Members
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6205,7 +6205,7 @@ paths:
               $ref: '#/components/schemas/MemberV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6275,7 +6275,7 @@ paths:
       tags:
       - Members
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6351,7 +6351,7 @@ paths:
       tags:
       - Models
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6421,7 +6421,7 @@ paths:
       tags:
       - Models
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6502,7 +6502,7 @@ paths:
       tags:
       - Plugin Releases
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6572,7 +6572,7 @@ paths:
       tags:
       - Plugin Releases
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6671,7 +6671,7 @@ paths:
       tags:
       - Plugins
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6741,7 +6741,7 @@ paths:
       tags:
       - Plugins
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6838,7 +6838,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -6940,7 +6940,7 @@ paths:
               $ref: '#/components/schemas/ProjectV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7010,7 +7010,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7096,7 +7096,7 @@ paths:
               $ref: '#/components/schemas/ProjectV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7181,7 +7181,7 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchedProjectV2CreateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7255,7 +7255,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7320,7 +7320,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7389,7 +7389,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7484,7 +7484,7 @@ paths:
             schema:
               $ref: '#/components/schemas/TargetRoleCreateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7565,7 +7565,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7634,7 +7634,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7705,7 +7705,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7767,7 +7767,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7852,7 +7852,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -7941,7 +7941,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8026,7 +8026,7 @@ paths:
               $ref: '#/components/schemas/TaskTagV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8101,7 +8101,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8180,7 +8180,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8250,7 +8250,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8318,7 +8318,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8419,7 +8419,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8493,7 +8493,7 @@ paths:
       tags:
       - Projects
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8586,7 +8586,7 @@ paths:
       tags:
       - Reviews
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8666,7 +8666,7 @@ paths:
               $ref: '#/components/schemas/ReviewV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8736,7 +8736,7 @@ paths:
       tags:
       - Reviews
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8805,7 +8805,7 @@ paths:
       tags:
       - Reviews
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8868,7 +8868,7 @@ paths:
       tags:
       - Reviews
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -8964,7 +8964,7 @@ paths:
       tags:
       - Reviews
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -9059,7 +9059,7 @@ paths:
       tags:
       - Tasks
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -9152,7 +9152,7 @@ paths:
               $ref: '#/components/schemas/TaskV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -9222,7 +9222,7 @@ paths:
       tags:
       - Tasks
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -9308,7 +9308,7 @@ paths:
               $ref: '#/components/schemas/TaskV2CreateRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -9393,7 +9393,7 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchedTaskV2CreateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -9467,7 +9467,7 @@ paths:
       tags:
       - Tasks
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -9532,7 +9532,7 @@ paths:
       tags:
       - Tasks
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -9595,7 +9595,7 @@ paths:
       tags:
       - Tasks
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -9691,7 +9691,7 @@ paths:
       tags:
       - Tasks
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -9813,7 +9813,7 @@ paths:
       tags:
       - Tenants
       security:
-      - TokenAuth: []
+      - tokenAuth: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
       - AccessTokenAuth: []
@@ -9876,7 +9876,7 @@ paths:
       tags:
       - Tenants
       security:
-      - TokenAuth: []
+      - tokenAuth: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
       - AccessTokenAuth: []
@@ -9946,7 +9946,7 @@ paths:
       tags:
       - Tokens
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10021,7 +10021,7 @@ paths:
             schema:
               $ref: '#/components/schemas/AccessTokenV2CreateRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10087,7 +10087,7 @@ paths:
       tags:
       - Tokens
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10161,7 +10161,7 @@ paths:
       tags:
       - Tokens
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10241,7 +10241,7 @@ paths:
       tags:
       - Validation Scripts
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10321,7 +10321,7 @@ paths:
               $ref: '#/components/schemas/ValidationScriptV2WriteRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10391,7 +10391,7 @@ paths:
       tags:
       - Validation Scripts
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10477,7 +10477,7 @@ paths:
               $ref: '#/components/schemas/ValidationScriptV2WriteRequest'
         required: true
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10562,7 +10562,7 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchedValidationScriptV2WriteRequest'
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10636,7 +10636,7 @@ paths:
       tags:
       - Validation Scripts
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10723,7 +10723,7 @@ paths:
       tags:
       - Workshops
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10793,7 +10793,7 @@ paths:
       tags:
       - Workshops
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10862,7 +10862,7 @@ paths:
       tags:
       - Workshops
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -10925,7 +10925,7 @@ paths:
       tags:
       - Workshops
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
@@ -11021,7 +11021,7 @@ paths:
       tags:
       - Workshops
       security:
-      - TokenAuth: []
+      - tokenAuth: []
         SYNAPSE-Tenant: []
       - TokenAuth: []
         SYNAPSE-Tenant: []
