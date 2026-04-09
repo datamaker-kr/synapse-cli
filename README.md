@@ -67,6 +67,19 @@ go install github.com/datamaker-kr/synapse-cli/cmd/synapse@latest
 # https://github.com/datamaker-kr/synapse-cli/releases
 ```
 
+## Update
+
+```bash
+# 최신 버전으로 업데이트
+go install github.com/datamaker-kr/synapse-cli/cmd/synapse@latest
+
+# 특정 버전으로 업데이트
+go install github.com/datamaker-kr/synapse-cli/cmd/synapse@v0.2.0
+
+# 현재 설치된 버전 확인
+synapse --version
+```
+
 ## Quick Start
 
 ```bash
