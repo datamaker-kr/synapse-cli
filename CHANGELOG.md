@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- `synapse --version` 및 로고에 버전이 `dev` 또는 `v0.0.1-dirty`로 표시되는 버그 수정
+  - `go install`로 설치 시 `runtime/debug.ReadBuildInfo()` fallback으로 정확한 버전 표시
+  - `make build` 시 `git describe --abbrev=0`으로 clean 태그 버전만 주입
+
 ## [0.2.0] - 2026-04-09
 
 ### Added
