@@ -149,6 +149,21 @@ func buildListPath(basePath, sort, fields string) string {
 	return path
 }
 
+// doCreateWithDryRun performs a POST with optional ?dry_run=true query parameter.
+// Server-side dry-run validates payload without persisting (per v2 API policy).
+func doCreateWithDryRun(ctx context.Context, sc *client.SynapseClient, path string, payload map[string]any, dryRun bool) (*mcp.CallToolResult, any, error) {
+	if dryRun {
+		path = addQueryParam(path, "dry_run", "true")
+	}
+	return doCreate(ctx, sc, path, payload)
+}
+
+// doPostRaw performs a POST to an endpoint that may not be registered in the OpenAPI schema
+// (e.g., presigned-upload, confirm-upload, generate-tasks). Same behavior as doCreate.
+func doPostRaw(ctx context.Context, sc *client.SynapseClient, path string, payload map[string]any) (*mcp.CallToolResult, any, error) {
+	return doCreate(ctx, sc, path, payload)
+}
+
 // doCreate performs a POST request with a JSON body and returns the result.
 func doCreate(ctx context.Context, sc *client.SynapseClient, path string, payload map[string]any) (*mcp.CallToolResult, any, error) {
 	body, _ := json.Marshal(payload)

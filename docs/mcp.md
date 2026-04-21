@@ -18,6 +18,8 @@ AI가 결과를 해석하여 자연어로 응답
 
 > **사전 조건**: `synapse` CLI가 설치되어 있고, `synapse login`으로 인증이 완료되어야 한다.
 > 설치 및 인증은 [getting-started.md](./getting-started.md) 참조.
+>
+> **호환 백엔드 버전**: 일부 tool(Schema Discovery, presigned-upload, generate-tasks)은 **Synapse Backend v2026.1.5+** 필요.
 
 ---
 
@@ -207,7 +209,7 @@ Cursor Settings → MCP에서 서버를 추가한다:
 
 ---
 
-## 사용 가능한 Tool (23개)
+## 사용 가능한 Tool (29개)
 
 ### 읽기 전용 (15개)
 
@@ -229,14 +231,25 @@ Cursor Settings → MCP에서 서버를 추가한다:
 | `synapse_validation_script_list` | 검증 스크립트 목록 | `page_all` |
 | `synapse_validation_script_get` | 검증 스크립트 상세 | `id` |
 
-### 쓰기 (4개)
+### Schema Discovery (2개) — Synapse Backend v2026.1.5+
 
-| Tool | 설명 | 안전장치 |
-|------|------|----------|
-| `synapse_project_create` | 프로젝트 생성 | `dry_run` 기본 활성화 (`false`로 실행) |
-| `synapse_experiment_create` | 실험 생성 | `dry_run` 기본 활성화 (`false`로 실행) |
-| `synapse_project_delete` | 프로젝트 삭제 | `force=true` 필수 |
-| `synapse_experiment_delete` | 실험 삭제 | `force=true` 필수 |
+| Tool | 설명 | 주요 파라미터 |
+|------|------|--------------|
+| `synapse_schema_file_specifications` | data-collection 생성용 file_specifications 스키마 | `category` (optional) |
+| `synapse_schema_annotation_configurations` | project 생성용 configuration 스키마 | `category` (optional) |
+
+### 쓰기 (8개)
+
+| Tool | 설명 | 안전장치 | 비고 |
+|------|------|----------|------|
+| `synapse_project_create` | 프로젝트 생성 (title/category/configuration/data_collection) | `dry_run` 기본 true | `synapse_schema_annotation_configurations` 선조회 권장 |
+| `synapse_data_collection_create` | 데이터 컬렉션 생성 (file_specifications 포함) | `dry_run` 기본 true | `synapse_schema_file_specifications` 선조회 권장 |
+| `synapse_experiment_create` | 실험 생성 | `dry_run` 기본 true | |
+| `synapse_data_file_presigned_upload` | 파일 업로드용 presigned URL 발급 | — | v2026.1.5+ 필요 |
+| `synapse_data_file_confirm_upload` | 업로드 완료 통지 | — | v2026.1.5+ 필요 |
+| `synapse_project_generate_tasks` | 프로젝트의 task 자동 생성 | `dry_run` 기본 true | v2026.1.5+ 필요, `can_generate_task=true` 전제 |
+| `synapse_project_delete` | 프로젝트 삭제 | `force=true` 필수, `dry_run` 기본 true | |
+| `synapse_experiment_delete` | 실험 삭제 | `force=true` 필수, `dry_run` 기본 true | |
 
 ### Config / Auth (4개)
 

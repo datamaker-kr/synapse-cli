@@ -2,6 +2,8 @@ package tools
 
 import (
 	"context"
+	"encoding/json"
+	"fmt"
 
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 
@@ -19,9 +21,17 @@ type ProjectGetInput struct {
 }
 
 type ProjectCreateInput struct {
-	Name        string `json:"name" jsonschema:"프로젝트 이름"`
-	Description string `json:"description,omitempty" jsonschema:"프로젝트 설명"`
-	DryRun      *bool  `json:"dry_run,omitempty" jsonschema:"true이면 실제 생성하지 않고 요청 내용만 반환. 기본값 true"`
+	Title          string `json:"title" jsonschema:"프로젝트 제목 (필수)"`
+	Category       string `json:"category" jsonschema:"카테고리 (image|video|audio|text|pcd|prompt|time_series) (필수)"`
+	Configuration  string `json:"configuration" jsonschema:"configuration JSON 문자열 (필수). schema_type + classification 구조. UUID v4 생성 필수. 빈 값은 '{}' 전달. 먼저 synapse_schema_annotation_configurations로 스키마 조회 권장"`
+	DataCollection *int   `json:"data_collection,omitempty" jsonschema:"연결할 data-collection ID (optional, nullable)"`
+	Description    string `json:"description,omitempty" jsonschema:"프로젝트 설명"`
+	DryRun         *bool  `json:"dry_run,omitempty" jsonschema:"true이면 dry-run (서버 validation만 수행). 기본값 true"`
+}
+
+type ProjectGenerateTasksInput struct {
+	ProjectID string `json:"project_id" jsonschema:"프로젝트 ID (필수)"`
+	DryRun    *bool  `json:"dry_run,omitempty" jsonschema:"true이면 dry-run. 기본값 true"`
 }
 
 type ProjectDeleteInput struct {
@@ -61,24 +71,59 @@ func RegisterProject(s *mcp.Server, cfg *config.Config) {
 		})
 
 	mcp.AddTool(s, &mcp.Tool{
-		Name:        "synapse_project_create",
-		Description: "Synapse 프로젝트를 생성한다. dry_run 기본 활성화.",
+		Name: "synapse_project_create",
+		Description: "Synapse 프로젝트를 생성한다. dry_run 기본 활성화. " +
+			"먼저 synapse_schema_annotation_configurations로 카테고리별 configuration 스키마 조회 권장. " +
+			"configuration은 JSON 문자열로 전달 (예: '{\"schema_type\":\"dm_schema\",\"classification\":{...}}', 빈 값은 '{}'). " +
+			"UUID v4는 직접 생성하여 classification.id 등에 주입.",
 	},
 		func(ctx context.Context, req *mcp.CallToolRequest, input ProjectCreateInput) (*mcp.CallToolResult, any, error) {
-			isDryRun := input.DryRun == nil || *input.DryRun
-			if isDryRun {
-				payload := map[string]any{"name": input.Name, "description": input.Description}
-				r, _, _ := toolText("[DRY RUN] POST /v2/projects/ 로 다음 데이터를 전송합니다:\n" + toJSON(payload) + "\n\n실행하려면 dry_run=false로 다시 호출하세요.")
-				return r, nil, nil
+			var configuration any = map[string]any{}
+			if input.Configuration != "" {
+				if err := json.Unmarshal([]byte(input.Configuration), &configuration); err != nil {
+					r, _, _ := toolError(fmt.Sprintf("configuration이 유효한 JSON이 아닙니다: %v", err))
+					return r, nil, nil
+				}
 			}
+			payload := map[string]any{
+				"title":         input.Title,
+				"category":      input.Category,
+				"configuration": configuration,
+			}
+			if input.Description != "" {
+				payload["description"] = input.Description
+			}
+			if input.DataCollection != nil {
+				payload["data_collection"] = *input.DataCollection
+			}
+
+			isDryRun := input.DryRun == nil || *input.DryRun
 			sc, err := newClient(cfg)
 			if err != nil {
 				r, _, _ := toolError(err.Error())
 				return r, nil, nil
 			}
-			return doCreate(ctx, sc, "/v2/projects/", map[string]any{
-				"name": input.Name, "description": input.Description,
-			})
+			return doCreateWithDryRun(ctx, sc, "/v2/projects/", payload, isDryRun)
+		})
+
+	mcp.AddTool(s, &mcp.Tool{
+		Name: "synapse_project_generate_tasks",
+		Description: "프로젝트에 task를 자동 생성한다. dry_run 기본 활성화. " +
+			"전제 조건: data-unit의 can_generate_task=true 상태여야 함 (비동기 파일 처리 완료 후 자동 설정). " +
+			"비동기 처리되어 202 Accepted + job_id 응답 가능.",
+	},
+		func(ctx context.Context, req *mcp.CallToolRequest, input ProjectGenerateTasksInput) (*mcp.CallToolResult, any, error) {
+			isDryRun := input.DryRun == nil || *input.DryRun
+			sc, err := newClient(cfg)
+			if err != nil {
+				r, _, _ := toolError(err.Error())
+				return r, nil, nil
+			}
+			path := "/v2/projects/" + input.ProjectID + "/generate-tasks/"
+			if isDryRun {
+				path = addQueryParam(path, "dry_run", "true")
+			}
+			return doPostRaw(ctx, sc, path, map[string]any{})
 		})
 
 	mcp.AddTool(s, &mcp.Tool{

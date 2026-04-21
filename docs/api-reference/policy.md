@@ -1,235 +1,422 @@
-# Synapse v2 API 정책
+# Synapse v2 API Policy
 
-이 문서는 Synapse v2 API의 인증, 속도 제한, 페이지네이션, 입력 검증, 에러 처리, dry-run, 리소스 의존성, 권한 모델에 대한 정책을 정의한다.
+> 출처: `https://api.test.synapse.sh/api-docs/v2/policy/` (2026-04-21 fetch 기준)
+> 최소 호환 백엔드 버전: **Synapse Backend v2026.1.5+**
 
----
+이 문서는 Synapse v2 Agent-First API의 핵심 정책을 정리한다. CLI/MCP는 이 정책을 준수한다.
 
-## 인증 (Authentication)
+## 1. Quick Start (E2E Workflow)
 
-Synapse v2 API는 세 가지 인증 방식을 지원한다.
-
-### Session 인증
-
-브라우저 기반 세션 쿠키를 사용하는 방식. 웹 UI에서 주로 사용된다.
-
-### Token 인증 (DRF Token)
+최소 워크플로우:
 
 ```
-Authorization: Token {token}
-SYNAPSE-Tenant: {tenant_code}
+Schema Discovery → DataCollection 생성 → DataUnit 생성 → DataFile 업로드 (presigned) → Project 생성 → Task 생성
 ```
 
-- `Authorization` 헤더에 DRF Token을 전달한다.
-- 반드시 `SYNAPSE-Tenant` 헤더로 테넌트 코드를 함께 지정해야 한다.
+### Step 0: Schema Discovery (권장)
 
-### Access Token 인증
+```bash
+# file specification 스키마
+GET /v2/schemas/file-specifications/?category=image
 
+# annotation configuration 스키마
+GET /v2/schemas/annotation-configurations/?category=image
 ```
-Authorization: Bearer {access_token}
-```
 
-- 또는 `SYNAPSE-ACCESS-TOKEN: syn_{token}` 헤더를 사용한다.
-- Access Token에는 테넌트 정보가 포함되어 있으므로 별도의 `SYNAPSE-Tenant` 헤더가 불필요하다.
-- Access Token이 설정되어 있으면 DRF Token보다 우선한다.
-
-### 테넌트 자동 할당
-
-- Access Token 방식에서는 토큰에 바인딩된 테넌트가 자동으로 할당된다.
-- DRF Token 방식에서는 `SYNAPSE-Tenant` 헤더가 필수이며, 해당 테넌트에 대한 접근 권한이 있어야 한다.
-
----
-
-## 속도 제한 (Rate Limiting)
-
-API 호출이 속도 제한을 초과하면 HTTP 429 응답이 반환된다.
+### Step 1: DataCollection 생성
 
 ```json
+POST /v2/data-collections/
 {
-  "error": {
-    "code": "RATE_LIMIT_EXCEEDED",
-    "message": "Too many requests. Please retry after a short delay.",
-    "status": 429
+  "name": "Vehicle Detection Dataset",
+  "category": "image",
+  "file_specifications": [
+    {
+      "name": "image_1",
+      "file_type": "image",
+      "is_required": true,
+      "is_primary": true,
+      "function_type": "main",
+      "index": 1
+    }
+  ]
+}
+```
+
+- `name`, `category` 필수. `file_specifications` optional
+- naming 규칙: `{spec_key}_{index}` (예: `image_1`, `pcd_1`)
+- `is_primary=true` 1개 필수
+- `function_type=main` 1개 필수
+
+### Step 2: DataUnit 생성
+
+```json
+POST /v2/data-units/
+{ "data_collection": 1, "name": "sample_001" }
+```
+
+### Step 3: DataFile 업로드 (3단계 presigned 워크플로우)
+
+```bash
+# 3a. presigned URL 발급
+POST /v2/data-files/presigned-upload/
+{ "data_unit": 1, "file_specification": 1, "file_name": "car_001.jpg" }
+
+# 3b. presigned URL로 직접 업로드 (MCP 외부)
+PUT <presigned_url> -H 'Content-Type: image/jpeg' --data-binary @car_001.jpg
+
+# 3c. 업로드 완료 통지
+POST /v2/data-files/confirm-upload/
+{ "data_unit": 1, "file_specification": 1 }
+```
+
+### Step 4: Project 생성
+
+```json
+POST /v2/projects/
+{
+  "title": "Vehicle Detection Project",
+  "category": "image",
+  "data_collection": 1,
+  "configuration": {
+    "schema_type": "dm_schema",
+    "classification": {
+      "bounding_box": {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "representativeCodes": [],
+        "classification_schema": [
+          {
+            "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+            "code": "car",
+            "name": "Car",
+            "value": "#FF0000",
+            "is_default": false,
+            "customFields": {},
+            "attributes": []
+          }
+        ]
+      }
+    }
   }
 }
 ```
 
-- 429 응답을 받으면 잠시 후 재시도해야 한다.
-- `Retry-After` 헤더가 포함될 수 있으며, 해당 시간(초) 후에 재시도를 권장한다.
+- `title`, `category`, `configuration` 필수. `data_collection` nullable optional
+- `id` 필드는 모두 **UUID v4** 직접 생성 필요
+- 빈 configuration은 `{}` 전달
+
+### Step 5: Task 생성
+
+```bash
+POST /v2/projects/{id}/generate-tasks/
+```
+
+- 전제: DataUnit의 `can_generate_task=True` (비동기 파일 처리 완료 후 자동 설정)
 
 ---
 
-## 페이지네이션 (Pagination)
+## 2. Response Format
 
-모든 목록(list) 엔드포인트는 커서 기반 페이지네이션을 사용한다.
-
-### 기본 파라미터
-
-| 파라미터 | 설명 | 기본값 | 최대값 |
-|----------|------|--------|--------|
-| `per_page` | 한 페이지당 항목 수 | 50 | 200 |
-| `cursor` | 다음 페이지 커서 (응답의 `next` 필드) | - | - |
-
-### 정렬 (sort)
-
-`sort` 파라미터로 정렬 기준을 지정한다. 여러 필드를 쉼표로 구분하며, `-` 접두사는 내림차순을 의미한다.
-
-```
-GET /v2/projects/?sort=-created,name
-```
-
-- `-created`: 생성일 내림차순 (최신 먼저)
-- `name`: 이름 오름차순
-
-### 필드 선택 (fields)
-
-`fields` 파라미터로 응답에 포함할 필드를 지정한다. 불필요한 데이터를 줄여 응답 크기를 최적화할 수 있다.
-
-```
-GET /v2/projects/?fields=id,name,status
-```
-
-### 응답 형식
+### Success Envelope
 
 ```json
 {
-  "results": [...],
-  "next": "cursor_token_for_next_page",
-  "previous": "cursor_token_for_previous_page",
-  "count": 150
+  "data": { ... },
+  "meta": {
+    "request_id": "req_abc123def456",
+    "pagination": {
+      "next_cursor": "cD0yMDI2LTAx",
+      "previous_cursor": null,
+      "per_page": 50
+    }
+  }
 }
 ```
 
----
-
-## 입력 검증 (Input Validation)
-
-Synapse v2 API는 3계층 방어(3-Layer Defense) 전략으로 입력을 검증한다.
-
-### 1계층: Path Parameter 검증
-
-- 경로 파라미터(예: `{id}`, `{slug}`)의 형식과 유효성을 검증한다.
-- 유효하지 않은 ID 형식은 즉시 400 응답으로 거부된다.
-
-### 2계층: Query Parameter 이중 인코딩 방지
-
-- 쿼리 파라미터의 이중 URL 인코딩(double-encoding)을 탐지하고 차단한다.
-- Agent가 생성한 URL에서 흔히 발생하는 이중 인코딩 문제를 방어한다.
-
-### 3계층: 문자열 제어 문자 차단
-
-- 문자열 입력에서 제어 문자(control characters)를 탐지하고 제거한다.
-- NULL 바이트, 줄바꿈 삽입 등의 공격을 방어한다.
-
----
-
-## 에러 처리 (Error Handling)
-
-### 에러 응답 형식 (Error Envelope)
-
-모든 에러는 통일된 봉투(envelope) 형식으로 반환된다:
+### Error Envelope
 
 ```json
 {
   "error": {
     "code": "VALIDATION_ERROR",
-    "message": "Human-readable error description.",
-    "status": 400,
+    "message": "This field is required.",
     "details": [
-      {
-        "field": "name",
-        "message": "This field is required."
-      }
+      { "field": "title", "message": "This field is required." }
     ]
-  }
+  },
+  "meta": { "request_id": "req_abc123def456" }
 }
 ```
 
-### 에러 코드
+### Async Job Envelope (202 Accepted)
 
-| HTTP 상태 | 에러 코드 | 설명 |
-|-----------|-----------|------|
-| 400 | `VALIDATION_ERROR` | 요청 데이터 검증 실패 (필수 필드 누락, 잘못된 형식 등) |
-| 401 | `AUTHENTICATION_REQUIRED` | 인증 필요 (토큰 없음 또는 만료) |
-| 403 | `PERMISSION_DENIED` | 권한 부족 (해당 리소스에 대한 접근 권한 없음) |
-| 404 | `NOT_FOUND` | 리소스를 찾을 수 없음 (ID 확인 필요) |
-| 409 | `CONFLICT` | 리소스 충돌 (중복 이름, 동시 수정 등) |
-| 422 | `UNPROCESSABLE_ENTITY` | 전제 조건 미충족 (의존 리소스 미존재, 상태 불일치 등) |
-| 429 | `RATE_LIMIT_EXCEEDED` | 속도 제한 초과 (잠시 후 재시도) |
+```json
+{
+  "data": {
+    "job_id": "job_abc123",
+    "status": "queued",
+    "status_url": "/v2/jobs/job_abc123"
+  },
+  "meta": { "request_id": "req_abc123def456" }
+}
+```
+
+### Error Codes
+
+| HTTP | Error Code | 의미 |
+|------|------------|------|
+| 400 | `VALIDATION_ERROR` | 입력 데이터 검증 실패 |
+| 401 | `AUTHENTICATION_REQUIRED` | 인증 필요 |
+| 403 | `PERMISSION_DENIED` | 권한 없음 |
+| 404 | `NOT_FOUND` | 리소스 없음 |
+| 409 | `CONFLICT` | 리소스 충돌 (중복 등) |
+| 422 | `UNPROCESSABLE_ENTITY` | 요청 처리 불가 (전제 조건 미충족) |
+| 429 | `RATE_LIMIT_EXCEEDED` | 요청 속도 제한 초과 |
 | 500 | `INTERNAL_ERROR` | 서버 내부 오류 |
 
 ---
 
-## Dry-Run
+## 3. Authentication & Tenant Context
 
-모든 mutation(생성, 수정, 삭제) 엔드포인트는 `?dry_run=true` 쿼리 파라미터를 지원한다.
+### 인증 방식
 
-```
-POST /v2/projects/?dry_run=true
-Content-Type: application/json
+| 방식 | 헤더/메커니즘 | 용도 |
+|------|----------|------|
+| Session | Django session cookie | Browser / Web UI |
+| Token | `Authorization: Token <key>` | CLI / Script |
+| Access Token | `Authorization: Bearer <jwt>` | OAuth / Agent |
 
-{"name": "new-project", "description": "..."}
-```
+### Tenant Context
 
-- dry-run 요청은 입력 검증과 권한 확인을 수행하지만, 실제 데이터를 변경하지 않는다.
-- 응답 형식은 실제 요청과 동일하며, dry-run 결과임을 나타내는 메타데이터가 포함된다.
-- **Agent는 모든 mutation 전에 반드시 dry-run을 수행해야 한다.** dry-run 결과를 사용자에게 보여주고, 사용자가 확인한 후에만 실제 mutation을 실행한다.
+- 인증 과정에서 `request.member.tenant`로 자동 설정
+- 별도 `X-Tenant-ID` 헤더 불필요
+- 모든 queryset이 `request.member.tenant`로 자동 필터링
 
 ---
 
-## 리소스 의존성 (Resource Dependencies)
+## 4. Pagination, Sorting & Field Selection
 
-Synapse 리소스는 계층적 의존 관계를 가진다. 리소스를 생성할 때는 반드시 상위 리소스가 먼저 존재해야 한다.
+### Cursor 기반 Pagination
 
-### 데이터 계층
+| 파라미터 | 기본값 | 최대값 | 설명 |
+|----------|--------|--------|------|
+| `per_page` | 50 | 200 | 페이지당 결과 수 |
+| `cursor` | — | — | base64 cursor 토큰 |
+
+### Sorting
+
+```bash
+GET /v2/projects/?sort=-created,name
+```
+
+- `-` 접두사: 내림차순
+- ViewSet마다 `ALLOWED_SORT_FIELDS` whitelist 존재
+- 비허용 필드는 silent ignore (에러 아님)
+- 기본: `-created`
+
+### Field Selection
+
+```bash
+GET /v2/projects/?fields=id,name,created
+```
+
+- List Serializer에 `V2FieldSelectSerializerMixin`이 적용된 경우만 동작
+- Detail/Create Serializer에는 적용되지 않음
+
+---
+
+## 5. Input Validation Rules
+
+3계층 방어 (`V2InputValidationMixin` 자동 적용).
+
+### Layer 1: Path Parameters (Resource IDs)
+
+`initial()` 단계에서 검증. 거부 패턴: `[?#%&\\/]` 또는 `..`
+
+```
+GET /v2/projects/../../../etc/passwd/  → 400
+GET /v2/projects/123?extra=1/          → 400
+GET /v2/projects/123%00/               → 400
+```
+
+### Layer 2: Query Parameters (Double URL Encoding)
+
+`%25xx` 패턴 거부.
+
+```
+GET /v2/projects/?status=%2541         → 400
+```
+
+### Layer 3: String Fields (Control Characters)
+
+`perform_create()` / `perform_update()` 단계에서 nested dict/list 재귀 검증.
+
+| 거부 | 허용 |
+|------|------|
+| `\x00`-`\x08` (NULL, BEL 등) | `\n` (LF) |
+| `\x0b` (VT) | `\t` (TAB) |
+| `\x0c` (FF) | `\r` (CR) |
+| `\x0e`-`\x1f` | |
+
+---
+
+## 6. Safety Rails (Dry-Run 모드)
+
+모든 mutation 엔드포인트(POST, PUT, PATCH, DELETE)에서 `?dry_run=true` 지원.
+
+**Agent는 실제 mutation 전 반드시 dry-run을 수행해야 한다.**
+
+### Dry-Run 응답 (create/update)
+
+```json
+{
+  "data": {
+    "dry_run": true,
+    "action": "create",
+    "validated_fields": ["title", "category", "configuration"]
+  },
+  "meta": { "request_id": "req_..." }
+}
+```
+
+| Action | dry_run=true 동작 |
+|--------|--------------------|
+| `create` | Serializer validation만 수행, DB insert 없음 |
+| `update` | Serializer validation만 수행, DB update 없음 |
+| `partial_update` | partial=True validation만 |
+| `destroy` | Permission check만, DB delete 없음 |
+
+---
+
+## 7. Resource Workflows
+
+### 생성 순서 (의존성)
 
 ```
 Tenant → DataCollection → FileSpecification → DataUnit → DataFile
+                                                  ↓
+                                        Project → Task → Assignment
 ```
 
-- `Tenant`: 최상위 워크스페이스. 모든 리소스의 루트.
-- `DataCollection`: 데이터 컬렉션. Tenant에 소속.
-- `FileSpecification`: 파일 사양 정의. DataCollection에 소속.
-- `DataUnit`: 데이터 유닛. DataCollection에 소속.
-- `DataFile`: 데이터 파일. DataUnit에 소속.
+### 의존성 표
 
-### 프로젝트 계층
+| 리소스 | 의존 | 핵심 제약 |
+|---|---|---|
+| DataCollection | Tenant | tenant 자동 설정 |
+| FileSpecification | DataCollection | 컬렉션 생성 시 함께 지정 |
+| DataUnit | DataCollection | data_collection 필수 |
+| DataFile | DataUnit, FileSpecification | presigned URL 워크플로우 |
+| Project | DataCollection | tenant는 DataCollection.tenant로 자동 override |
+| Task | Project, DataUnit | (Project, DataUnit) 쌍당 1개 |
+| Assignment | Task | task에 의존 |
 
-```
-Project → Task → Assignment
-```
+### 핵심 제약
 
-- `Project`: 프로젝트. Tenant에 소속.
-- `Task`: 태스크. Project에 소속.
-- `Assignment`: 할당. Task에 소속.
-
-### 생성 순서
-
-리소스 생성 시 반드시 상위 리소스부터 순서대로 생성해야 한다. 상위 리소스가 존재하지 않으면 422 `UNPROCESSABLE_ENTITY` 에러가 반환된다.
+- **DataUnit.can_generate_task**: 비동기 파일 처리 완료 후 자동 True. Task 생성 전 True여야 함
+- **Project.tenant**: 직접 지정 불가, DataCollection.tenant로 자동 override
+- **Task uniqueness**: (Project, DataUnit) 쌍당 1개만
+- **Presigned upload**: 3단계 (URL 요청 → 업로드 → 완료 통지)
 
 ---
 
-## 권한 모델 (Permission Model)
+## 8. Permission Model
 
-Synapse v2 API는 ViewSet 기반 권한 모델을 사용한다.
+### ViewSet 타입
 
-### TargetModelViewSet
+| ViewSet | Permission Source | 예시 |
+|---|---|---|
+| `V2TargetModelViewSet` | 자체 MemberRole | Project, DataCollection, Experiment |
+| `V2DerivedModelViewSet` | DerivedHop으로 inherit | Task, DataUnit, Workshop |
+| `V2ModelViewSet` | 기본 permission stack | ValidationScript, GroundTruthDataset |
+| `V2ReadOnlyModelViewSet` | 기본 permission stack | Plugin, Model, DataFile |
 
-- 직접 대상이 되는 리소스(Project, DataCollection, Experiment 등)에 대한 ViewSet.
-- 사용자의 테넌트 멤버십과 리소스 소유권을 기반으로 접근을 제어한다.
+### AccessLevel
 
-### DerivedModelViewSet
+| 레벨 | list | retrieve | write |
+|------|------|----------|-------|
+| `PUBLIC` | Yes | Yes | MemberRole 필요 |
+| `PARTIALLY_PUBLIC` | Yes | MemberRole 필요 | MemberRole 필요 |
+| `PRIVATE` | MemberRole 필요 | MemberRole 필요 | MemberRole 필요 |
 
-- 상위 리소스로부터 파생된 리소스(Task, Assignment, DataUnit 등)에 대한 ViewSet.
-- 상위 리소스의 권한을 상속받는다. 예: Task의 권한은 소속 Project의 권한을 따른다.
+### Admin Bypass
 
-### AccessLevel 규칙
+Phase 3에서 admin bypass **제거**. 관리자도 각 리소스에 명시적 MemberRole 필요.
 
-| AccessLevel | 읽기 | 쓰기 | 삭제 | 관리 |
-|-------------|------|------|------|------|
-| `viewer` | O | X | X | X |
-| `editor` | O | O | X | X |
-| `manager` | O | O | O | X |
-| `admin` | O | O | O | O |
+---
 
-- 리소스별로 사용자에게 부여된 AccessLevel에 따라 허용되는 작업이 결정된다.
-- 테넌트 관리자(admin)는 테넌트 내 모든 리소스에 대해 전체 권한을 가진다.
+## 9. Configuration Schema (Project)
+
+### Schema Type
+
+```json
+{ "schema_type": "dm_schema" }
+```
+
+| 값 | 설명 |
+|----|------|
+| `dm_schema` | Synapse 기본 (default) |
+| `json_schema` | JSON Schema 기반 커스텀 |
+
+### Category → Annotation Types
+
+| Category | 지원 Annotation Types |
+|----------|----------------------|
+| image | annotationGroup, classification, bounding_box, polygon, polyline, keypoint, relation, segmentation |
+| video | annotationGroup, classification, segmentation, bounding_box |
+| audio | annotationGroup, classification, segmentation |
+| text | classification, relation, named_entity |
+| pcd | 3d_bounding_box, 3d_segmentation, relation |
+| prompt | classification, prompt, answer |
+
+### Widget Types
+
+| Widget | 설명 | options 필요 |
+|--------|------|-------------|
+| `select` | 단일 선택 dropdown | Yes |
+| `radio` | 라디오 버튼 | Yes |
+| `multi_select` | 다중 선택 | Yes |
+| `text` | 자유 텍스트 | No |
+
+---
+
+## 10. Schema Discovery APIs
+
+### File Specification Schema
+
+```bash
+GET /v2/schemas/file-specifications/                # 전체
+GET /v2/schemas/file-specifications/?category=pcd   # 카테고리 필터
+```
+
+응답 핵심:
+- `categories.{category}.file_specifications` — spec_key별 정의
+- `file_types` — 카테고리별 지원 확장자
+- `function_types` — `["main", "sub", "meta"]`
+- `validation_rules` — naming / primary / main_function / index 규칙
+- `payload_schema` — required/optional 필드, 예시
+
+### Annotation Configuration Schema
+
+```bash
+GET /v2/schemas/annotation-configurations/?category=image
+```
+
+응답 핵심:
+- `categories.{category}.annotation_types` — 지원 타입 + smart_tools
+- `configuration_schema` — schema_type, classification 구조
+- `widget_types` — select/radio/multi_select/text
+- `validation_rules` — UUID 생성, category 매칭, attribute_options
+- `payload_schema` — required/optional 필드
+
+---
+
+## 11. CLI / MCP 활용
+
+본 정책은 `synapse-cli`의 MCP tool에 다음과 같이 반영:
+
+- **Schema Discovery**: `synapse_schema_file_specifications`, `synapse_schema_annotation_configurations`
+- **Creation Workflow**: `synapse_data_collection_create`, `synapse_project_create` (모두 dry_run 기본 활성화)
+- **Presigned Upload**: `synapse_data_file_presigned_upload`, `synapse_data_file_confirm_upload`
+- **Task Generation**: `synapse_project_generate_tasks`
+- **Mutation Safety**: `dry_run` 기본 활성화 (모든 create/delete tool)
+- **Sort/Fields**: 모든 list tool 지원
