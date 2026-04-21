@@ -17,6 +17,17 @@ type DataFileListInput struct {
 	PageAll          bool   `json:"page_all,omitempty" jsonschema:"true이면 모든 페이지를 조회한다"`
 }
 
+type DataFilePresignedUploadInput struct {
+	DataUnit          int    `json:"data_unit" jsonschema:"data-unit ID (필수)"`
+	FileSpecification int    `json:"file_specification" jsonschema:"file-specification ID (필수)"`
+	FileName          string `json:"file_name" jsonschema:"업로드할 파일 이름 (필수, 예: car_001.jpg)"`
+}
+
+type DataFileConfirmUploadInput struct {
+	DataUnit          int `json:"data_unit" jsonschema:"data-unit ID (필수)"`
+	FileSpecification int `json:"file_specification" jsonschema:"file-specification ID (필수)"`
+}
+
 // RegisterDataFile registers data-file-related MCP tools.
 func RegisterDataFile(s *mcp.Server, cfg *config.Config) {
 	mcp.AddTool(s, &mcp.Tool{
@@ -42,5 +53,47 @@ func RegisterDataFile(s *mcp.Server, cfg *config.Config) {
 			path = buildListPath(path, input.Sort, input.Fields)
 			r, _, _ := fetchList(ctx, sc, path, input.PageAll)
 			return r, nil, nil
+		})
+
+	mcp.AddTool(s, &mcp.Tool{
+		Name: "synapse_data_file_presigned_upload",
+		Description: "데이터 파일 업로드용 presigned URL을 발급받는다. " +
+			"3단계 워크플로우: " +
+			"(1) 이 tool로 presigned URL 발급 → " +
+			"(2) MCP 외부에서 PUT <url> -H 'Content-Type: <mime>' --data-binary @<file> 로 실제 업로드 → " +
+			"(3) synapse_data_file_confirm_upload 호출하여 서버에 업로드 완료 통지. " +
+			"요구 사항: Synapse Backend v2026.1.5+",
+	},
+		func(ctx context.Context, req *mcp.CallToolRequest, input DataFilePresignedUploadInput) (*mcp.CallToolResult, any, error) {
+			sc, err := newClient(cfg)
+			if err != nil {
+				r, _, _ := toolError(err.Error())
+				return r, nil, nil
+			}
+			payload := map[string]any{
+				"data_unit":          input.DataUnit,
+				"file_specification": input.FileSpecification,
+				"file_name":          input.FileName,
+			}
+			return doPostRaw(ctx, sc, "/v2/data-files/presigned-upload/", payload)
+		})
+
+	mcp.AddTool(s, &mcp.Tool{
+		Name: "synapse_data_file_confirm_upload",
+		Description: "presigned URL을 통한 파일 업로드가 완료되었음을 서버에 통지한다. " +
+			"presigned-upload → PUT 업로드 → 이 tool 순서로 호출. " +
+			"요구 사항: Synapse Backend v2026.1.5+",
+	},
+		func(ctx context.Context, req *mcp.CallToolRequest, input DataFileConfirmUploadInput) (*mcp.CallToolResult, any, error) {
+			sc, err := newClient(cfg)
+			if err != nil {
+				r, _, _ := toolError(err.Error())
+				return r, nil, nil
+			}
+			payload := map[string]any{
+				"data_unit":          input.DataUnit,
+				"file_specification": input.FileSpecification,
+			}
+			return doPostRaw(ctx, sc, "/v2/data-files/confirm-upload/", payload)
 		})
 }

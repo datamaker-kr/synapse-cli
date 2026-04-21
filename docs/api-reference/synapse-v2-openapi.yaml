@@ -6633,7 +6633,7 @@ paths:
         name: category
         schema:
           type: string
-          x-spec-enum-id: 2a9b1295503920e1
+          x-spec-enum-id: 32c4380f5c7a058a
           enum:
           - converter
           - data_validation
@@ -6645,8 +6645,8 @@ paths:
           - upload
         description: |-
           * `neural_net` - Neural Network
-          * `export` - Export
-          * `upload` - Exports
+          * `export` - 익스포트
+          * `upload` - 임포트
           * `smart_tool` - Smart Tool
           * `pre_annotation` - Task Preprocessing
           * `post_annotation` - Task Postprocessing
@@ -8993,6 +8993,128 @@ paths:
                       - project.write
                   summary: 부모 역할 정보
           description: 부모 역할 정보
+        '400':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                        example: VALIDATION_ERROR
+                      message:
+                        type: string
+                      details:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            field:
+                              type: string
+                            message:
+                              type: string
+                        nullable: true
+                  meta:
+                    type: object
+                    properties:
+                      request_id:
+                        type: string
+                        example: req_abc123def456
+          description: Validation Error
+        '401':
+          description: Authentication Required
+        '403':
+          description: Permission Denied
+        '404':
+          description: Not Found
+  /v2/schemas/annotation-configurations/:
+    get:
+      operationId: schemas_annotation_configurations_retrieve
+      description: |-
+        Category별 annotation configuration 구성에 필요한 스키마 정보를 반환한다.
+
+        Agent가 project 생성 시 올바른 ``configuration`` JSON을 구성할 수 있도록
+        category별 annotation type 목록, classification schema 구조 템플릿,
+        widget type, validation rules 정보를 제공한다.
+
+        Query Parameters:
+            category (optional): 특정 category만 필터링 (image, video, audio, text, pcd, prompt, time_series)
+      summary: Annotation configuration 스키마 조회
+      tags:
+      - Schemas
+      security:
+      - tokenAuth: []
+      - TokenAuth: []
+        SYNAPSE-Tenant: []
+      - AccessTokenAuth: []
+        SYNAPSE-Tenant: []
+      responses:
+        '200':
+          description: No response body
+        '400':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                        example: VALIDATION_ERROR
+                      message:
+                        type: string
+                      details:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            field:
+                              type: string
+                            message:
+                              type: string
+                        nullable: true
+                  meta:
+                    type: object
+                    properties:
+                      request_id:
+                        type: string
+                        example: req_abc123def456
+          description: Validation Error
+        '401':
+          description: Authentication Required
+        '403':
+          description: Permission Denied
+        '404':
+          description: Not Found
+  /v2/schemas/file-specifications/:
+    get:
+      operationId: schemas_file_specifications_retrieve
+      description: |-
+        Category별 file specification 구성에 필요한 메타데이터를 반환한다.
+
+        Agent가 data collection 생성 시 올바른 ``file_specifications``
+        payload를 구성할 수 있도록 category별 지원 file type, function type,
+        extensions, validation rules 등의 스키마 정보를 제공한다.
+
+        Query Parameters:
+            category (optional): 특정 category만 필터링 (image, video, audio, text, pcd, data)
+      summary: File specification 스키마 조회
+      tags:
+      - Schemas
+      security:
+      - tokenAuth: []
+      - TokenAuth: []
+        SYNAPSE-Tenant: []
+      - AccessTokenAuth: []
+        SYNAPSE-Tenant: []
+      responses:
+        '200':
+          description: No response body
         '400':
           content:
             application/json:
@@ -13408,14 +13530,14 @@ components:
           type: string
           description: |-
             * `neural_net` - Neural Network
-            * `export` - Export
-            * `upload` - Exports
+            * `export` - 익스포트
+            * `upload` - 임포트
             * `smart_tool` - Smart Tool
             * `pre_annotation` - Task Preprocessing
             * `post_annotation` - Task Postprocessing
             * `data_validation` - Data File
             * `converter` - 데이터 변환기
-          x-spec-enum-id: 2a9b1295503920e1
+          x-spec-enum-id: 32c4380f5c7a058a
           readOnly: true
         description:
           type: string
@@ -13474,14 +13596,14 @@ components:
           type: string
           description: |-
             * `neural_net` - Neural Network
-            * `export` - Export
-            * `upload` - Exports
+            * `export` - 익스포트
+            * `upload` - 임포트
             * `smart_tool` - Smart Tool
             * `pre_annotation` - Task Preprocessing
             * `post_annotation` - Task Postprocessing
             * `data_validation` - Data File
             * `converter` - 데이터 변환기
-          x-spec-enum-id: 2a9b1295503920e1
+          x-spec-enum-id: 32c4380f5c7a058a
           readOnly: true
         is_active:
           type: boolean

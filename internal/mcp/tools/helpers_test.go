@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -133,6 +134,55 @@ func TestBuildListPath(t *testing.T) {
 	assert.Equal(t, "/v2/test/?fields=id%2Cname", buildListPath("/v2/test/", "", "id,name"))
 	assert.Equal(t, "/v2/test/?sort=-created&fields=id%2Cname", buildListPath("/v2/test/", "-created", "id,name"))
 	assert.Equal(t, "/v2/test/?status=running&sort=name", buildListPath("/v2/test/?status=running", "name", ""))
+}
+
+func TestDoPostRaw_PostsJSONBody(t *testing.T) {
+	var capturedMethod string
+	var capturedBody string
+	sc, ts := newTestServer(func(w http.ResponseWriter, r *http.Request) {
+		capturedMethod = r.Method
+		body, _ := io.ReadAll(r.Body)
+		capturedBody = string(body)
+		w.WriteHeader(200)
+		fmt.Fprint(w, `{"data":{"ok":true}}`)
+	})
+	defer ts.Close()
+
+	r, _, err := doPostRaw(context.Background(), sc, "/v2/data-files/presigned-upload/", map[string]any{"data_unit": 1})
+	require.NoError(t, err)
+	assert.False(t, r.IsError)
+	assert.Equal(t, "POST", capturedMethod)
+	assert.Contains(t, capturedBody, `"data_unit":1`)
+}
+
+func TestDoCreateWithDryRun_AddsQueryParam(t *testing.T) {
+	var capturedPath string
+	sc, ts := newTestServer(func(w http.ResponseWriter, r *http.Request) {
+		capturedPath = r.URL.RawQuery
+		w.WriteHeader(200)
+		fmt.Fprint(w, `{"data":{"dry_run":true}}`)
+	})
+	defer ts.Close()
+
+	r, _, err := doCreateWithDryRun(context.Background(), sc, "/v2/projects/", map[string]any{"title": "X"}, true)
+	require.NoError(t, err)
+	assert.False(t, r.IsError)
+	assert.Contains(t, capturedPath, "dry_run=true")
+}
+
+func TestDoCreateWithDryRun_NoQueryWhenFalse(t *testing.T) {
+	var capturedPath string
+	sc, ts := newTestServer(func(w http.ResponseWriter, r *http.Request) {
+		capturedPath = r.URL.RawQuery
+		w.WriteHeader(201)
+		fmt.Fprint(w, `{"data":{"id":1}}`)
+	})
+	defer ts.Close()
+
+	r, _, err := doCreateWithDryRun(context.Background(), sc, "/v2/projects/", map[string]any{"title": "X"}, false)
+	require.NoError(t, err)
+	assert.False(t, r.IsError)
+	assert.NotContains(t, capturedPath, "dry_run")
 }
 
 func TestDoCreate_Success(t *testing.T) {

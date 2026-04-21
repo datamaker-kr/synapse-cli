@@ -2950,8 +2950,8 @@ type PluginReleaseV2List struct {
 // PluginV2Detail 상세용.
 type PluginV2Detail struct {
 	// Category * `neural_net` - Neural Network
-	// * `export` - Export
-	// * `upload` - Exports
+	// * `export` - 익스포트
+	// * `upload` - 임포트
 	// * `smart_tool` - Smart Tool
 	// * `pre_annotation` - Task Preprocessing
 	// * `post_annotation` - Task Postprocessing
@@ -2972,8 +2972,8 @@ type PluginV2Detail struct {
 }
 
 // PluginV2DetailCategory * `neural_net` - Neural Network
-// * `export` - Export
-// * `upload` - Exports
+// * `export` - 익스포트
+// * `upload` - 임포트
 // * `smart_tool` - Smart Tool
 // * `pre_annotation` - Task Preprocessing
 // * `post_annotation` - Task Postprocessing
@@ -2984,8 +2984,8 @@ type PluginV2DetailCategory string
 // PluginV2List 목록용.
 type PluginV2List struct {
 	// Category * `neural_net` - Neural Network
-	// * `export` - Export
-	// * `upload` - Exports
+	// * `export` - 익스포트
+	// * `upload` - 임포트
 	// * `smart_tool` - Smart Tool
 	// * `pre_annotation` - Task Preprocessing
 	// * `post_annotation` - Task Postprocessing
@@ -3000,8 +3000,8 @@ type PluginV2List struct {
 }
 
 // PluginV2ListCategory * `neural_net` - Neural Network
-// * `export` - Export
-// * `upload` - Exports
+// * `export` - 익스포트
+// * `upload` - 임포트
 // * `smart_tool` - Smart Tool
 // * `pre_annotation` - Task Preprocessing
 // * `post_annotation` - Task Postprocessing
@@ -3823,8 +3823,8 @@ type PluginReleaseListParams struct {
 // PluginListParams defines parameters for PluginList.
 type PluginListParams struct {
 	// Category * `neural_net` - Neural Network
-	// * `export` - Export
-	// * `upload` - Exports
+	// * `export` - 익스포트
+	// * `upload` - 임포트
 	// * `smart_tool` - Smart Tool
 	// * `pre_annotation` - Task Preprocessing
 	// * `post_annotation` - Task Postprocessing
@@ -4921,6 +4921,12 @@ type ClientInterface interface {
 
 	// ReviewRoles request
 	ReviewRoles(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// SchemasAnnotationConfigurationsRetrieve request
+	SchemasAnnotationConfigurationsRetrieve(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// SchemasFileSpecificationsRetrieve request
+	SchemasFileSpecificationsRetrieve(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// TaskList request
 	TaskList(ctx context.Context, params *TaskListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -7035,6 +7041,30 @@ func (c *Client) ReviewPermissions(ctx context.Context, id int, reqEditors ...Re
 
 func (c *Client) ReviewRoles(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewReviewRolesRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) SchemasAnnotationConfigurationsRetrieve(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSchemasAnnotationConfigurationsRetrieveRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) SchemasFileSpecificationsRetrieve(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSchemasFileSpecificationsRetrieveRequest(c.Server)
 	if err != nil {
 		return nil, err
 	}
@@ -14056,6 +14086,60 @@ func NewReviewRolesRequest(server string, id int) (*http.Request, error) {
 	return req, nil
 }
 
+// NewSchemasAnnotationConfigurationsRetrieveRequest generates requests for SchemasAnnotationConfigurationsRetrieve
+func NewSchemasAnnotationConfigurationsRetrieveRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/schemas/annotation-configurations/")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewSchemasFileSpecificationsRetrieveRequest generates requests for SchemasFileSpecificationsRetrieve
+func NewSchemasFileSpecificationsRetrieveRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/schemas/file-specifications/")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewTaskListRequest generates requests for TaskList
 func NewTaskListRequest(server string, params *TaskListParams) (*http.Request, error) {
 	var err error
@@ -16131,6 +16215,12 @@ type ClientWithResponsesInterface interface {
 
 	// ReviewRolesWithResponse request
 	ReviewRolesWithResponse(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*ReviewRolesResponse, error)
+
+	// SchemasAnnotationConfigurationsRetrieveWithResponse request
+	SchemasAnnotationConfigurationsRetrieveWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*SchemasAnnotationConfigurationsRetrieveResponse, error)
+
+	// SchemasFileSpecificationsRetrieveWithResponse request
+	SchemasFileSpecificationsRetrieveWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*SchemasFileSpecificationsRetrieveResponse, error)
 
 	// TaskListWithResponse request
 	TaskListWithResponse(ctx context.Context, params *TaskListParams, reqEditors ...RequestEditorFn) (*TaskListResponse, error)
@@ -20228,6 +20318,74 @@ func (r ReviewRolesResponse) StatusCode() int {
 	return 0
 }
 
+type SchemasAnnotationConfigurationsRetrieveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r SchemasAnnotationConfigurationsRetrieveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r SchemasAnnotationConfigurationsRetrieveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type SchemasFileSpecificationsRetrieveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON400      *struct {
+		Error *struct {
+			Code    *string `json:"code,omitempty"`
+			Details *[]struct {
+				Field   *string `json:"field,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"details,omitempty"`
+			Message *string `json:"message,omitempty"`
+		} `json:"error,omitempty"`
+		Meta *struct {
+			RequestId *string `json:"request_id,omitempty"`
+		} `json:"meta,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r SchemasFileSpecificationsRetrieveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r SchemasFileSpecificationsRetrieveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type TaskListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -22590,6 +22748,24 @@ func (c *ClientWithResponses) ReviewRolesWithResponse(ctx context.Context, id in
 		return nil, err
 	}
 	return ParseReviewRolesResponse(rsp)
+}
+
+// SchemasAnnotationConfigurationsRetrieveWithResponse request returning *SchemasAnnotationConfigurationsRetrieveResponse
+func (c *ClientWithResponses) SchemasAnnotationConfigurationsRetrieveWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*SchemasAnnotationConfigurationsRetrieveResponse, error) {
+	rsp, err := c.SchemasAnnotationConfigurationsRetrieve(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSchemasAnnotationConfigurationsRetrieveResponse(rsp)
+}
+
+// SchemasFileSpecificationsRetrieveWithResponse request returning *SchemasFileSpecificationsRetrieveResponse
+func (c *ClientWithResponses) SchemasFileSpecificationsRetrieveWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*SchemasFileSpecificationsRetrieveResponse, error) {
+	rsp, err := c.SchemasFileSpecificationsRetrieve(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSchemasFileSpecificationsRetrieveResponse(rsp)
 }
 
 // TaskListWithResponse request returning *TaskListResponse
@@ -27891,6 +28067,82 @@ func ParseReviewRolesResponse(rsp *http.Response) (*ReviewRolesResponse, error) 
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseSchemasAnnotationConfigurationsRetrieveResponse parses an HTTP response from a SchemasAnnotationConfigurationsRetrieveWithResponse call
+func ParseSchemasAnnotationConfigurationsRetrieveResponse(rsp *http.Response) (*SchemasAnnotationConfigurationsRetrieveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &SchemasAnnotationConfigurationsRetrieveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest struct {
+			Error *struct {
+				Code    *string `json:"code,omitempty"`
+				Details *[]struct {
+					Field   *string `json:"field,omitempty"`
+					Message *string `json:"message,omitempty"`
+				} `json:"details,omitempty"`
+				Message *string `json:"message,omitempty"`
+			} `json:"error,omitempty"`
+			Meta *struct {
+				RequestId *string `json:"request_id,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseSchemasFileSpecificationsRetrieveResponse parses an HTTP response from a SchemasFileSpecificationsRetrieveWithResponse call
+func ParseSchemasFileSpecificationsRetrieveResponse(rsp *http.Response) (*SchemasFileSpecificationsRetrieveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &SchemasFileSpecificationsRetrieveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			Error *struct {

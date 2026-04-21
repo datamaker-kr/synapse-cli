@@ -43,6 +43,7 @@ func Serve(ctx context.Context, cfg *config.Config) error {
 	tools.RegisterDataFile(s, cfg)
 	tools.RegisterConfig(s, cfg)
 	tools.RegisterValidationScript(s, cfg)
+	tools.RegisterSchema(s, cfg)
 
 	return s.Run(ctx, &mcp.StdioTransport{})
 }

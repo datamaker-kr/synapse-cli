@@ -2,6 +2,8 @@ package tools
 
 import (
 	"context"
+	"encoding/json"
+	"fmt"
 
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 
@@ -16,6 +18,14 @@ type DataCollectionListInput struct {
 
 type DataCollectionGetInput struct {
 	ID string `json:"id" jsonschema:"데이터 컬렉션 ID"`
+}
+
+type DataCollectionCreateInput struct {
+	Name               string `json:"name" jsonschema:"데이터 컬렉션 이름 (필수)"`
+	Category           string `json:"category" jsonschema:"카테고리 (image|video|audio|text|pcd|data) (필수)"`
+	Description        string `json:"description,omitempty" jsonschema:"데이터 컬렉션 설명"`
+	FileSpecifications string `json:"file_specifications,omitempty" jsonschema:"file_specifications JSON 배열 문자열. 예: [{\"name\":\"image_1\",\"file_type\":\"image\",\"is_required\":true,\"is_primary\":true,\"function_type\":\"main\",\"index\":1}]. naming은 {spec_key}_{index} 형식 필수. is_primary=true 1개 + function_type=main 1개 필수. 먼저 synapse_schema_file_specifications로 스키마 조회 권장"`
+	DryRun             *bool  `json:"dry_run,omitempty" jsonschema:"true이면 dry-run (서버 validation만 수행). 기본값 true"`
 }
 
 // RegisterDataCollection registers data-collection-related MCP tools.
@@ -47,5 +57,37 @@ func RegisterDataCollection(s *mcp.Server, cfg *config.Config) {
 			}
 			r, _, _ := fetchOne(ctx, sc, "/v2/data-collections/"+input.ID+"/")
 			return r, nil, nil
+		})
+
+	mcp.AddTool(s, &mcp.Tool{
+		Name: "synapse_data_collection_create",
+		Description: "Synapse 데이터 컬렉션을 생성한다. dry_run 기본 활성화. " +
+			"먼저 synapse_schema_file_specifications로 스키마 조회 후 file_specifications를 구성할 것. " +
+			"file_specifications는 JSON 배열 문자열로 전달.",
+	},
+		func(ctx context.Context, req *mcp.CallToolRequest, input DataCollectionCreateInput) (*mcp.CallToolResult, any, error) {
+			payload := map[string]any{
+				"name":     input.Name,
+				"category": input.Category,
+			}
+			if input.Description != "" {
+				payload["description"] = input.Description
+			}
+			if input.FileSpecifications != "" {
+				var fileSpecs []any
+				if err := json.Unmarshal([]byte(input.FileSpecifications), &fileSpecs); err != nil {
+					r, _, _ := toolError(fmt.Sprintf("file_specifications가 유효한 JSON 배열이 아닙니다: %v", err))
+					return r, nil, nil
+				}
+				payload["file_specifications"] = fileSpecs
+			}
+
+			isDryRun := input.DryRun == nil || *input.DryRun
+			sc, err := newClient(cfg)
+			if err != nil {
+				r, _, _ := toolError(err.Error())
+				return r, nil, nil
+			}
+			return doCreateWithDryRun(ctx, sc, "/v2/data-collections/", payload, isDryRun)
 		})
 }
