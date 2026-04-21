@@ -5,13 +5,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.2.1] - 2026-04-21
+
+### Added
+
+- Schema Discovery MCP tool 2개 (`synapse_schema_file_specifications`, `synapse_schema_annotation_configurations`) — 호환 백엔드 v2026.1.5+
+- `synapse_data_collection_create` MCP tool — file_specifications JSON 지원, dry_run 기본 활성화
+- `synapse_data_file_presigned_upload`, `synapse_data_file_confirm_upload` — 3단계 업로드 워크플로우 지원
+- `synapse_project_generate_tasks` — 태스크 자동 생성 (can_generate_task 전제)
+- `helpers.go`에 `doCreateWithDryRun`, `doPostRaw` 공통 헬퍼 추가
+- `skills/synapse-cli.md`에 Schema Discovery 기반 리소스 생성 워크플로우 가이드 추가
+- 22개 신규 테스트 케이스 (data_collection, project, data_file, schema, helpers)
+
+### Changed
+
+- 최신 v2 OpenAPI 스키마 반영 (Schema Discovery 엔드포인트 2개 포함)
+- `synapse_project_create` 확장: `title/category/configuration/data_collection` 필드 지원, dry_run 기본 활성화
+- MCP tool 총 23개 → 29개
+- `docs/api-reference/` 동기화 (스키마 + policy.md 최신화)
+- `docs/mcp.md` 업데이트 (29개 tool 반영, 호환 백엔드 버전 명시)
+- 호환 백엔드 버전 명시: **Synapse Backend v2026.1.5+**
 
 ### Fixed
 
 - `synapse --version` 및 로고에 버전이 `dev` 또는 `v0.0.1-dirty`로 표시되는 버그 수정
   - `go install`로 설치 시 `runtime/debug.ReadBuildInfo()` fallback으로 정확한 버전 표시
   - `make build` 시 `git describe --abbrev=0`으로 clean 태그 버전만 주입
+
+### Breaking Changes
+
+- `synapse_project_create`의 `name` 파라미터가 `title`로 변경됨 (API 스키마 정합성)
+- `category`, `configuration`이 필수 필드로 추가 (빈 configuration은 `'{}'` 전달)
 
 ## [0.2.0] - 2026-04-09
 
@@ -44,7 +68,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - MCP config/auth tool: config current-context/list-contexts/use-context, login guardrail (보안상 credential 입력 차단, 방법 안내만 반환)
 - MCP resource: `synapse://skills/synapse-cli` — Claude용 Synapse 플랫폼 사용 가이드 (go:embed 내장)
 - `.mcp.json` Claude Code 연동 설정 파일
-- `docs/` 디렉토리 CLI 문서화 (12개 파일): getting-started, architecture, commands/*, configuration, authentication, output-formats, development, mcp 연동 가이드
+- `docs/` 디렉토리 CLI 문서화 (12개 파일): getting-started, architecture, commands/\*, configuration, authentication, output-formats, development, mcp 연동 가이드
 - `skills/synapse-cli.md` Claude용 skill 파일
 
 ### Changed
